@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg63"
+   sodipodi:docname="oven.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs67" />
+  <sodipodi:namedview
+     id="namedview65"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="24.46875"
+     inkscape:cx="16"
+     inkscape:cy="12.730524"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg63" />
+  <g
+     id="oven">
+    <path
+       d="m 28,20 c 0,-1.333333 -2,-1.333333 -2,0 m 0,0 v 4 H 6 V 4 H 26 V 8 H 9 c -1.3333328,0 -1.3333328,2 0,2 h 17 v 6 m 0,0 c 0.08174,0.88378 2,1.333333 2,0 m 0,0 V 4 C 28,2.8954305 27.104569,2 26,2 H 6 C 4.8954305,2 4,2.8954305 4,4 v 24 c 0,0.552285 0.4477153,1 1,1 h 4 c 0.3345191,-0.0017 0.6460165,-0.170615 0.83,-0.45 L 11.54,26 h 8.92 l 1.71,2.55 c 0.183983,0.279385 0.495481,0.448269 0.83,0.45 h 4 c 0.552285,0 1,-0.447715 1,-1 v -8 m -2,6 v 1 H 23.54 L 22.87,26 Z M 9.13,26 8.46,27 H 6 v -1 z"
+       id="path52"
+       sodipodi:nodetypes="ccccccccsscccccssssssccccccssccccccccccc" />
+    <path
+       d="M9,12a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V13a1,1,0,0,0-1-1Zm13,8H10V14H22Z"
+       id="path54" />
+    <path
+       d="M9,7h4a1,1,0,0,0,0-2H9A1,1,0,0,0,9,7Z"
+       id="path56" />
+    <path
+       d="M24,6a1,1,0,0,0-1-1h0a1,1,0,1,0,1,1Z"
+       id="path58" />
+    <path
+       d="M21,6a1,1,0,0,0-1-1h0a1,1,0,1,0,1,1Z"
+       id="path60" />
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header {
+    height: 260px;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(#FFDBD1, white);
+}
+
+
+/*# sourceMappingURL=styles.css.map */
