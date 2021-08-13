@@ -3,13 +3,147 @@
     margin: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: hind;
+    font-family: handlee;
 }
 
 header {
     height: 260px;
+    /*background-color: #FFDBD1;*/
     /* For browsers that do not support gradients */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFDBD1), to(white));
     background-image: linear-gradient(#FFDBD1, white);
 }
 
+logo {
+    width: 60px;
+}
 
-/*# sourceMappingURL=styles.css.map */
+.logo-title {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 30px;
+    color: #E30C0C;
+}
+
+h1 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 48px;
+    color: #77838F
+}
+
+.parrafo1 {
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #6BA431;
+}
+
+.parrafo2 {
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #77838F;
+}
+
+h2 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 36px;
+    color: #6BA431;
+}
+
+h3 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 24px;
+    color: #6BA431;
+}
+
+.btn-nar {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: #FF8908;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    border: 0px;
+}
+
+.btn-nar:hover {
+    color: #FFF6F3;
+}
+
+.card-1 {
+    background-color: #FFF6F3;
+    border: 0px;
+    border-radius: 0px 0px 10px 10px;
+    width: 20rem;
+}
+
+.card-1-text {
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-2 {
+    background-color: #FFF6F3;
+    border: 0px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.card-title {
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card-body p {
+    color: #77838F;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+footer {
+    height: 380px;
+    background-color: #C1D6AB;
+    border-radius: 20px 20px 0px 0px;
+}
+
+footer ul li {
+    list-style: none;
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+footer .app-2021 {
+    list-style: none;
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14 px;
+}
