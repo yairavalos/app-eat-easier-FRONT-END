@@ -1,34 +1,8 @@
-* {
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-body {
-    font-family: hind;
-    font-family: handlee;
-}
-
-header {
-    height: 260px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFDBD1), to(white));
-    background-image: linear-gradient(#FFDBD1, white);
-}
-
-.logo-title {
-    font-family: handlee;
-    font-style: normal;
-    font-size: 30px;
-    color: #E30C0C;
-}
-
 h1 {
     font-family: handlee;
     font-style: normal;
     font-size: 48px;
-    color: #77838F;
+    color: $colorFive;
 }
 
 .parrafo1 {
@@ -36,7 +10,7 @@ h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
-    color: #6BA431;
+    color: $colorTwo;
 }
 
 .parrafo2 {
@@ -44,7 +18,7 @@ h1 {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
-    color: #77838F;
+    color: $colorFive;
 }
 
 h2 {
@@ -68,7 +42,6 @@ h3 {
     background-color: #FF8908;
     border-radius: 10px;
     text-decoration: none;
-    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     color: white;
     font-family: hind;
@@ -87,7 +60,6 @@ h3 {
     border: 0px;
     border-radius: 0px 0px 10px 10px;
     width: 20rem;
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
 }
 
@@ -103,7 +75,6 @@ h3 {
     background-color: #FFF6F3;
     border: 0px;
     border-radius: 15px 0px 0px 15px;
-    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -116,7 +87,7 @@ h3 {
 }
 
 .card-body p {
-    color: #77838F;
+    color: $colorFive;
     font-family: hind;
     font-style: normal;
     font-weight: 400;
@@ -124,48 +95,9 @@ h3 {
 }
 
 .foto {
-    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
 }
 
 .foto-2 {
     border-radius: 15px 0px 0px 15px;
 }
-
-footer {
-    height: 380px;
-    border-radius: 20px 20px 0 0;
-    background-color: #C1D6AB;
-}
-
-footer .upper-arr {
-    background-color: #FFF6F3;
-    height: 48px;
-    width: 48px;
-    border-radius: 24px;
-    margin-right: 25px;
-    margin-top: -24px;
-    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-footer ul li {
-    list-style: none;
-    color: #15202B;
-    font-family: hind;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-}
-
-footer .app-2021 {
-    list-style: none;
-    color: #15202B;
-    font-family: hind;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14 px;
-}
-
-
-/*# sourceMappingURL=styles.css.map */
