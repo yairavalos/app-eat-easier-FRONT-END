@@ -25,5 +25,35 @@
   color: #6BA431;
 }
 
+.accordion-header{
+  font-family: Hind;
+  font-size: 18px;  
+}
+
+.menu-1{
+  border: none;
+  font-family: hind;
+  background-color: #C1D6AB;
+  border-radius: 5px;  
+}
+
+.row-menu{
+  width: 300px;
+  height: 48px;
+}
+
+.choose-period{
+  width: 300px;
+  height: 48px;
+}
+
+.period-button{
+  background-color: #FFF6F3;
+  border: none;
+  font-family: hind;
+}
+
+
+
 
 
