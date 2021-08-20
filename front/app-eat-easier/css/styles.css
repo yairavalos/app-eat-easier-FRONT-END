@@ -51,6 +51,19 @@ header {
           transform: rotate(-90deg);
 }
 
+.right-arr {
+  background-color: #FFF6F3;
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
+  margin-left: 25px;
+  margin-top: -55px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .navbar-light .navbar-toggler {
   border-color: #FF8908;
   color: #FF8908;
