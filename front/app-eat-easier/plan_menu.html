@@ -193,7 +193,31 @@
 
             <div class="col-12 col-sm-6 col-md-4  text-center d-flex mx-auto flex-column ">
                 <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                    <button class=" btn-nar" type="button">Confirmar mi plan</button>
+                    <button class=" btn-nar" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Confirmar mi plan</button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog ">
+                    <div class="modal-content offcanvas-bg">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Guardar mi menú </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body mb-2">
+                            ¿Deseas guardar tu menú?
+
+
+                            <label for="disabledTextInput" class="form-label"></label>
+                            <input type="text" id="disabledTextInput" class="form-control card-title" placeholder="Menu 1" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-nar">Guardar</button>
+                            <button type="button" class="btn-green" data-bs-dismiss="modal">Cancelar</button>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 

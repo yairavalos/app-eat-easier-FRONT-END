@@ -12,6 +12,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/18d9802767.js" crossorigin="anonymous"></script>
     <title>App-Eat-Easier</title>
 </head>
 
@@ -56,26 +57,29 @@
             <div class="offcanvas-bg offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- <form class="d-flex border bg-nar">
-                        <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg></button>
-                    </form>-->
-
+                                                        <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
+                                                        <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                                fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                                            </svg></button>
+                                                    </form>-->
 
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-4  text-center mx-auto d-flex justify-content flex-column">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                             <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            <button class=" btn-green mb-2" type="button">Mi planificador de menú</button>
-                            <button class=" btn-green mb-2" type="button">Mis favoritos</button>
-                            <button class=" btn-green mb-2" type="button">Mi perfil</button>
-                            <button class=" btn-green mb-2" type="button">Mi menú</button>
-                            <button class=" btn-green mb-2" type="button">Mi lista de super </button>
-                            <button class=" btn-green mb-2" type="button">Inicio</button>
+                            <a href="plan_menu.html"><button class=" btn-green mb-2" type="button">Mi planificador de
+                                    menú</button></a>
+                            <a href="favoritos.html"><button class=" btn-green mb-2" type="button">Mis
+                                    favoritos</button></a>
+                            <a href="plan_menu.html"><button class=" btn-green mb-2" type="button">Mi
+                                    perfil</button></a>
+                            <a href="menu.html"><button class=" btn-green mb-2" type="button">Mi menú</button></a>
+                            <a href="lista.html"><button class=" btn-green mb-2" type="button">Mi lista de super
+                                </button></a>
+                            <a href="home.html"><button class=" btn-green mb-2" type="button">Inicio</button></a>
                         </div>
 
                     </div>
@@ -97,6 +101,7 @@
             </div>
 
         </section>
+
     </header>
     <!--Main-->
     <main class=container>
@@ -140,7 +145,7 @@
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4  text-center mx-auto d-flex justify-content flex-column">
                 <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                    <button class=" btn-nar mb-2" type="button">Inicio</button>
+                    <a href="people_amount.html"><button class=" btn-nar mb-2" type="button">Inicio</button></a>
                 </div>
             </div>
         </div>
@@ -214,7 +219,7 @@
             </div>
 
             <div class=" row ">
-                <div class="col-12 col-sm-6 col-md-9  d-flex justify-content-evenly mx-auto">
+                <div class="col-12 col-sm-6 col-md-8  d-flex justify-content-evenly mx-auto">
                     <div class="col-4 col-md-4 text-center p-2">
                         <img src="./assets/fotos/ingre.png" class="img-fluid rounded-start g-0" alt="ingrediente">
                         <p class="p-1 card-title text-center ">Ingrediente</p>
@@ -231,7 +236,7 @@
             </div>
 
             <div class=" row">
-                <div class="col-12 col-sm-6 col-md-9  d-flex justify-content-evenly mx-auto">
+                <div class="col-12 col-sm-6 col-md-8  d-flex justify-content-evenly mx-auto">
                     <div class="col-4 col-md-4 text-center p-2">
                         <img src="./assets/fotos/fiestas.png" class="img-fluid rounded-start g-0" alt="fiestas">
                         <p class="p-1 card-title text-center">Fiestas</p>
@@ -257,7 +262,7 @@
 
                 <div class="col-12 col-sm-6 col-md-4  text-center d-flex mx-auto flex-column ">
                     <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                        <button class=" btn-nar" type="button">Registrate ya</button>
+                        <a href="people_amount.html"> <button class=" btn-nar" type="button">Registrate ya</button></a>
                     </div>
                 </div>
             </div>
