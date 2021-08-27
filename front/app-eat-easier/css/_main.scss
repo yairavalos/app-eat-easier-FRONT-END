@@ -207,3 +207,13 @@ h3 {
     color: $colorOne;
     font-size: 20px;
 }
+
+.carousel-item {
+    height: 50%;
+}
+
+@media only screen and (max-width:567px) {
+    .carousel {
+        width: 100vw;
+    }
+}

@@ -288,6 +288,16 @@ h3 {
   font-size: 20px;
 }
 
+.carousel-item {
+  height: 50%;
+}
+
+@media only screen and (max-width: 567px) {
+  .carousel {
+    width: 100vw;
+  }
+}
+
 footer {
   height: 380px;
   border-radius: 20px 20px 0 0;
