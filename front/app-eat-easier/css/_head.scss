@@ -1,0 +1,53 @@
+    header {
+        height: 260px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#FFDBD1), to(white));
+        background-image: linear-gradient(#FFDBD1, white);
+    }
+    
+    .btn {
+        border-color: #FFDBD1;
+    }
+    
+    .search {
+        border: 2px solid #77838F;
+        border-radius: 5px;
+        height: 60px;
+    }
+    
+    .offcanvas-bg {
+        background-color: #FFF6F3;
+    }
+    
+    .logo-title {
+        font-family: handlee;
+        font-style: normal;
+        font-size: 30px;
+        color: $colorFour;
+    }
+    
+    .left-arr {
+        background-color: $colorSix;
+        height: 48px;
+        width: 48px;
+        border-radius: 24px;
+        margin-left: 25px;
+        margin-top: -55px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        transform: rotate(-90deg);
+    }
+    
+    .right-arr {
+        background-color: $colorSix;
+        height: 48px;
+        width: 48px;
+        border-radius: 24px;
+        margin-left: 25px;
+        margin-top: -55px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        transform: rotate(90deg);
+    }
+    
+    .navbar-light .navbar-toggler {
+        border-color: $colorOne;
+        color: $colorOne;
+    }

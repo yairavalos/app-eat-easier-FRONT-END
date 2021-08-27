@@ -1,0 +1,219 @@
+h1 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 48px;
+    color: $colorFive;
+}
+
+.parrafo1 {
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: $colorTwo;
+}
+
+.parrafo2 {
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: $colorFive;
+}
+
+h2 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 36px;
+    color: #6BA431;
+}
+
+h3 {
+    font-family: handlee;
+    font-style: normal;
+    font-size: 24px;
+    color: $colorTwo;
+}
+
+.btn-nar {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: $colorOne;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0px;
+}
+
+.btn-green {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: $colorSeven;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: $colorThree;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0px;
+}
+
+.btn-lg-org {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: $colorSix;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: $colorThree;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0px;
+}
+
+.btn-red {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: $colorFour;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0px;
+}
+
+.btn-white {
+    width: 100%;
+    height: 48px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $colorFive;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    border: 0px;
+}
+
+.btn-nar:hover {
+    color: $colorSix;
+}
+
+.card-1 {
+    background-color: $colorSix;
+    border: 0px;
+    border-radius: 0px 0px 10px 10px;
+    width: 20rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-1-text {
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-2 {
+    background-color: #FFF6F3;
+    border: 0px;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card-body {
+    color: $colorFive;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.foto {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.foto-2 {
+    border-radius: 15px 0px 0px 15px;
+    height: 140px;
+}
+
+.img-small {
+    border-radius: 15px 0px 0px 15px;
+    padding-left: 0px;
+}
+
+.p-title {
+    color: #77838F;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.down-arr {
+    background-color: $colorSix;
+    height: 32px;
+    width: 32px;
+    border-radius: 24px;
+    transform: rotate(180deg);
+}
+
+.circle {
+    background-color: white;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.glide__slide {
+    width: 100%;
+}
+
+.glide__arrow {
+    color: $colorOne;
+}
+
+.fa {
+    color: $colorOne;
+    font-size: 20px;
+}
+
+.carousel-item {
+    height: 50%;
+}
+
+@media only screen and (max-width:567px) {
+    .carousel {
+        width: 100vw;
+    }
+}
