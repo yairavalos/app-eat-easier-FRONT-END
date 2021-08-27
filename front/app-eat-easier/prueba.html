@@ -79,7 +79,7 @@
                 </div>
                 <div class="row">
                     <div class="
-                col-12 
+                col-12 col-sm-6 col-md-4
                 text-center
                 mx-auto
                 d-flex
@@ -88,26 +88,23 @@
               ">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                             <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            <a href="home.html"><button class="btn-green mb-2" type="button">
-                                    Inicio
-                                </button></a>
                             <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
-                                    Mi perfil
+                                    Mi planificador de menú
                                 </button></a>
                             <a href="favoritos.html"><button class="btn-green mb-2" type="button">
                                     Mis favoritos
                                 </button></a>
                             <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
-                                    Ingrediente principal
+                                    Mi perfil
                                 </button></a>
                             <a href="menu.html"><button class="btn-green mb-2" type="button">
-                                    Mi planificador de menú
-                                </button></a>
-                            <a href="lista.html"><button class="btn-green mb-2" type="button">
                                     Mi menú
                                 </button></a>
-                            <a href="home.html"><button class="btn-green mb-2" type="button">
+                            <a href="lista.html"><button class="btn-green mb-2" type="button">
                                     Mi lista de super
+                                </button></a>
+                            <a href="home.html"><button class="btn-green mb-2" type="button">
+                                    Inicio
                                 </button></a>
                         </div>
                     </div>
@@ -159,17 +156,28 @@
     <main class="container">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-8 d-flex justify-content flex-column">
-                <h3 class="mb-2">Mi menú</h3>
+                <h2 class="mb-2">Mi menú</h2>
                 <p class="p-title">Periodo Semanal</p>
                 <p class="card-1-text">Desayunos</p>
             </div>
         </div>
 
-        <div class=" row images glide col-12 col-md-4 d-flex mb-5 d-flex justify-content-center align-items-center p-1">
+        <div class="
+          row
+          images
+          glide
+          col-12 col-md-4
+          d-flex
+          mb-5
+          d-flex
+          justify-content-center
+          align-items-center
+          p-1
+        ">
             <div class="glide__track" data-glide-el="track">
                 <div class="glide__slides">
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/pollo-papas.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
                         <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -188,7 +196,7 @@
                     </div>
 
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/pollo-papas.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
                         <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -206,7 +214,7 @@
                         </div>
                     </div>
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/pollo-papas.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
                         <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,17 +249,7 @@
             </div>
         </div>
 
-        <div class="
-          row
-          images-1
-          glide
-          col-12 col-md-4
-          d-flex
-          mb-5
-          d-flex
-          justify-content-center
-          align-items-center
-          p-1
+        <div class=" row images-1 glide col-12 col-md-4 d-flex mb-5 d-flex justify-content-center align-items-center p-1
         ">
             <div class="glide__track" data-glide-el="track">
                 <div class="glide__slides">
@@ -275,6 +273,9 @@
                     </div>
 
                     <div class="glide__slide card card-1 g-0 border">
+                        <span class=" circle mb-3 d-flex align-items-center justify-content-around
+                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa fa-minus"></i></span>
                         <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
                         <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
@@ -343,8 +344,8 @@
             <div class="glide__track" data-glide-el="track">
                 <div class="glide__slides">
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/450_1000.jpg" class="card-img-top" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2">Pollo con ejotes</p>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -362,8 +363,8 @@
                     </div>
 
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/450_1000.jpg" class="card-img-top" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2">Pollo con ejotes</p>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -380,8 +381,8 @@
                         </div>
                     </div>
                     <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/450_1000.jpg" class="card-img-top" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2">Pollo con ejotes</p>
+                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top" alt="pollo-horno " /></a>
+                        <p class="card-text card-1-text p-2">Huevo a la mexicana</p>
                         <div class="card-body d-flex justify-content-between">
                             <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -438,7 +439,7 @@
             <div class="col-12 col-md-6 d-flex justify-content-between">
                 <ul class="col-6 p-3">
                     <li class="p-2">
-                        <a href="mi_lista.html"> Lista de Supermercado </a>
+                        <a href="plan_menu.html"> Planificador de Menús </a>
                     </li>
                     <li class="p-2">Acerca de nosotros</li>
                     <li class="p-2">Contáctanos</li>
