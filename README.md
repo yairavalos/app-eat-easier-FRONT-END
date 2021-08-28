@@ -7,3 +7,7 @@ This branch is intended for Web Page Styling & Mock-up Designing, where in the f
 # Feature design with user preferences branch
 
 Merge rama design con rama preferences
+
+# Feature AJAX branch its added
+
+This branch comes from above mentioned, ajax functionallity its added
