@@ -34,13 +34,13 @@ function populate_nodes(n){
     my_container.lastElementChild.querySelectorAll(".json_node .pic_url")[0].setAttribute("src", this_attr)
 
     this_attr = my_json_list[n].cat_recipe.title
-    my_container.lastElementChild.querySelectorAll(".title")[0].setAttribute("innerText", this_attr) 
+    my_container.lastElementChild.querySelectorAll(".title")[0].innerText = this_attr
 
     this_attr = my_json_list[n].cat_recipe.meal_type
-    my_container.lastElementChild.querySelectorAll(".meal_type")[0].setAttribute("innerText", this_attr) 
+    my_container.lastElementChild.querySelectorAll(".meal_type")[0].innerText = this_attr
 
     this_attr = my_json_list[n].cat_recipe.level
-    my_container.lastElementChild.querySelectorAll(".level")[0].setAttribute("innerText", this_attr) 
+    my_container.lastElementChild.querySelectorAll(".level")[0].innerText = this_attr
 
 }
 
