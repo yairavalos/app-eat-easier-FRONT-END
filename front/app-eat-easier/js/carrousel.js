@@ -1,3 +1,5 @@
+//carrousel menus
+
 new Glide(".images", {
     type: 'carousel',
     perView: 3,
@@ -51,3 +53,5 @@ new Glide(".images-2", {
         }
     }
 }).mount();
+
+//date picker

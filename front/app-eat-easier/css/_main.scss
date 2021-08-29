@@ -212,6 +212,22 @@ h3 {
     height: 50%;
 }
 
+.form-check-input:checked {
+    background-color: $colorOne;
+    ;
+    border-color: $colorOne;
+    border-radius: 50%;
+}
+
+.form-check-input:focus {
+    border-color: $colorSix;
+    outline: 0;
+}
+
+.icono_ac:active {
+    color: $colorOne;
+}
+
 @media only screen and (max-width:567px) {
     .carousel {
         width: 100vw;
