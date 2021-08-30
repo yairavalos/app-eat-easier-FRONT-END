@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8000/api/";
 
 let user_profile_id = 1
 let user_planner_id = 5
-let recipe_id = 1
+let recipe_id = 3
 let my_json_list = []
 
 const getRecipeByID = async() => {
@@ -50,7 +50,7 @@ function populate_nodes_details(n){
     my_container.querySelector(".time_prep").innerText = this_attr
 
     this_attr = my_json_list["recipe_details"][n].level
-    my_container.querySelector(".time_prep").innerText = this_attr
+    my_container.querySelector(".level").innerText = this_attr
 }
 
 function populate_nodes_ingredients(n){
