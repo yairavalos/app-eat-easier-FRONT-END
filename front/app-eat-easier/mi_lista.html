@@ -141,7 +141,7 @@
         <div class="row ">
             <div class="col-12 col-sm-6 col-md-8 d-flex justify-content flex-column">
                 <h2 class="mb-2">Lista de super</h2>
-                <p class="p-title">Periodo semanal</p>
+                <p class="p-title json_node period">Periodo semanal</p>
             </div>
         </div>
         <div class="row col-12 col-sm-6 col-md-8 mx-auto d-flex mb-5 d-flex justify-content-evenly offcanvas-bg  align-items-center p-1">
@@ -153,67 +153,33 @@
             <div class="col-12 col-sm-6 col-md-8 d-flex    justify-content flex-column">
                 <p class="card-1-text mt-3 p-1">Ingredientes</p>
             </div>
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 d- flex align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                    </div>
-                </span>
 
-            </div>
-
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+            <div class="  d-flex  flex-column  mx-auto    align-items-center json_container ">
+                <div class=" position-relative col-12 mx-auto col-md-8 p-2  d-flex align-items-center mb-1 json_item">
+                    <div class="btn-white    p-3 d-flex align-items-center  json_node qty">
+                        1 kg de manzana
                     </div>
-                </span>
-            </div>
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
                     <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                        <input class="position-absolute top-0 end-0 me-3 mt-4 d-flex align-items-center form-check-input m-2 json_node purchase" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
                     </div>
-                </span>
+                </div>
             </div>
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                    </div>
-                </span>
-            </div>
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                    </div>
-                </span>
-            </div>
-            <div class="d-grid gap-2 col-12 col-md-8 p-2 ms-1 align-items-center mb-1">
-                <span class="btn-white ps-2 p-2 d-flex align-items-center justify-content-between ">1 kg de manzana
-                    <div>
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
-                    </div>
-                </span>
-            </div>
-
         </div>
-        <hr>
+
+        <hr />
 
 
         <div class="row d-flex  d-flex justify-content  align-items-center">
 
             <div class="col-12  col-md-4  text-center d-flex mx-auto flex-column ">
                 <div class="d-grid gap-2 col-11 col-md-8 mx-auto  mb-2">
-                    <a href="menu_generator.html"><button class=" btn-nar" type="button">Compartir
+                    <a href="menu_generator.html"><button class=" btn-nar" type="button">Guardar lista
                         </button></a>
-                </div>
-                <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                    <a href="favoritos.html"> <button class=" btn-green" type="button">Imprimir</button></a>
                 </div>
 
             </div>
+
+        </div>
         </div>
     </main>
     <!--Footer-->
@@ -285,8 +251,10 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin="anonymous "></script>
+    <script src="./ajax/spmkt_list.js"></script>
 </body>
 
 </html>
