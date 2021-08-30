@@ -2,12 +2,14 @@ const API_URL = "http://localhost:8000/api/";
 
 let user_profile_id = 0
 let my_json_list = []
+let user_planner_id = 0
 
 
-const getUserFavorites = async() => {
+
+const getMenuGenerator = async() => {
 
     try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
+        const response = await fetch(`${API_URL}users/${user_profile_id}/planners/`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -28,19 +30,14 @@ const getUserFavorites = async() => {
 function populate_nodes(n) {
 
     this_attr = my_json_list[n].id
-    my_container.lastElementChild.setAttribute("id", this_attr)
+    my_container.lastElementChild.setAttribute("id", this_attr) //no se toca 
 
-    this_attr = my_json_list[n].cat_recipe.pic_url
-    my_container.lastElementChild.querySelectorAll(".json_node .pic_url")[0].setAttribute("src", this_attr)
+    this_attr = my_json_list[n].plan_title
 
-    this_attr = my_json_list[n].cat_recipe.title
-    my_container.lastElementChild.querySelectorAll(".title")[0].innerText = this_attr
+    console.log(this_attr)
+    my_container.lastElementChild.querySelectorAll(".plan_title")[0].innerText = this_attr
 
-    this_attr = my_json_list[n].cat_recipe.meal_type
-    my_container.lastElementChild.querySelectorAll(".meal_type")[0].innerText = this_attr
 
-    this_attr = my_json_list[n].cat_recipe.level
-    my_container.lastElementChild.querySelectorAll(".level")[0].innerText = this_attr
 
 }
 
@@ -55,7 +52,7 @@ function clone_html_item() {
 
 const transfer_retrieve = async() => {
 
-    my_json_list = await getUserFavorites();
+    my_json_list = await getMenuGenerator();
     json_items_num = my_json_list.length
 
     if (json_items_num > 1) {
@@ -83,7 +80,8 @@ $(document).ready(() => {
     my_container = document.querySelector(".json_container")
     my_template_item = my_container.children[0]
 
-    user_profile_id = 2
+    user_profile_id = 1
+    user_planner_id = 1
     transfer_retrieve();
 
 });

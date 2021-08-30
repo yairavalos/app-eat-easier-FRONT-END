@@ -110,7 +110,7 @@ h3 {
     font-family: hind;
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     border: 0px;
 }
 
@@ -193,6 +193,7 @@ h3 {
     width: 36px;
     border-radius: 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
 .glide__slide {
@@ -226,10 +227,4 @@ h3 {
 
 .icono_ac:active {
     color: $colorOne;
-}
-
-@media only screen and (max-width:567px) {
-    .carousel {
-        width: 100vw;
-    }
 }

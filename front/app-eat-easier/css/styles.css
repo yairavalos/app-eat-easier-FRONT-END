@@ -48,7 +48,7 @@ header {
   width: 48px;
   border-radius: 24px;
   margin-left: 25px;
-  margin-top: -55px;
+  margin-top: 10px;
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-transform: rotate(-90deg);
@@ -188,7 +188,7 @@ h3 {
   font-family: hind;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   border: 0px;
 }
 
@@ -276,6 +276,7 @@ h3 {
   border-radius: 50%;
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 10;
 }
 
 .glide__slide {
@@ -308,12 +309,6 @@ h3 {
 
 .icono_ac:active {
   color: #FF8908;
-}
-
-@media only screen and (max-width: 567px) {
-  .carousel {
-    width: 100vw;
-  }
 }
 
 footer {
