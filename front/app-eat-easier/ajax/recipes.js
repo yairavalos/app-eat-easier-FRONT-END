@@ -43,13 +43,13 @@ function populate_nodes_details(n){
     this_attr = my_json_list["recipe_details"][n].pic_url
     my_container.querySelector(".pic_url").setAttribute("src",this_attr)
 
-    this_attr = my_json_list["recipe_details"][n].persons
+    this_attr = my_json_list["recipe_details"][n].persons + " personas"
     my_container.querySelector(".persons").innerText = this_attr
 
-    this_attr = "time_prep"
+    this_attr = my_json_list["recipe_details"][n].time_prep + " minuto(s)"
     my_container.querySelector(".time_prep").innerText = this_attr
 
-    this_attr = my_json_list["recipe_details"][n].level
+    this_attr = "dificultad " + my_json_list["recipe_details"][n].level
     my_container.querySelector(".level").innerText = this_attr
 }
 
@@ -119,7 +119,7 @@ function container_handler(my_container_name, myjson_item, populate_nodes){
 
 const transfer_retrieve = async() =>{
 
-    // Here instead to have just one container, we need to split it into 3
+    // Here instead to have just one container, we need to split it into 4
     my_json_list = await getRecipeByID();
     console.log("transfer retrieve")
 
