@@ -35,9 +35,6 @@ function populate_nodes_header(n){
     this_attr = my_json_list[0].user_planner.period
     my_container.querySelector(".period").innerText = this_attr
 
-    this_attr = my_json_list[0].meal_date
-    my_container.querySelector(".meal_date").innerText = this_attr
-
 }
 
 function populate_nodes_meals(n){
@@ -65,13 +62,15 @@ function clone_html_item(){
 }
 
 // the callback needs to be without parenthesis
-function container_handler(my_container_name, populate_nodes){
+function container_handler(my_container_name, target_date, populate_nodes){
     
     my_container = document.querySelector(my_container_name)
     my_template_item = my_container.children[0]
 
     json_items_num = my_json_list.length
     console.log("container_handler with " + json_items_num + " items")
+    console.log("my json list start date:" + Date.parse(target_date))
+
 
     if (my_container_name == ".json_container0"){
     
@@ -82,9 +81,14 @@ function container_handler(my_container_name, populate_nodes){
         if (json_items_num > 1) {
 
             for(i=0; i < json_items_num; i++){         
-    
-                if( my_json_list[i].meal_date == "2021-09-06") {
 
+                let my_json_date = new Date(my_json_list[i].meal_date)
+                console.log("my_json_date: " + my_json_date)
+                let my_picker_date = new Date(target_date)
+                console.log("my_picker_date: " + my_picker_date)
+
+                if( my_json_date.toLocaleDateString() == my_picker_date.toLocaleDateString()) {
+                    
                     populate_nodes(i)
 
                 }                 
@@ -96,20 +100,35 @@ function container_handler(my_container_name, populate_nodes){
 
 }
 
+
 const transfer_retrieve = async() =>{
 
-    // Here instead to have just one container, we need to split it into 4
+    // Here instead to have just one container, we need to split it into 2
     my_json_list = await getRecipeByID();
     console.log("transfer retrieve desde menu planner")
 
-    container_handler(".json_container0", populate_nodes_header)
-    container_handler(".json_container1", populate_nodes_meals)
+    $("#myDatePicker").datepicker('update',my_json_list[0].user_planner.start_date)
+
+    container_handler(".json_container0", my_json_list[0].user_planner.start_date, populate_nodes_header)
+    container_handler(".json_container1", my_json_list[0].user_planner.start_date, populate_nodes_meals)
         
 }
 
 
 $(document).ready(() => {
 
-    transfer_retrieve();
+    $('#myDatePicker').datepicker({
+        format: "yyyy-mm-dd",
+        language: "es",
+        calendarWeeks: true,
+        autoclose: true,
+        todayHighlight: true
+    })
 
+    transfer_retrieve()   
+
+    $('#myDatePicker').datepicker().on('changeDate', function(e){
+        container_handler(".json_container1", $('#myDatePicker').datepicker('getFormattedDate'), populate_nodes_meals)
+    })
+    
 });
