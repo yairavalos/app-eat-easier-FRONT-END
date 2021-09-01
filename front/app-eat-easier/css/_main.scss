@@ -51,6 +51,12 @@ h3 {
     border: 0px;
 }
 
+.btn-nar:hover {
+    background-color: $colorOne;
+    color: $colorFour;
+    border: $colorFive 3px;
+}
+
 .btn-green {
     width: 100%;
     height: 48px;

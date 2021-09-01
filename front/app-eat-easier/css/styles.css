@@ -72,6 +72,15 @@ header {
   color: #FF8908;
 }
 
+.text-head {
+  color: #77838F;
+  text-decoration: none;
+}
+
+.text-head:hover {
+  color: #15202B;
+}
+
 h1 {
   font-family: handlee;
   font-style: normal;
@@ -124,6 +133,12 @@ h3 {
   font-weight: 600;
   font-size: 16px;
   border: 0px;
+}
+
+.btn-nar:hover {
+  background-color: #FF8908;
+  color: #E30C0C;
+  border: #77838F 3px;
 }
 
 .btn-green {

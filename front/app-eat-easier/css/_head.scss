@@ -54,3 +54,12 @@
         border-color: $colorOne;
         color: $colorOne;
     }
+    
+    .text-head {
+        color: $colorFive;
+        text-decoration: none;
+    }
+    
+    .text-head:hover {
+        color: $colorThree;
+    }
