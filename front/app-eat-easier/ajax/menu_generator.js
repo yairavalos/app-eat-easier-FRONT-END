@@ -2,8 +2,10 @@ const API_URL = "http://localhost:8000/api/";
 
 let user_profile_id = 0
 let my_json_list = []
+let my_json_post =[]
 let user_planner_id = 0
-
+let user_period = ""
+let user_period_start = ""
 
 
 const getMenuGenerator = async() => {
@@ -19,6 +21,28 @@ const getMenuGenerator = async() => {
         console.log(data)
 
         return data
+
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+
+const createPlanner = async() => {
+
+    try {
+        const response = await fetch(`${API_URL}users/${user_profile_id}/planners/`, {
+            headers: {
+                "Content-Type": "application/json",
+                "method": "POST",
+                "body": my_json_post
+            },
+        });
+
+        const new_data = await response.json()
+        console.log(new_data)
+
+        return new_data
 
     } catch (error) {
         console.log(error)
@@ -75,6 +99,7 @@ const transfer_retrieve = async() => {
 }
 
 
+
 $(document).ready(() => {
 
     my_container = document.querySelector(".json_container")
@@ -84,4 +109,32 @@ $(document).ready(() => {
     user_planner_id = 1
     transfer_retrieve();
 
+    $('#myDatePicker').datepicker({
+        format: "yyyy-mm-dd",
+        language: "es",
+        calendarWeeks: true,
+        autoclose: true,
+        todayHighlight: true
+    })
+
+    let my_selector = document.querySelector('#period_selector')
+
+    my_selector.addEventListener('click', (event)=>{
+
+        if(event.target.id == 'semanal' || event.target.id == 'quincenal'){
+            user_period = event.target.id
+            my_selector.querySelector('#dropdownMenuLink').innerText = event.target.innerText
+        }
+    })
+
+    $('#myDatePicker').datepicker().on('changeDate', function(e){
+        user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
+        console.log(user_period_start.toString())
+    })
+
+    let my_menuBtn = document.querySelector("#create_menu")
+
+    my_menuBtn.addEventListener('click', ()=>{
+
+    })
 });
