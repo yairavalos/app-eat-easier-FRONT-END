@@ -81,6 +81,12 @@ header {
   color: #15202B;
 }
 
+.search {
+  border: 2px solid #77838F;
+  border-radius: 5px;
+  height: 60px;
+}
+
 h1 {
   font-family: handlee;
   font-style: normal;
@@ -308,7 +314,7 @@ h3 {
 }
 
 .carousel-item {
-  height: 50%;
+  height: 70%;
 }
 
 .form-check-input:checked {
