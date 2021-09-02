@@ -12,8 +12,8 @@
     <!-- Bootstrap CSS -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/bootstrap-datepicker3.min.css">
     <script src="./js/glide.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="./css/glide.core.min.css" />
     <link rel="stylesheet" href="./css/glide.theme.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -24,32 +24,21 @@
 <body>
     <!--Header -->
     <header class="container-fluid-sm p-1">
+        <!--logo-->
         <section>
             <div class="row">
-                <div class="
-              col-12 col-md-10
-              mx-auto
-              d-flex
-              justify-content-center
-              align-items-end
-              p-3
-            ">
-                    <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
-                    <p class="logo-title mb-0">App-Eat-Easier</p>
-                </div>
+                <a href="home.html">
+                    <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
+                        <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
+                        <p class="logo-title mb-0">App-Eat-Easier</p>
+                    </div>
+                </a>
             </div>
         </section>
         <!--search-->
-        <nav class="
-          navbar navbar-light navbar-expand-lg
-          col-12 col-sm-6 col-md-10
-          d-flex
-          justify-content-evenly
-          p-3
-          flex-column
-          mx-auto
-        ">
+        <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
             <div class="container-fluid">
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
@@ -57,35 +46,36 @@
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                     </svg>
                 </button>
-
+                <!--nav desktop-->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="edit_profile.html">Mi perfil</a>
+                            <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="favoritos.html">Mis favoritos</a>
+                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="categorias.html">Ingrediente
+                            <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
                                 principal</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="menu_generator.html">Generador de
+                            <a class="text-head p-2" aria-current="page" href="menu_generator.html">Generador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="plan_menu.html">Mi planificador de
+                            <a class="text-head p-2" aria-current="page" href="plan_menu.html">Mi planificador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="menu.html">Mi menú</a>
+                            <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="mi_lista.html">Mi lista de super</a>
+                            <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
+                    <!--search desktop-->
+                    <form class="d-flex col-3">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn" type="submit">
                             <span>
@@ -97,33 +87,31 @@
                         </button>
                     </form>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </div>
+                <!--serach boton mobile-->
+                <div class="border ">
+                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
+                        <span> <i class="fa fa-search"></i> </span>
+                    </a>
+                </div>
+
+
         </nav>
         <div class="row d-flex">
             <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- <form class="d-flex border bg-nar">
-                                                            <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-                                                            <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                                    fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                                                                    <path
-                                                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                                                </svg></button>
-                                                        </form>-->
+                                              <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
+                                              <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                      fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                                                      <path
+                                                          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                                  </svg></button>
+                                          </form>-->
                 </div>
+
+                <!--menu hamburguesa-->
                 <div class="row">
-                    <div class="
-                col-12
-                text-center
-                mx-auto
-                d-flex
-                justify-content
-                flex-column
-              ">
+                    <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                             <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             <a href="home.html"><button class="btn-green mb-2" type="button">
@@ -155,6 +143,7 @@
                 </div>
             </div>
         </div>
+
         <!--Logo-->
         <div class="row">
             <a href="preferred_food.html">
@@ -169,373 +158,130 @@
                 </div>
             </a>
         </div>
+        <!--modal search -->
+        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
+            <div class="offcanvas-header">
+                <form class="d-flex col-12 border ">
+                    <input class="  form-control  me-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg></button>
+                </form>
+                <!--<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+            </div>
+        </div>
     </header>
     <!--Main-->
     <main class="container">
-        <div class="row json_container0">
-            <div class="
-            col-12 col-sm-6 col-md-8
-            d-flex
-            justify-content
-            flex-column
-            json_item
-          ">
-                <h2 class="mb-2 json_node">Planificador de menú</h2>
-                <p class="p-title json_node title">Periodo Semanal</p>
-                <p class="p-title json_node period">Periodo Semanal</p>
-                <p class="card-1-text json_node">Desayunos</p>
+        <!-- d-flex flex-row justify-content-center -->
+        <div class="row flex-column col-12 col-sm-6 col-md-10  mx-auto d-flex align-content-center json_container0">
+
+            <div class="col-12 col-sm-6 col-md-10  d-flex justify-content flex-column json_item">
+                <h2 class="mb-2 json_node">Planificador de menú </h2>
+                <p class="card-1-text json_node planner_title">El título de mi planner</p>
+                <p class="p-title json_node period">El periodo del menu</p>
+                <p class="card-1-text json_node">Menú del Día</p>
             </div>
-        </div>
+            <!--DATE PICKER-->
 
-        <div class="
-          row
-          images
-          glide
-          col-12 col-md-10
-          d-flex
-          mb-5
-          d-flex
-          justify-content-center
-          align-items-center
-          p-1
-        ">
-            <div class="glide__track" data-glide-el="track">
-                <div class="glide__slides json_container1">
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <span class="
-                  position-absolute
-                  top-0
-                  end-0
-                  circle
-                  me-2
-                  mt-2
-                  d-flex
-                  align-items-center
-                  justify-content-around
-                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="fa fa-minus"></i></span>
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-5 text-center gap-3 mx-auto d-flex justify-content-center" id="sandbox-container">
+                <div class="ms-6 input-group date">
+                    <input type="text" id="myDatePicker" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    <div>
+                        <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
                     </div>
                 </div>
             </div>
 
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-10 d-flex justify-content-end json_item">
+                    <p class="p-title  flex-end json_node period">Dia 1</p>
+                </div>
             </div>
+
         </div>
 
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-8 d-flex justify-content flex-column">
-                <p class="card-1-text">Comidas</p>
+        <div class="row col-12 col-sm-6 col-md-10 text-center mx-auto d-flex justify-content-evenly json_container1">
+            <div class=" border mx-0 card card-1 g-0 col-12 col-md-4 d-flex mb-4 desayuno">
+                <!--boton modal-->
+                <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
+                                        " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa fa-minus"></i></span>
+                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
+                <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
+                <p class="p-title ps-2 json_node meal_type">Desayuno</p>
+                <div class="card-body d-flex justify-content-between">
+                    <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
+                            fill="#979797" />
+                    </svg>
+                    <section class="d-flex">
+                        <p class="card-level me-2 level">Bajo</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                        </svg>
+                    </section>
+                </div>
             </div>
-        </div>
 
-        <div class="
-          row
-          images-1
-          glide
-          col-12 col-md-10
-          d-flex
-          mb-5
-          d-flex
-          justify-content-center
-          align-items-center
-          p-1
-        ">
-            <div class="glide__track" data-glide-el="track">
-                <div class="glide__slides json_container2">
-                    <div class="glide__slide card card-1 g-0 border">
-                        <span class="
-                  position-absolute
-                  top-0
-                  end-0
-                  circle
-                  me-2
-                  mt-2
-                  d-flex
-                  align-items-center
-                  justify-content-around
-                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="fa fa-minus"></i></span>
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">
-                            Huevo a la mexicana 1
-                        </p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
+            <div class="card card-1 g-0 col-12 col-md-4  border mb-4 comida">
+                <!--boton modal-->
+                <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
+                                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa fa-minus"></i></span>
+                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
+                <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
+                <p class="p-title text-center json_node meal_type">Comida</p>
+                <div class="card-body d-flex justify-content-between">
+                    <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
+                            fill="#979797" />
+                    </svg>
+                    <section class="d-flex">
+                        <p class="card-level me-2 level">Bajo</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                        </svg>
+                    </section>
+                </div>
+            </div>
 
-                    <div class="glide__slide card card-1 g-0 border position-relative">
-                        <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
-                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="fa fa-minus"></i></span>
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">
-                            Huevo a la mexicana 2
-                        </p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <span class="
-                  position-absolute
-                  top-0
-                  end-0
-                  circle
-                  me-2
-                  mt-2
-                  d-flex
-                  align-items-center
-                  justify-content-around
-                " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="fa fa-minus"></i></span>
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title">
-                            Huevo a la mexicana 3
-                        </p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
+            <div class="card card-1 g-0 col-12 mb-4 col-md-4  cena">
+                <!--boton modal-->
+                <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa fa-minus"></i></span>
+                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
+                <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
+                <p class="p-title text-center json_node meal_type">Cena</p>
+                <div class="card-body d-flex justify-content-between">
+                    <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
+                            fill="#979797" />
+                    </svg>
+                    <section class="d-flex">
+                        <p class="card-level me-2 level">Bajo</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                        </svg>
+                    </section>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-8 d-flex justify-content flex-column">
-                <p class="card-1-text">Cenas</p>
-            </div>
-        </div>
-
-        <div class="row images-2 glide col-12 col-md-10 d-flex mb-5 d-flex justify-content-center align-items-center p-1">
-            <div class="glide__track" data-glide-el="track">
-                <div class="glide__slides json_container3">
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-
-                    <div class="glide__slide card card-1 g-0 border">
-                        <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
-                        <p class="card-text card-1-text p-2 title"></p>
-                        <div class="card-body d-flex justify-content-between">
-                            <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
-                                    fill="#979797" />
-                            </svg>
-                            <section class="d-flex">
-                                <p class="card-level me-2 level">Bajo</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                                </svg>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
         <!--Modal-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content offcanvas-bg">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                            Tu menú esta incompleto
-                        </h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Tu menú esta incompleto </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">¿Deseas completarlo?</div>
@@ -566,15 +312,7 @@
                 </svg>
             </a>
         </div>
-        <div class="
-          row
-          d-flex
-          align-items-center
-          d-flex
-          justify-content
-          flex-column
-          align-items-center
-        ">
+        <div class="row d-flex align-items-center d-flex justify-content flex-column align-items-center">
             <div class="col-12 col-md-6 d-flex justify-content-between">
                 <ul class="col-6 p-3">
                     <li class="p-2">
@@ -592,13 +330,7 @@
                 </ul>
             </div>
             <div class="row">
-                <ul class="
-              d-flex
-              justify-content-evenly
-              mx-auto
-              col-12 col-md-4
-              align-items-center
-            ">
+                <ul class="d-flex justify-content-evenly mx-auto col-12 col-md-4 align-items-center">
                     <li class="p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-facebook mx-2" viewBox="0 0 16 16">
                             <path
@@ -629,19 +361,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin="anonymous "></script>
+
+
     <script src="./js/bootstrap-datepicker.min.js"></script>
     <script src="./js/bootstrap-datepicker.es.min.js"></script>
     <script src="./ajax/menu_planner.js"></script>
-    <script src="./js/carrousel.js"></script>
-    <script>
-        $('#sandbox-container .input-group.date').datepicker({
-            format: "dd-mm-yyyy",
-            language: "es",
-            calendarWeeks: true,
-            autoclose: true,
-            todayHighlight: true
-        });
-    </script>
+
 </body>
 
 </html>

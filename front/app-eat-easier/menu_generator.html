@@ -20,32 +20,21 @@
 
 <body>
     <header class="container-fluid-sm p-1">
-        <section>
+        <!--logo-->
+            <section>
             <div class="row">
-                <div class="
-              col-12 col-md-10
-              mx-auto
-              d-flex
-              justify-content-center
-              align-items-end
-              p-3
-            ">
-                    <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
-                    <p class="logo-title mb-0">App-Eat-Easier</p>
-                </div>
+                <a href="home.html">
+                    <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
+                        <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
+                        <p class="logo-title mb-0">App-Eat-Easier</p>
+                    </div>
+                </a>
             </div>
         </section>
         <!--search-->
-        <nav class="
-          navbar navbar-light navbar-expand-lg
-          col-12 col-sm-6 col-md-10
-          d-flex
-          justify-content-evenly
-          p-3
-          flex-column
-          mx-auto
-        ">
+        <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
             <div class="container-fluid">
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
@@ -53,35 +42,36 @@
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                     </svg>
                 </button>
-
+                <!--nav desktop-->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="edit_profile.html">Mi perfil</a>
+                            <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="favoritos.html">Mis favoritos</a>
+                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="categorias.html">Ingrediente
+                            <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
                                 principal</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="menu_generator.html">Generador de
+                            <a class="text-head p-2" aria-current="page" href="menu_generator.html">Generador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="plan_menu.html">Mi planificador de
+                            <a class="text-head p-2" aria-current="page" href="plan_menu.html">Mi planificador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="menu.html">Mi menú</a>
+                            <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="nav-link active" aria-current="page" href="mi_lista.html">Mi lista de super</a>
+                            <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
                         </li>
                     </ul>
-                    <form class="d-flex">
+                    <!--search desktop-->
+                    <form class="d-flex col-3">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn" type="submit">
                             <span>
@@ -93,33 +83,31 @@
                         </button>
                     </form>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </div>
+                <!--serach boton mobile-->
+                <div class="border ">
+                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
+                        <span> <i class="fa fa-search"></i> </span>
+                    </a>
+                </div>
+
+
         </nav>
         <div class="row d-flex">
             <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- <form class="d-flex border bg-nar">
-                                                            <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-                                                            <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                                    fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                                                                    <path
-                                                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                                                </svg></button>
-                                                        </form>-->
+                                          <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
+                                          <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                  fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                                                  <path
+                                                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                              </svg></button>
+                                      </form>-->
                 </div>
+
+                <!--menu hamburguesa-->
                 <div class="row">
-                    <div class="
-                col-12
-                text-center
-                mx-auto
-                d-flex
-                justify-content
-                flex-column
-              ">
+                    <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                             <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             <a href="home.html"><button class="btn-green mb-2" type="button">
@@ -151,6 +139,7 @@
                 </div>
             </div>
         </div>
+
         <!--Logo-->
         <div class="row">
             <a href="preferred_food.html">
@@ -164,6 +153,20 @@
                     </div>
                 </div>
             </a>
+        </div>
+        <!--modal search -->
+        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
+            <div class="offcanvas-header">
+                <form class="d-flex col-12 border ">
+                    <input class="  form-control  me-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg></button>
+                </form>
+                <!--<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+            </div>
         </div>
     </header>
     <!--main-->

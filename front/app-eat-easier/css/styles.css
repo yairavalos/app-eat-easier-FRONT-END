@@ -81,10 +81,14 @@ header {
   color: #15202B;
 }
 
-.search {
-  border: 2px solid #77838F;
-  border-radius: 5px;
-  height: 60px;
+.search-cont {
+  height: 100px;
+  position: absolute;
+  top: 80px;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
