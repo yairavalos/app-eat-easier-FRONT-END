@@ -148,39 +148,43 @@
             <p class="p-title">Para que te lleguen las novedades</p>
         </div>
         <form>
+
             <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
-                <label for="disabledTextInput" class="form-label"></label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Nombre" />
+                <label for="validationDefault01" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault01" value="Nombre" required>
             </div>
+
             <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
-                <label for="disabledTextInput" class="form-label"></label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Apellido" />
+                <label for="validationDefault02" class="form-label"></label>
+                <input type="text" class="form-control" id="validationDefault02" value="Apellido" required>
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
                 <label for="disabledTextInput" class="form-label"></label>
                 <input type="text" id="disabledTextInput" class="form-control" placeholder="Usuario/alias" />
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
-                <label for="disabledTextInput" class="form-label"></label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Correo Electrónico" />
+            <div class="mb-3 col-12 col-sm-6 col-md-4 mb-3 mx-auto">
+                <label for="exampleInputEmail1" class="form-label"></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="correo@dominio.com.mx">
+                <div id="emailHelp" class="form-text">Nunca compartiremos tu correo con nadie </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
-                <label for="disabledTextInput" class="form-label"></label>
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Contraseña" />
+            <div class="mb-3 col-12 col-sm-6 col-md-4 mb-3 mx-auto">
+                <label for="exampleInputPassword1" class="form-label"></label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="contraseña">
             </div>
             <div class="col-12 col-sm-6 col-md-4 mb-3 mx-auto">
                 <label for="disabledTextInput" class="form-label"></label>
                 <input type="text" id="disabledTextInput" class="form-control" placeholder=" Confirma Contraseña" />
             </div>
-        </form>
-        <div class="row d-flex d-flex justify-content mt-4 align-items-center">
-            <div class="col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column">
-                <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                    <a href="home.html">
-                        <button class="btn-nar" type="submit">Enviar</button></a>
+
+            <div class="row d-flex d-flex justify-content mt-4 align-items-center">
+                <div class="col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column">
+                    <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
+
+                        <button class="btn-nar" type="submit" data-bs-toggle="modal" data-bs-target="#login">Enviar</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
         <!--Modal-->
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
