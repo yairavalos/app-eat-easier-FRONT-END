@@ -117,24 +117,11 @@ $(document).ready(() => {
         todayHighlight: true
     })
 
-    let my_selector = document.querySelector('#period_selector')
-
-    my_selector.addEventListener('click', (event)=>{
-
-        if(event.target.id == 'semanal' || event.target.id == 'quincenal'){
-            user_period = event.target.id
-            my_selector.querySelector('#dropdownMenuLink').innerText = event.target.innerText
-        }
-    })
 
     $('#myDatePicker').datepicker().on('changeDate', function(e){
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
         console.log(user_period_start.toString())
     })
 
-    let my_menuBtn = document.querySelector("#create_menu")
-
-    my_menuBtn.addEventListener('click', ()=>{
-
-    })
+    
 });
