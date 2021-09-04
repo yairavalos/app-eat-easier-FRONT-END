@@ -332,8 +332,31 @@ h3 {
   outline: 0;
 }
 
-.icono_ac:active {
+.icon {
+  color: #77838F;
+  font-size: 50px;
+}
+
+.icon:hover {
   color: #FF8908;
+}
+
+.child {
+  color: #77838F;
+  font-size: 30px;
+}
+
+.child:hover {
+  color: #FF8908;
+}
+
+.check {
+  color: #FF8908;
+}
+
+.ut {
+  font-size: 30px;
+  color: #77838F;
 }
 
 footer {

@@ -19,156 +19,6 @@
 <body>
     <header class="container-fluid-sm p-1">
         <!--logo-->
-            <section>
-            <div class="row">
-                <a href="home.html">
-                    <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
-                        <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
-                        <p class="logo-title mb-0">App-Eat-Easier</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-        <!--search-->
-        <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
-            <div class="container-fluid">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
-                        viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </button>
-                <!--nav desktop-->
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
-                                principal</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="menu_generator.html">Generador de
-                                menú</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="plan_menu.html">Mi planificador de
-                                menú</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
-                        </li>
-                        <li class="nav-item p-title">
-                            <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
-                        </li>
-                    </ul>
-                    <!--search desktop-->
-                    <form class="d-flex col-3">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn" type="submit">
-                            <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908"
-                                    class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                </svg></span>
-                        </button>
-                    </form>
-                </div>
-                <!--serach boton mobile-->
-                <div class="border ">
-                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
-                        <span> <i class="fa fa-search"></i> </span>
-                    </a>
-                </div>
-
-
-        </nav>
-        <div class="row d-flex">
-            <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <!-- <form class="d-flex border bg-nar">
-                                          <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-                                          <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                  fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                              </svg></button>
-                                      </form>-->
-                </div>
-
-                <!--menu hamburguesa-->
-                <div class="row">
-                    <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
-                        <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                            <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            <a href="home.html"><button class="btn-green mb-2" type="button">
-                                    Inicio
-                                </button></a>
-                            <a href="edit_profile.html"><button class="btn-green mb-2" type="button">
-                                    Mi perfil
-                                </button></a>
-                            <a href="favoritos.html"><button class="btn-green mb-2" type="button">
-                                    Mis favoritos
-                                </button></a>
-                            <a href="categorias.html"><button class="btn-green mb-2" type="button">
-                                    Ingrediente principal
-                                </button></a>
-                            <a href="menu_generator.html"><button class="btn-green mb-2" type="button">
-                                    Generador de menú
-                                </button></a>
-                            <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
-                                    Mi planificador de menú
-                                </button></a>
-                            <a href="menu.html"><button class="btn-green mb-2" type="button">
-                                    Mi menú
-                                </button></a>
-                            <a href="mi_lista.html"><button class="btn-green mb-2" type="button">
-                                    Mi lista de super
-                                </button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Logo-->
-        <div class="row">
-            <a href="preferred_food.html">
-                <div class="row d-flex justify-content-start">
-                    <div class="left-arr col-1 d-flex align-content">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14 fa-5x">
-                            <path width="30" height="30" fill="#FF8908"
-                                d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"
-                                class=""></path>
-                        </svg>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <!--modal search -->
-        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
-            <div class="offcanvas-header">
-                <form class="d-flex col-12 border ">
-                    <input class="  form-control  me-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg></button>
-                </form>
-                <!--<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
-            </div>
-        </div>
-    </header>
-    <header class="container-fluid-sm p-1">
-        <!--logo-->
         <section>
             <div class="row">
                 <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
@@ -180,7 +30,6 @@
         <!--search-->
         <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
             <div class="container-fluid">
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
@@ -235,8 +84,7 @@
                         <span> <i class="fa fa-search"></i> </span>
                     </a>
                 </div>
-
-
+            </div>
         </nav>
         <div class="row d-flex">
             <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -288,185 +136,146 @@
 
         <!--Logo-->
         <div class="row">
-            <a href="preferred_food.html">
-                <div class="row d-flex justify-content-start">
-                    <div class="left-arr col-1 d-flex align-content">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14 fa-5x">
-                            <path width="30" height="30" fill="#FF8908"
-                                d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"
-                                class=""></path>
-                        </svg>
+            <div class="col-12 d-flex ">
+                <a href="preferred_food.html">
+                    <div class="row d-flex justify-content-start">
+                        <div class="left-arr col-1 d-flex align-content">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14 fa-5x">
+                                <path width="30" height="30" fill="#FF8908"
+                                    d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"
+                                    class=""></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <div class="row ">
+                    <div class="d-flex">
+
+                        <h3 class="ut ms-5 mt-3">Hola usuario</h3>
+
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <!--modal search -->
-        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
-            <div class="offcanvas-header">
-                <form class="d-flex col-12 border ">
-                    <input class="  form-control  me-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg border d-flex " tabindex=" -1 " id=" search " aria-labelledby=" search ">
+            <div class=" offcanvas-header ">
+                <form class=" d-flex col-12 border ">
+                    <input class=" form-control me-1 " type=" search " placeholder=" Search " aria-label=" Search ">
+                    <button class=" btn " type=" submit "><svg xmlns=" http://www.w3.org/2000/svg " width=" 24 "
+                            height=" 24 " fill=" #FF8908 " class=" bi bi-search " viewBox=" 0 0 16 16 ">
                             <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                d=" M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z " />
                         </svg></button>
                 </form>
-                <!--<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+                <!--<button type=" button " class=" btn-close text-reset " data-bs-dismiss=" offcanvas " aria-label=" Close "></button>-->
             </div>
         </div>
     </header>
     <!-- Section People Count -->
-    <section class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-6 col-md-5   d-flex justify-content  flex-column mx-auto">
-                <h3 class=" mb-2">Cuentanos de tu familia</h2>
-                    <p class="p-title">¿Cuantos adultos son?</p>
-            </div>
+
+    <section class=" container ">
+        <div class="col-12 col-sm-6 col-md-8 d-flex justify-content flex-column">
+            <h3 class=" mb-2 ">Cuentanos de tu familia</h2>
+                <p class=" p-title ">¿Cuantos adultos son?</p>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto">
-            <a href="#"><svg width="25" height="50" viewBox="0 0 25 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7917 42.9229V41.9229H19.7917H21.875C23.1114 41.9229 24 40.9996 24 39.9963V23.4125C24 20.7929 21.7123 18.5594 18.75 18.5594H17.4726C14.2454 19.8868 10.6274 19.8338 7.52742 18.5594H6.25C3.28765 18.5594 1 20.7929 1 23.4125V39.9963C1 40.9996 1.88856 41.9229 3.125 41.9229H5.20833H6.20833V42.9229V59.5067C6.20833 60.51 7.0969 61.4333 8.33333 61.4333H16.6667C17.9031 61.4333 18.7917 60.51 18.7917 59.5067V42.9229ZM12.5 1C8.38713 1 5.16667 4.10714 5.16667 7.80416C5.16667 11.5012 8.38713 14.6083 12.5 14.6083C16.6129 14.6083 19.8333 11.5012 19.8333 7.80416C19.8333 4.10714 16.6129 1 12.5 1Z"
-                        stroke="#77838F" stroke-width="2" />
-                </svg>
-            </a>
-            <a href="#"><svg width="25" height="50" viewBox="0 0 25 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7917 42.9229V41.9229H19.7917H21.875C23.1114 41.9229 24 40.9996 24 39.9963V23.4125C24 20.7929 21.7123 18.5594 18.75 18.5594H17.4726C14.2454 19.8868 10.6274 19.8338 7.52742 18.5594H6.25C3.28765 18.5594 1 20.7929 1 23.4125V39.9963C1 40.9996 1.88856 41.9229 3.125 41.9229H5.20833H6.20833V42.9229V59.5067C6.20833 60.51 7.0969 61.4333 8.33333 61.4333H16.6667C17.9031 61.4333 18.7917 60.51 18.7917 59.5067V42.9229ZM12.5 1C8.38713 1 5.16667 4.10714 5.16667 7.80416C5.16667 11.5012 8.38713 14.6083 12.5 14.6083C16.6129 14.6083 19.8333 11.5012 19.8333 7.80416C19.8333 4.10714 16.6129 1 12.5 1Z"
-                        stroke="#77838F" stroke-width="2" />
-                </svg>
-            </a>
-            <a href="#"><svg width="25" height="50" viewBox="0 0 25 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7917 42.9229V41.9229H19.7917H21.875C23.1114 41.9229 24 40.9996 24 39.9963V23.4125C24 20.7929 21.7123 18.5594 18.75 18.5594H17.4726C14.2454 19.8868 10.6274 19.8338 7.52742 18.5594H6.25C3.28765 18.5594 1 20.7929 1 23.4125V39.9963C1 40.9996 1.88856 41.9229 3.125 41.9229H5.20833H6.20833V42.9229V59.5067C6.20833 60.51 7.0969 61.4333 8.33333 61.4333H16.6667C17.9031 61.4333 18.7917 60.51 18.7917 59.5067V42.9229ZM12.5 1C8.38713 1 5.16667 4.10714 5.16667 7.80416C5.16667 11.5012 8.38713 14.6083 12.5 14.6083C16.6129 14.6083 19.8333 11.5012 19.8333 7.80416C19.8333 4.10714 16.6129 1 12.5 1Z"
-                        stroke="#77838F" stroke-width="2" />
-                </svg>
-            </a>
-            <a href="#"><svg width="25" height="50" viewBox="0 0 25 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7917 42.9229V41.9229H19.7917H21.875C23.1114 41.9229 24 40.9996 24 39.9963V23.4125C24 20.7929 21.7123 18.5594 18.75 18.5594H17.4726C14.2454 19.8868 10.6274 19.8338 7.52742 18.5594H6.25C3.28765 18.5594 1 20.7929 1 23.4125V39.9963C1 40.9996 1.88856 41.9229 3.125 41.9229H5.20833H6.20833V42.9229V59.5067C6.20833 60.51 7.0969 61.4333 8.33333 61.4333H16.6667C17.9031 61.4333 18.7917 60.51 18.7917 59.5067V42.9229ZM12.5 1C8.38713 1 5.16667 4.10714 5.16667 7.80416C5.16667 11.5012 8.38713 14.6083 12.5 14.6083C16.6129 14.6083 19.8333 11.5012 19.8333 7.80416C19.8333 4.10714 16.6129 1 12.5 1Z"
-                        stroke="#77838F" stroke-width="2" />
-                </svg>
-            </a>
-            <a href="#"><svg width="25" height="50" viewBox="0 0 25 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M18.7917 42.9229V41.9229H19.7917H21.875C23.1114 41.9229 24 40.9996 24 39.9963V23.4125C24 20.7929 21.7123 18.5594 18.75 18.5594H17.4726C14.2454 19.8868 10.6274 19.8338 7.52742 18.5594H6.25C3.28765 18.5594 1 20.7929 1 23.4125V39.9963C1 40.9996 1.88856 41.9229 3.125 41.9229H5.20833H6.20833V42.9229V59.5067C6.20833 60.51 7.0969 61.4333 8.33333 61.4333H16.6667C17.9031 61.4333 18.7917 60.51 18.7917 59.5067V42.9229ZM12.5 1C8.38713 1 5.16667 4.10714 5.16667 7.80416C5.16667 11.5012 8.38713 14.6083 12.5 14.6083C16.6129 14.6083 19.8333 11.5012 19.8333 7.80416C19.8333 4.10714 16.6129 1 12.5 1Z"
-                        stroke="#77838F" stroke-width="2" />
-                </svg>
-            </a>
-        </div>
 
-        <div class="mt-5">
-            <!-- Space for autofill -->
-        </div>
-        <div class="col-12 col-sm-6 col-md-5   d-flex justify-content  flex-column mx-auto">
-            <p class="p-title">¿Cuantos niños son?</p>
-        </div>
-        <section>
-            <div class="col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto">
+        <div class=" adult col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto ">
 
-                <a href="#"><svg width="33" height="43" viewBox="0 0 33 43" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.90015 6.77337L1.90013 6.7734C1.24317 7.4123 1.24317 8.43617 1.90013 9.07507L9.93175 16.886L10.2346 17.1805V17.6029V39.6212C10.2346 40.5016 10.9764 41.2626 11.9506 41.2626H13.3086C14.2828 41.2626 15.0247 40.5016 15.0247 39.6212V30.3762V29.3762H16.0247H17.3827H18.3827V30.3762V39.6212C18.3827 40.5016 19.1246 41.2626 20.0988 41.2626H21.4568C22.431 41.2626 23.1729 40.5016 23.1729 39.6212V17.6029V17.1805L23.4757 16.886L31.5073 9.07515C32.1642 8.43625 32.1642 7.4123 31.5073 6.7734L31.5073 6.77337C30.8348 6.11933 29.7331 6.11933 29.0607 6.77337L29.0607 6.7734L21.708 13.9239L21.4169 14.2071H21.0109H12.3966H11.9906L11.6995 13.9239L4.34676 6.7734L4.34673 6.77337C3.67427 6.11933 2.57262 6.11933 1.90015 6.77337ZM21.8148 5.94317C21.8148 3.23918 19.553 1 16.7037 1C13.8544 1 11.5926 3.23918 11.5926 5.94317C11.5926 8.6471 13.8544 10.8863 16.7037 10.8863C19.553 10.8863 21.8148 8.6471 21.8148 5.94317Z"
-                            stroke="#77838F" stroke-width="2" />
-                    </svg>
-                </a>
-                <a href="#"><svg width="33" height="43" viewBox="0 0 33 43" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.90015 6.77337L1.90013 6.7734C1.24317 7.4123 1.24317 8.43617 1.90013 9.07507L9.93175 16.886L10.2346 17.1805V17.6029V39.6212C10.2346 40.5016 10.9764 41.2626 11.9506 41.2626H13.3086C14.2828 41.2626 15.0247 40.5016 15.0247 39.6212V30.3762V29.3762H16.0247H17.3827H18.3827V30.3762V39.6212C18.3827 40.5016 19.1246 41.2626 20.0988 41.2626H21.4568C22.431 41.2626 23.1729 40.5016 23.1729 39.6212V17.6029V17.1805L23.4757 16.886L31.5073 9.07515C32.1642 8.43625 32.1642 7.4123 31.5073 6.7734L31.5073 6.77337C30.8348 6.11933 29.7331 6.11933 29.0607 6.77337L29.0607 6.7734L21.708 13.9239L21.4169 14.2071H21.0109H12.3966H11.9906L11.6995 13.9239L4.34676 6.7734L4.34673 6.77337C3.67427 6.11933 2.57262 6.11933 1.90015 6.77337ZM21.8148 5.94317C21.8148 3.23918 19.553 1 16.7037 1C13.8544 1 11.5926 3.23918 11.5926 5.94317C11.5926 8.6471 13.8544 10.8863 16.7037 10.8863C19.553 10.8863 21.8148 8.6471 21.8148 5.94317Z"
-                            stroke="#77838F" stroke-width="2" />
-                    </svg>
-                </a>
-                <a href="#"><svg width="33" height="43" viewBox="0 0 33 43" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.90015 6.77337L1.90013 6.7734C1.24317 7.4123 1.24317 8.43617 1.90013 9.07507L9.93175 16.886L10.2346 17.1805V17.6029V39.6212C10.2346 40.5016 10.9764 41.2626 11.9506 41.2626H13.3086C14.2828 41.2626 15.0247 40.5016 15.0247 39.6212V30.3762V29.3762H16.0247H17.3827H18.3827V30.3762V39.6212C18.3827 40.5016 19.1246 41.2626 20.0988 41.2626H21.4568C22.431 41.2626 23.1729 40.5016 23.1729 39.6212V17.6029V17.1805L23.4757 16.886L31.5073 9.07515C32.1642 8.43625 32.1642 7.4123 31.5073 6.7734L31.5073 6.77337C30.8348 6.11933 29.7331 6.11933 29.0607 6.77337L29.0607 6.7734L21.708 13.9239L21.4169 14.2071H21.0109H12.3966H11.9906L11.6995 13.9239L4.34676 6.7734L4.34673 6.77337C3.67427 6.11933 2.57262 6.11933 1.90015 6.77337ZM21.8148 5.94317C21.8148 3.23918 19.553 1 16.7037 1C13.8544 1 11.5926 3.23918 11.5926 5.94317C11.5926 8.6471 13.8544 10.8863 16.7037 10.8863C19.553 10.8863 21.8148 8.6471 21.8148 5.94317Z"
-                            stroke="#77838F" stroke-width="2" />
-                    </svg>
-                </a>
-                <a href="#"><svg width="33" height="43" viewBox="0 0 33 43" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.90015 6.77337L1.90013 6.7734C1.24317 7.4123 1.24317 8.43617 1.90013 9.07507L9.93175 16.886L10.2346 17.1805V17.6029V39.6212C10.2346 40.5016 10.9764 41.2626 11.9506 41.2626H13.3086C14.2828 41.2626 15.0247 40.5016 15.0247 39.6212V30.3762V29.3762H16.0247H17.3827H18.3827V30.3762V39.6212C18.3827 40.5016 19.1246 41.2626 20.0988 41.2626H21.4568C22.431 41.2626 23.1729 40.5016 23.1729 39.6212V17.6029V17.1805L23.4757 16.886L31.5073 9.07515C32.1642 8.43625 32.1642 7.4123 31.5073 6.7734L31.5073 6.77337C30.8348 6.11933 29.7331 6.11933 29.0607 6.77337L29.0607 6.7734L21.708 13.9239L21.4169 14.2071H21.0109H12.3966H11.9906L11.6995 13.9239L4.34676 6.7734L4.34673 6.77337C3.67427 6.11933 2.57262 6.11933 1.90015 6.77337ZM21.8148 5.94317C21.8148 3.23918 19.553 1 16.7037 1C13.8544 1 11.5926 3.23918 11.5926 5.94317C11.5926 8.6471 13.8544 10.8863 16.7037 10.8863C19.553 10.8863 21.8148 8.6471 21.8148 5.94317Z"
-                            stroke="#77838F" stroke-width="2" />
-                    </svg>
-                </a>
-                <a href="#"><svg width="33" height="43" viewBox="0 0 33 43" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.90015 6.77337L1.90013 6.7734C1.24317 7.4123 1.24317 8.43617 1.90013 9.07507L9.93175 16.886L10.2346 17.1805V17.6029V39.6212C10.2346 40.5016 10.9764 41.2626 11.9506 41.2626H13.3086C14.2828 41.2626 15.0247 40.5016 15.0247 39.6212V30.3762V29.3762H16.0247H17.3827H18.3827V30.3762V39.6212C18.3827 40.5016 19.1246 41.2626 20.0988 41.2626H21.4568C22.431 41.2626 23.1729 40.5016 23.1729 39.6212V17.6029V17.1805L23.4757 16.886L31.5073 9.07515C32.1642 8.43625 32.1642 7.4123 31.5073 6.7734L31.5073 6.77337C30.8348 6.11933 29.7331 6.11933 29.0607 6.77337L29.0607 6.7734L21.708 13.9239L21.4169 14.2071H21.0109H12.3966H11.9906L11.6995 13.9239L4.34676 6.7734L4.34673 6.77337C3.67427 6.11933 2.57262 6.11933 1.90015 6.77337ZM21.8148 5.94317C21.8148 3.23918 19.553 1 16.7037 1C13.8544 1 11.5926 3.23918 11.5926 5.94317C11.5926 8.6471 13.8544 10.8863 16.7037 10.8863C19.553 10.8863 21.8148 8.6471 21.8148 5.94317Z"
-                            stroke="#77838F" stroke-width="2" />
-                    </svg>
-                </a>
-            </div>
-        </section>
-        <div class="mt-5">
-            <!-- Space for autofill -->
-        </div>
-        </div>
-        <div class="row   d-flex justify-content mt-4 align-items-center">
-            <div class="col-12 col-sm-6 col-md-4  text-center d-flex mx-auto flex-column ">
-                <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                    <a href="preferred_food.html"> <button class=" btn-nar" type="button">Siguiente</button></a>
-                </div>
-            </div>
+            <a id="adult1" class="icon" href="#"><i class="fas fa-male"></i></a>
+            <a id="adult2" class="icon" href="#"><i class="fas fa-male"></i></a>
+            <a id="adult3" class="icon" href="#"><i class="fas fa-male"></i></a>
+            <a id="adult4" class="icon" href="#"><i class="fas fa-male"></i></a>
+            <a id="adult5" class="icon" href="#"><i class="fas fa-male"></i></a>
+
+
         </div>
     </section>
+
+    <div class=" col-12 col-sm-6 col-md-5 d-flex justify-content flex-column mx-auto ">
+        <p class=" p-title ">¿Cuantos niños son?</p>
+    </div>
+    <section>
+        <div class=" botn col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto ">
+            <a id="child1" class="child" href="#"><i class=" fas fa-child "></i></a>
+            <a id="child2" class="child" href="#"><i class=" fas fa-child "></i></a>
+            <a id="child3" class="child" href="#"><i class=" fas fa-child "></i></a>
+            <a id="child4" class="child" href="#"><i class=" fas fa-child "></i></a>
+            <a id="child5" class="child" href="#"><i class=" fas fa-child "></i></a>
+        </div>
+
+    </section>
+    <div class=" mt-5 ">
+        <!-- Space for autofill -->
+    </div>
+
+    <div class=" row d-flex justify-content mt-4 align-items-center ">
+        <div class=" col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column ">
+            <div class=" d-grid gap-2 col-11 col-md-8 mx-auto mb-5 ">
+                <a href=" preferred_food.html "> <button class=" btn-nar " type=" button ">Siguiente</button></a>
+            </div>
+        </div>
+    </div>
+
     <!--Footer-->
     <footer>
-        <div class="row d-flex justify-content-end ">
-            <a class="upper-arr  col-1  d-flex align-content" href="#">
+        <div class=" row d-flex justify-content-end ">
+            <a class=" upper-arr col-1 d-flex align-content " href=" # ">
 
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14 fa-5x">
-                    <path width="30" height="30" fill="#FF8908"
-                        d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"
-                        class=""></path>
+                <svg aria-hidden=" true " focusable=" false " data-prefix=" fas " data-icon=" chevron-up " role=" img " xmlns=" http://www.w3.org/2000/svg " viewBox=" 0 0 448 512 " class=" svg-inline--fa fa-chevron-up fa-w-14 fa-5x ">
+                    <path width=" 30 " height=" 30 " fill=" #FF8908 " d=" M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569
+                0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z " class=" "></path>
                 </svg>
             </a>
         </div>
-        <div class="row d-flex align-items-center d-flex justify-content flex-column align-items-center">
-            <div class="col-12 col-md-6 d-flex justify-content-between ">
-                <ul class="col-6 p-3">
-                    <li class="p-2">Planificador de Menús</li>
-                    <li class="p-2">Acerca de nosotros</li>
-                    <li class="p-2">Contáctanos</li>
-                    <li class="p-2">Preguntas Frecuentes</li>
+        <div class=" row d-flex align-items-center d-flex justify-content flex-column align-items-center ">
+            <div class=" col-12 col-md-6 d-flex justify-content-between ">
+                <ul class=" col-6 p-3 ">
+                    <li class=" p-2 ">Planificador de Menús</li>
+                    <li class=" p-2 ">Acerca de nosotros</li>
+                    <li class=" p-2 ">Contáctanos</li>
+                    <li class=" p-2 ">Preguntas Frecuentes</li>
                 </ul>
-                <ul class="col-6 p-3">
-                    <li class="p-2">Aviso de Cookies</li>
-                    <li class="p-2">Aviso de privacidad</li>
-                    <li class="p-2">Aviso legal</li>
-                    <li class="p-2">Condiciones de uso</li>
+                <ul class=" col-6 p-3 ">
+                    <li class=" p-2 ">Aviso de Cookies</li>
+                    <li class=" p-2 ">Aviso de privacidad</li>
+                    <li class=" p-2 ">Aviso legal</li>
+                    <li class=" p-2 ">Condiciones de uso</li>
                 </ul>
             </div>
-            <div class="row">
-                <ul class=" d-flex justify-content-evenly mx-auto col-12 col-md-4  align-items-center">
-                    <li class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-facebook mx-2" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+            <div class=" row ">
+                <ul class=" d-flex justify-content-evenly mx-auto col-12 col-md-4 align-items-center ">
+                    <li class=" p-2 "><svg xmlns=" http://www.w3.org/2000/svg " width=" 24 " height=" 24 " fill=" #FF8908 " class=" bi bi-facebook mx-2 " viewBox=" 0 0 16 16 ">
+                            <path d=" M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303
+                1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z " />
                         </svg>
                     </li>
-                    <li class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-twitter mx-2" viewBox="0 0 16 16">
-                            <path
-                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                    <li class=" p-2 "><svg xmlns=" http://www.w3.org/2000/svg " width=" 24 " height=" 24 " fill=" #FF8908 " class=" bi bi-twitter mx-2 " viewBox=" 0 0 16 16 ">
+                            <path d=" M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325
+                9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0
+                0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z " />
                         </svg></li>
-                    <li class="p-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <li class=" p-2 "><svg xmlns=" http://www.w3.org/2000/svg " width=" 24 " height=" 24 " fill=" #FF8908 " class=" bi bi-instagram " viewBox=" 0 0 16 16 ">
                             <path
-                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                d=" M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372
+                1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99
+                10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035
+                1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478
+                2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034
+                1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z " />
                         </svg></li>
                 </ul>
             </div>
-            <div class="row">
-                <p class=" app-2021 d-flex justify-content-center mb-0  text-center">App eat easier 2021</p>
+            <div class=" row ">
+                <p class=" app-2021 d-flex justify-content-center mb-0 text-center ">App eat easier 2021</p>
             </div>
         </div>
     </footer>
-
-    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin="anonymous "></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin="anonymous "></script>
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js " integrity=" sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js " integrity=" sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp " crossorigin=" anonymous "></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js " integrity=" sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/ " crossorigin=" anonymous "></script>
+    <script src=" ./js/botones.js "></script>
 </body>
 
 </html>
