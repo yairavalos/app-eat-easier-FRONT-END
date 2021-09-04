@@ -1,10 +1,10 @@
 const API_URL = "http://localhost:8000/api/";
 
-let user_profile_id = 0
+let user_profile_id = 1
 let my_json_list = []
 
 
-const getUserFavorites = async() => {
+const getFavorites = async() => {
 
     try {
         const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
@@ -24,66 +24,78 @@ const getUserFavorites = async() => {
 
 }
 
+function setUserStorage(my_user){
 
-function populate_nodes(n) {
-
-    this_attr = my_json_list[n].id
-    my_container.lastElementChild.setAttribute("id", this_attr)
-
-    this_attr = my_json_list[n].cat_recipe.pic_url
-    my_container.lastElementChild.querySelectorAll(".json_node .pic_url")[0].setAttribute("src", this_attr)
-
-    this_attr = my_json_list[n].cat_recipe.title
-    my_container.lastElementChild.querySelectorAll(".title")[0].innerText = this_attr
-
-    this_attr = my_json_list[n].cat_recipe.meal_type
-    my_container.lastElementChild.querySelectorAll(".meal_type")[0].innerText = this_attr
-
-    this_attr = my_json_list[n].cat_recipe.level
-    my_container.lastElementChild.querySelectorAll(".level")[0].innerText = this_attr
+    localStorage.setItem('user_id', my_user)
 
 }
 
-function clone_html_item() {
+function getUserStorage(){
 
-    my_item = document.createElement("div")
-    my_container.appendChild(my_item)
-
-    my_container.lastElementChild.outerHTML = my_container.firstElementChild.outerHTML
+    console.log(localStorage.getItem('user_id'))
 
 }
 
 const transfer_retrieve = async() => {
 
-    my_json_list = await getUserFavorites();
+    my_json_list = await getFavorites();
     json_items_num = my_json_list.length
 
-    if (json_items_num > 1) {
-
-        for (i = 0; i < json_items_num; i++) {
-
-            populate_nodes(i)
-
-            if (i < json_items_num - 1) {
-                clone_html_item()
-            }
-        }
-
-    } else {
-        populate_nodes(0)
-    }
-
     console.log("transfer retrieve")
+
+    setUserStorage('my_user_testings')
+    getUserStorage()
 
 }
 
 
+// On-hold -> data-bs-target="#login" -> to avoid fire modal 
+// On-hold -> data-bs-toggle="modal" -> to avoid fire modal
+
 $(document).ready(() => {
 
-    my_container = document.querySelector(".json_container")
-    my_template_item = my_container.children[0]
+    my_form = document.querySelector('#register_form') 
 
-    user_profile_id = 2
-    transfer_retrieve();
+    my_form.addEventListener('submit', (e)=>{
+        
+        console.log("You are about to send the form:" + e.target.id)
+        console.log("my email validation its: " + my_eMail.checkValidity())
+        
+        e.preventDefault()
+        console.log('Event prevented')
+
+        if (e.target.id == 'register_form' && my_eMail.checkValidity()){
+            
+            transfer_retrieve()
+        }
+
+    })
 
 });
+
+/* Algorithm
+
+    Pre-requirements:
+    - Json variable with User Profile Structure
+    - Back-End validation for POST Transactions
+    - Password encription from Django how it works
+
+    First before to send anything
+    validate form fields
+    prevent default behaviors from Form and modal
+    if its not filled correctly needs to stay into the same page
+    once its filled correctly its try to post it into db
+    if its repeated Auth its gonna complain
+        we need to handle it
+    once its done confirm from end-point its done
+    then
+        we need to do the next actions
+    save into datastorage the user identity
+    show modal confirming the success or not
+    redirect to go to favorites or to another page
+    if its the first time
+        redirect to people amount
+    it its a user
+        redirect them to favorites or home
+
+*/
