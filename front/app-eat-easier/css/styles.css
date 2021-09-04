@@ -350,13 +350,40 @@ h3 {
   color: #FF8908;
 }
 
-.check {
-  color: #FF8908;
-}
-
 .ut {
   font-size: 30px;
   color: #77838F;
+}
+
+.frame {
+  height: 72px;
+  width: 72px;
+  border: 3px solid #77838F;
+  border-radius: 10px;
+}
+
+.icon_s {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 48px;
+  color: #77838F;
+}
+
+.icon_s:hover {
+  color: #FF8908;
+}
+
+.icon_k {
+  font-size: 48px;
+  color: #77838F;
+}
+
+.icon_k:hover {
+  color: #FF8908;
+}
+
+.check {
+  color: #FF8908;
 }
 
 footer {
