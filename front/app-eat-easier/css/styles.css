@@ -386,6 +386,16 @@ h3 {
   color: #FF8908;
 }
 
+.kit_a:hover {
+  -webkit-filter: invert(56%) sepia(66%) saturate(1650%) hue-rotate(353deg) brightness(99%) contrast(104%);
+          filter: invert(56%) sepia(66%) saturate(1650%) hue-rotate(353deg) brightness(99%) contrast(104%);
+}
+
+.pressed {
+  -webkit-filter: invert(56%) sepia(66%) saturate(1650%) hue-rotate(353deg) brightness(99%) contrast(104%);
+          filter: invert(56%) sepia(66%) saturate(1650%) hue-rotate(353deg) brightness(99%) contrast(104%);
+}
+
 footer {
   height: 380px;
   border-radius: 20px 20px 0 0;
