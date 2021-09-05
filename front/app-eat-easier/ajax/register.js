@@ -4,6 +4,7 @@ let user_profile_id = 1
 let my_json_list = []
 let my_user = {}
 
+
 // This method it´s very unstable
 async function postNewUser(){
     
@@ -31,6 +32,7 @@ async function postNewUser(){
     
         const my_data = await my_response.json()
         console.log("Response Data: ", my_data)
+        saveUserProfile(my_data)
 
         return my_data
 
@@ -69,7 +71,7 @@ function generateNewUser(){
     .then(data => {
         console.log('data:', data)
         saveUserProfile(data)
-        //return data
+        return data
     })
     .catch(err=>console.error('json_data:',err.message))
 
@@ -104,28 +106,118 @@ function getLocalUserData(){
 }
 
 
+my_form = document.querySelector('#register_form')
+my_btn = document.querySelector('#btn_submit')
+
+my_form.addEventListener('click', (event) => {
+
+    event.preventDefault()
+    event.stopPropagation()
+
+    console.log('Form Trigger Button its fired. ', event)
+    console.log('Fired from: ', event.target.id)
+
+    if(event.target.id == 'btn_submit' ){
+
+        generateNewUser()
+
+    }
+
+})
+
+
+
+
+/*
+$(document).ajaxComplete((event)=>{
+    console.log("Ajax has been completed: ", event)
+})
+
+$(document).ajaxError((event)=>{
+    console.log("Ajax Error Details: ", event)
+})
+
+*/
+
+/*
 $(document).ready(() => {
 
-    my_form = document.querySelector('#register_form')
-    my_submit = document.querySelector('#btn_submit') 
+    my_form = $('#register_form')
 
-    my_submit.addEventListener('click', (e)=>{
+    $('#btn_submit').on('click', (event)=>{
+        event.preventDefault()
+        event.stopPropagation()
+        console.log('Form Event Handler: ', event)
+
+        localStorage.clear()
+        console.log("LocalStorage has been cleared")
+
+        newUserRequest = getLocalUserData()
+        console.log("newUserRequest: ", newUserRequest)
+
+        let postResult = $.post(`${API_URL}users/signup/`, newUserRequest)
+        console.log("Ajax POST Ejecuted")
+
+        //setTimeout(()=>{console.log("TIMER !!")},700)
         
+        postResult.done((data)=>{
+            console.log("JQuery Ajax Post Result: ", data)
+            saveUserProfile(data)
+        })
+
+        postResult.fail((error)=>{
+            console.log("Error from Post: ", error)
+        })
+
+        postResult.always((data)=>{
+            console.log("JQuery Ajax Post Result from Always: ", data)
+        })
+
+    })
+
+})
+
+*/
+
+/* 
+
+function getLocalUserData(){
+
+    let user_data = {
+        "username":my_form.querySelector('#my_username').value,
+        "password":my_form.querySelector('#my_pw1').value,
+        "email":my_form.querySelector('#my_email').value,
+        "first_name": my_form.querySelector('#my_first_name').value,
+        "last_name":my_form.querySelector('#my_last_name').value
+    }
+
+    return user_data
+
+}
+
+*/
+
+
+/*
+$(document).ready(() => {
+
+    const my_form = document.querySelector('#register_form')
+    const my_submit = document.querySelector('#btn_submit') 
+
+    my_form.addEventListener('register_form', (e)=>{
+    
         console.log("You are about to send the form:" + e.target.id)
         
         e.preventDefault()
         e.stopPropagation()
         console.log('Event prevented')
-
         if (e.target.id == 'btn_submit'){
-
-            // New CODE goes here !!
-
+            generateNewUser()
         }
-
     })
 
 }); 
+*/
 
 /* Algorithm
 
