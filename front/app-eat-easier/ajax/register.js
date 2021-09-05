@@ -2,76 +2,130 @@ const API_URL = "http://localhost:8000/api/";
 
 let user_profile_id = 1
 let my_json_list = []
+let my_user = {}
 
+// This method it´s very unstable
+async function postNewUser(){
+    
+    console.log("posting with Ajax postNewUser: ")
+    
+    let my_user_data = getLocalUserData()
+    console.log("my_user_data: ", my_user_data)
 
-const getFavorites = async() => {
-
+    // Very important configuration !!
+    let my_headers = new Headers()
+    my_headers.set("Content-Type", "application/json")
+    console.log("My Headers Config:", my_headers)
+    
     try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
+
+        const my_response = await fetch(`${API_URL}users/signup/`,{
             headers: {
-                "Content-Type": "application/json",
-            },
-        });
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+            method:'POST',
+            body: JSON.stringify(my_user_data)
+        })
+        console.log("Response Status: ", my_response.status)
+    
+        const my_data = await my_response.json()
+        console.log("Response Data: ", my_data)
 
-        const data = await response.json()
-        console.log(data)
-
-        return data
+        return my_data
 
     } catch (error) {
-        console.log(error)
+        console.log("Error from Try/Catch de Fetch: ", error)
     }
 
 }
 
-function setUserStorage(my_user){
+// This method is unstable
+// but a least in debug mode always you have a response
 
-    localStorage.setItem('user_id', my_user)
+//const generateNewUser = () => {
+
+function generateNewUser(){
+
+    console.log("posting with ajax: ")
+    
+    let my_user_data = getLocalUserData()
+    console.log("my_user_data: ", my_user_data)
+
+    // Very important configuration !!
+    let headers = new Headers()
+    headers.set("Content-Type", "application/json")
+
+    fetch(`${API_URL}users/signup/`, {
+        headers: headers,
+        method:"POST",
+        body: JSON.stringify(my_user_data),
+    })
+    .then(response => {
+            console.log('response:', response)
+            return response.json()
+    })
+    .catch(err=>console.error('response_error:', err.message))
+    .then(data => {
+        console.log('data:', data)
+        saveUserProfile(data)
+        //return data
+    })
+    .catch(err=>console.error('json_data:',err.message))
 
 }
 
-function getUserStorage(){
 
-    console.log(localStorage.getItem('user_id'))
+function saveUserProfile(myJSON){
 
-}
+    localStorage.clear()
 
-const transfer_retrieve = async() => {
-
-    my_json_list = await getFavorites();
-    json_items_num = my_json_list.length
-
-    console.log("transfer retrieve")
-
-    setUserStorage('my_user_testings')
-    getUserStorage()
+    for([key, value] of Object.entries(myJSON)){
+        localStorage.setItem(key, value)
+        console.log("mi item key is: " + key)
+        console.log("my value is: " + value)
+    }
 
 }
 
 
-// On-hold -> data-bs-target="#login" -> to avoid fire modal 
-// On-hold -> data-bs-toggle="modal" -> to avoid fire modal
+function getLocalUserData(){
+
+    let user_data = {
+        "username":my_form.querySelector('#my_username').value,
+        "password":my_form.querySelector('#my_pw1').value,
+        "email":my_form.querySelector('#my_email').value,
+        "first_name": my_form.querySelector('#my_first_name').value,
+        "last_name":my_form.querySelector('#my_last_name').value
+    }
+
+    return user_data
+
+}
+
 
 $(document).ready(() => {
 
-    my_form = document.querySelector('#register_form') 
+    my_form = document.querySelector('#register_form')
+    my_submit = document.querySelector('#btn_submit') 
 
-    my_form.addEventListener('submit', (e)=>{
+    my_submit.addEventListener('click', (e)=>{
         
         console.log("You are about to send the form:" + e.target.id)
-        console.log("my email validation its: " + my_eMail.checkValidity())
         
         e.preventDefault()
+        e.stopPropagation()
         console.log('Event prevented')
 
-        if (e.target.id == 'register_form' && my_eMail.checkValidity()){
-            
-            transfer_retrieve()
+        if (e.target.id == 'btn_submit'){
+
+            // New CODE goes here !!
+
         }
 
     })
 
-});
+}); 
 
 /* Algorithm
 
@@ -97,5 +151,8 @@ $(document).ready(() => {
         redirect to people amount
     it its a user
         redirect them to favorites or home
+
+    por default javascript son sincronos
+    async / await -> solamente cuando se requiera que se ejecute código sin esperar la respuesta previa
 
 */
