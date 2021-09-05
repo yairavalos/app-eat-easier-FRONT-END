@@ -99,7 +99,6 @@ const transfer_retrieve = async() => {
 }
 
 
-
 $(document).ready(() => {
 
     my_container = document.querySelector(".json_container")
