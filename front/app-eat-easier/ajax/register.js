@@ -1,187 +1,63 @@
 const API_URL = "http://localhost:8000/api/";
 
-let user_profile_id = 1
-let my_json_list = []
-let my_user = {}
+let user_profile_id = 1;
+let my_json_list = [];
+let my_user = {};
 
-// This method it´s very unstable
-async function postNewUser() {
 
-    console.log("posting with Ajax postNewUser: ")
+async function generateNewUser(userData) {
+  console.log("posting with ajax: ");
 
-    let my_user_data = getLocalUserData()
-    console.log("my_user_data: ", my_user_data)
+  try {
+    const response = await fetch(`${API_URL}users/signup/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        //"Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(userData),
+    });
 
-    // Very important configuration !!
-    let my_headers = new Headers()
-    my_headers.set("Content-Type", "application/json")
-    console.log("My Headers Config:", my_headers)
-
-    try {
-
-        const my_response = await fetch(`${API_URL}users/signup/`, {
-            headers: {
-                'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            method: 'POST',
-            body: JSON.stringify(my_user_data)
-        })
-        console.log("Response Status: ", my_response.status)
-
-        const my_data = await my_response.json()
-        console.log("Response Data: ", my_data)
-
-        return my_data
-
-    } catch (error) {
-        console.log("Error from Try/Catch de Fetch: ", error)
-    }
-
+    const data = response.json();
+    console.log("My response from AJAX: ", data);
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-// This method is unstable
-// but a least in debug mode always you have a response
-
-//const generateNewUser = () => {
-
-function generateNewUser(my_headers) {
-
-    console.log("posting with ajax: ")
-
-    let my_user_data = getLocalUserData()
-    console.log("my_user_data: ", my_user_data)
-
-    fetch(`${API_URL}users/signup/`, {
-            method: "POST",
-            credentials: 'same-origin',
-            headers: my_headers,
-            body: JSON.stringify(my_user_data),
-        })
-        .then(response => {
-            console.log('response:', response)
-            return response.json()
-        })
-        //.catch(err => console.error('response_error:', err.message))
-        .then(data => {
-            console.log('data:', data)
-            saveUserProfile(data)
-            
-            return data
-        })
-        .catch(err => console.error('json_data:', err.message))
-
-}
-
-
-const createNewUser = async (my_user_data) => {
-	
-    let user_data = {}
-    let new_user = {}
-    
-    try {
-
-        let my_headers = new Headers()
-        my_headers.set("Content-Type", "application/json")
-
-        user_data = getLocalUserData()
-
-		const response = await fetch(`${API_URL}users/signup/`, {
-            method: "POST",
-            headers: my_headers,
-            body: JSON.stringify(user_data)
-		})
-		
-        new_user = await response.json()
-        saveUserProfile(new_user)
-
-        return new_user
-
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-
 
 function saveUserProfile(myJSON) {
+  localStorage.clear();
 
-    localStorage.clear()
-
-    for ([key, value] of Object.entries(myJSON)) {
-        localStorage.setItem(key, value)
-        console.log("mi item key is: " + key)
-        console.log("my value is: " + value)
-    }
-
+  for ([key, value] of Object.entries(myJSON)) {
+    localStorage.setItem(key, value);
+    console.log("mi item key is: " + key);
+    console.log("my value is: " + value);
+  }
 }
 
+const myForm = document.getElementById("register_form");
 
 function getLocalUserData() {
+  let user_data = {
+    username: myForm.querySelector("#my_username").value,
+    password: myForm.querySelector("#my_pw1").value,
+    email: myForm.querySelector("#my_email").value,
+    first_name: myForm.querySelector("#my_first_name").value,
+    last_name: myForm.querySelector("#my_last_name").value,
+  };
 
-    let user_data = {
-        "username": my_form.querySelector('#my_username').value,
-        "password": my_form.querySelector('#my_pw1').value,
-        "email": my_form.querySelector('#my_email').value,
-        "first_name": my_form.querySelector('#my_first_name').value,
-        "last_name": my_form.querySelector('#my_last_name').value
-    }
-
-    return user_data
-
+  return user_data;
 }
 
+myForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log("Event prevented");
 
-$(document).ready(() => {
+  const data = getLocalUserData();
 
-    // Very important configuration !!
-    let my_headers = new Headers()
-    my_headers.set("Content-Type", "application/json")
-
-    my_form = document.querySelector('#register_form')
-    my_submit = document.querySelector('#btn_submit')
-
-    var my_modal = document.querySelector('#modal_login')
-
-    my_submit.addEventListener('click', (e) => {
-
-        console.log("You are about to send the form:" + e.target.id)
-
-        e.preventDefault()
-        e.stopPropagation()
-        console.log('Event prevented')
-
-        if (e.target.id == 'btn_submit') {
-
-            // New CODE goes here !!
-            // user_data = getLocalUserData()
-            // new_user = createNewUser(user_data)
-            // saveUserProfile(new_user)
-
-            generateNewUser(my_headers)
-        }   
-
-        my_modal.show()
-
-    })
-
+  await generateNewUser(data);
 });
-
-
-
-/*
-headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest', //Necessary to work with request.is_ajax()
-            },
-
-
-headers.append('Content-Type', 'application/json');
-headers.append('Accept', 'application/json');
-headers.append('Access-Control-Allow-Origin', 'http://localhost:5500');
-
-*/
 
 
 
@@ -210,3 +86,4 @@ headers.append('Access-Control-Allow-Origin', 'http://localhost:5500');
     por default javascript son sincronos
     async / await -> solamente cuando se requiera que se ejecute código sin esperar la respuesta previa
 */
+
