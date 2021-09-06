@@ -12,6 +12,34 @@ let adult3 = document.querySelector('#adult3')
 let adult4 = document.querySelector('#adult4')
 let adult5 = document.querySelector('#adult5')
 
+// ADULT DEFINITION
+
+let adult_dict = {
+    "adult1":1,
+    "adult2":2,
+    "adult3":3,
+    "adult4":4,
+    "adult5":5
+}
+
+let current_adult = ""
+let adult_count = 0
+
+// CHILDREN DEFINITION
+
+let child_dict = {
+    "child1":1,
+    "child2":2,
+    "child3":3,
+    "child4":4,
+    "child5":5
+}
+
+let current_child = ""
+let child_count = 0
+
+// ADULT ICONS EVENT HANDLERS
+
 adult1.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
@@ -23,8 +51,9 @@ adult1.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getAdultNumber()
-    fillAdultRow(fill_num)
+    current_adult = "adult1"
+    adult_count = adult_dict["adult1"]
+    fillAdultRow("adult1")
 
 })
 
@@ -39,8 +68,9 @@ adult2.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getAdultNumber()
-    fillAdultRow(fill_num)
+    current_adult = "adult2"
+    adult_count = adult_dict["adult2"]
+    fillAdultRow("adult2")
 
 })
 
@@ -56,8 +86,9 @@ adult3.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getAdultNumber()
-    fillAdultRow(fill_num)
+    current_adult = "adult3"
+    adult_count = adult_dict["adult3"]
+    fillAdultRow("adult3")
 
 })
 
@@ -73,9 +104,9 @@ adult4.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getAdultNumber()
-    fillAdultRow(fill_num)
-
+    current_adult = "adult4"
+    adult_count = adult_dict["adult4"]
+    fillAdultRow("adult4")
 })
 
 
@@ -90,8 +121,9 @@ adult5.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getAdultNumber()
-    fillAdultRow(fill_num)
+    current_adult = "adult5"
+    adult_count = adult_dict["adult5"]
+    fillAdultRow("adult5")
 
 })
 
@@ -101,7 +133,6 @@ adult5.addEventListener('click', (e) => {
 // ALGORITHM FOR CHILD COLOR TOGGLE SELECTOR 
 
 
-
 let child1 = document.querySelector('#child1')
 let child2 = document.querySelector('#child2')
 let child3 = document.querySelector('#child3')
@@ -109,8 +140,7 @@ let child4 = document.querySelector('#child4')
 let child5 = document.querySelector('#child5')
 
 
-
-
+// ADULT ICONS EVENT HANDLERS
 
 child1.addEventListener('click', (e) => {
     console.log(e.target.classList)
@@ -122,8 +152,10 @@ child1.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    let fill_num = getChildNumber()
-    fillChildRow(fill_num)
+    current_child = "child1"
+    child_count = child_dict["child1"]
+    fillChildRow("child1")
+
 })
 
 child2.addEventListener('click', (e) => {
@@ -135,8 +167,11 @@ child2.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-    let fill_num = getChildNumber()
-    fillChildRow(fill_num)
+
+    current_child = "child2"
+    child_count = child_dict["child2"]
+    fillChildRow("child2")
+
 })
 
 child3.addEventListener('click', (e) => {
@@ -148,8 +183,11 @@ child3.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-    let fill_num = getChildNumber()
-    fillChildRow(fill_num)
+
+    current_child = "child3"
+    child_count = child_dict["child3"]
+    fillChildRow("child3")
+
 })
 
 child4.addEventListener('click', (e) => {
@@ -161,8 +199,11 @@ child4.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-    let fill_num = getChildNumber()
-    fillChildRow(fill_num)
+
+    current_child = "child4"
+    child_count = child_dict["child4"]
+    fillChildRow("child4")
+
 })
 
 child5.addEventListener('click', (e) => {
@@ -174,13 +215,87 @@ child5.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-    let fill_num = getChildNumber()
-    fillChildRow(fill_num)
+
+    current_child = "child5"
+    child_count = child_dict["child5"]
+    fillChildRow("child5")
+
 })
 
 
 // STEP 1.
 
+function fillAdultRow(fill_num) {
+
+    for (i = 0; i <= adult_row.children.length - 1; i++) {
+
+        if (i <= adult_dict[fill_num] - 1) {
+
+            adult_row.children[i].querySelector("i").classList.add("check")
+
+        } else {
+
+            adult_row.children[i].querySelector("i").classList.remove("check")
+
+        }
+
+    }
+
+}
+
+
+// STEP 2
+//child_row = document.querySelector("#container_child")
+
+function fillChildRow(fill_num) {
+
+    for (i = 0; i <= child_row.children.length - 1; i++) {
+
+        if (i <= child_dict[fill_num] - 1) {
+
+            child_row.children[i].querySelector("i").classList.add("check")
+
+        } else {
+
+            child_row.children[i].querySelector("i").classList.remove("check")
+
+        }
+
+    }
+
+}
+
+
+/*
+
+    Algoritmo para pasar de Front-End 
+    a Back-End por Ajax
+
+    1. Ir a la fila de adultos y encontrar la posición
+    seleccionada
+    2. Lo mismo con la de niños
+    
+    3. Generar la estructura JSON como lo pide el Back-End
+    4. Llenar dicha estructura de acuerdo a las opciones
+    seleccionadas
+    5. Ir a Local Storage y obtener los datos del Perfil
+    del usuario para identificarse ante el BE
+    6. Generar un Ajax Post para que se guarde en BE
+    7. Tener una respuesta de confirmación del BE
+    8. Guardar dicha selección en el Local Storage para
+    evitar hacer demasiadas requisiciones al BE
+    9. Manejar la navegación para ir a la sig. Pantalla
+
+*/
+
+
+
+// -----------------------------------------------------------------------
+// CODE BACK-UP
+// Under Review
+// -----------------------------------------------------------------------
+
+/*
 function getAdultNumber() {
 
     adult_count = 0
@@ -204,86 +319,4 @@ function getAdultNumber() {
     return adult_count
 
 }
-
-function fillAdultRow(fill_num) {
-
-    for (i = 0; i <= fill_num - 1; i++) {
-
-        adult_row.children[i].querySelector("i").classList.add("check")
-
-    }
-
-    for (i = adult_row.children.length - 1; i >= fill_num; i--) {
-
-        adult_row.children[i].querySelector("i").classList.remove("check")
-
-    }
-
-}
-
-
-// STEP 2
-//child_row = document.querySelector("#container_child")
-
-function getChildNumber() {
-
-    child_count = 0
-
-    for (i = 0; i <= child_row.children.length - 1; i++) {
-
-        item = child_row.children[i].querySelector("i") //.classList
-        console.log("Item[" + i + "]: ", item)
-
-        for (j = 0; j <= child_row.children[i].querySelector("i").classList.length - 1; j++) {
-            console.log("class type[" + j + "]: ", child_row.children[i].querySelector("i").classList[j])
-
-            if (child_row.children[i].querySelector("i").classList[j] == "check") {
-                child_row = i + 1
-            }
-
-        }
-    }
-
-    console.log("El número de niños es: ", child_count)
-    return child_count
-
-}
-
-function fillChildRow(fill_num) {
-
-    for (i = 0; i <= fill_num - 1; i++) {
-
-        child_row.children[i].querySelector("i").classList.add("check")
-
-    }
-
-    for (i = child_row.children.length - 1; i >= fill_num; i--) {
-
-        child_row.children[i].querySelector("i").classList.remove("check")
-
-    }
-
-}
-
-
-
-/*
-
-    Algoritmo para pasar de Front-End 
-    a Back-End por Ajax
-
-    1. Ir a la fila de adultos y encontrar la posición
-    seleccionada
-    2. Lo mismo con la de niños
-    3. Generar la estructura JSON como lo pide el Back-End
-    4. Llenar dicha estructura de acuerdo a las opciones
-    seleccionadas
-    5. Ir a Local Storage y obtener los datos del Perfil
-    del usuario para identificarse ante el BE
-    6. Generar un Ajax Post para que se guarde en BE
-    7. Tener una respuesta de confirmación del BE
-    8. Guardar dicha selección en el Local Storage para
-    evitar hacer demasiadas requisiciones al BE
-    9. Manejar la navegación para ir a la sig. Pantalla
-
 */
