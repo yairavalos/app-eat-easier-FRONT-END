@@ -6,57 +6,59 @@ let my_user = {};
 
 
 async function generateNewUser(userData) {
-  console.log("posting with ajax: ");
+    console.log("posting with ajax: ");
 
-  try {
-    const response = await fetch(`${API_URL}users/signup/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        //"Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(userData),
-    });
+    try {
+        const response = await fetch(`${API_URL}users/signup/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                //"Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify(userData),
+        });
 
-    const data = response.json();
-    console.log("My response from AJAX: ", data);
-  } catch (error) {
-    console.log(error);
-  }
+        const data = response.json();
+        saveUserProfile(data);
+        console.log("My response from AJAX: ", data);
+    } catch (error) {
+        console.log("manejo de error ", response.json())
+        console.log(error);
+    }
 }
 
 function saveUserProfile(myJSON) {
-  localStorage.clear();
+    localStorage.clear();
 
-  for ([key, value] of Object.entries(myJSON)) {
-    localStorage.setItem(key, value);
-    console.log("mi item key is: " + key);
-    console.log("my value is: " + value);
-  }
+    for ([key, value] of Object.entries(myJSON)) {
+        localStorage.setItem(key, value);
+        console.log("mi item key is: " + key);
+        console.log("my value is: " + value);
+    }
 }
 
 const myForm = document.getElementById("register_form");
 
 function getLocalUserData() {
-  let user_data = {
-    username: myForm.querySelector("#my_username").value,
-    password: myForm.querySelector("#my_pw1").value,
-    email: myForm.querySelector("#my_email").value,
-    first_name: myForm.querySelector("#my_first_name").value,
-    last_name: myForm.querySelector("#my_last_name").value,
-  };
+    let user_data = {
+        username: myForm.querySelector("#my_username").value,
+        password: myForm.querySelector("#my_pw1").value,
+        email: myForm.querySelector("#my_email").value,
+        first_name: myForm.querySelector("#my_first_name").value,
+        last_name: myForm.querySelector("#my_last_name").value,
+    };
 
-  return user_data;
+    return user_data;
 }
 
-myForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  console.log("Event prevented");
+myForm.addEventListener("submit", async(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Event prevented");
 
-  const data = getLocalUserData();
+    const data = getLocalUserData();
 
-  await generateNewUser(data);
+    await generateNewUser(data);
 });
 
 
@@ -86,4 +88,3 @@ myForm.addEventListener("submit", async (e) => {
     por default javascript son sincronos
     async / await -> solamente cuando se requiera que se ejecute código sin esperar la respuesta previa
 */
-

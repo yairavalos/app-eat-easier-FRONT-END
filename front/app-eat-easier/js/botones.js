@@ -4,6 +4,7 @@ console.log("hola")
 // ALGORITHM FOR ADULT COLOR TOGGLE SELECTOR 
 
 let adult_row = document.querySelector("#container_adult")
+let child_row = document.querySelector("#container_child")
 
 let adult1 = document.querySelector('#adult1')
 let adult2 = document.querySelector('#adult2')
@@ -21,7 +22,7 @@ adult1.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-    
+
     let fill_num = getAdultNumber()
     fillAdultRow(fill_num)
 
@@ -99,6 +100,8 @@ adult5.addEventListener('click', (e) => {
 
 // ALGORITHM FOR CHILD COLOR TOGGLE SELECTOR 
 
+
+
 let child1 = document.querySelector('#child1')
 let child2 = document.querySelector('#child2')
 let child3 = document.querySelector('#child3')
@@ -119,6 +122,8 @@ child1.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
+    let fill_num = getChildNumber()
+    fillChildRow(fill_num)
 })
 
 child2.addEventListener('click', (e) => {
@@ -130,7 +135,8 @@ child2.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-
+    let fill_num = getChildNumber()
+    fillChildRow(fill_num)
 })
 
 child3.addEventListener('click', (e) => {
@@ -142,7 +148,8 @@ child3.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-
+    let fill_num = getChildNumber()
+    fillChildRow(fill_num)
 })
 
 child4.addEventListener('click', (e) => {
@@ -154,7 +161,8 @@ child4.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-
+    let fill_num = getChildNumber()
+    fillChildRow(fill_num)
 })
 
 child5.addEventListener('click', (e) => {
@@ -166,28 +174,29 @@ child5.addEventListener('click', (e) => {
     } else {
         e.target.classList.add('check')
     }
-
+    let fill_num = getChildNumber()
+    fillChildRow(fill_num)
 })
 
 
 // STEP 1.
 
-function getAdultNumber(){
+function getAdultNumber() {
 
     adult_count = 0
 
-    for (i=0; i <= adult_row.children.length - 1; i++) {
+    for (i = 0; i <= adult_row.children.length - 1; i++) {
 
-        item = adult_row.children[i].querySelector("i")//.classList
-        console.log("Item[" + i +"]: ", item)
+        item = adult_row.children[i].querySelector("i") //.classList
+        console.log("Item[" + i + "]: ", item)
 
-        for (j=0; j <= adult_row.children[i].querySelector("i").classList.length - 1; j++) {
-            console.log("class type[" + j +"]: ", adult_row.children[i].querySelector("i").classList[j])
-         
+        for (j = 0; j <= adult_row.children[i].querySelector("i").classList.length - 1; j++) {
+            console.log("class type[" + j + "]: ", adult_row.children[i].querySelector("i").classList[j])
+
             if (adult_row.children[i].querySelector("i").classList[j] == "check") {
                 adult_count = i + 1
             }
-            
+
         }
     }
 
@@ -196,26 +205,65 @@ function getAdultNumber(){
 
 }
 
-function fillAdultRow(fill_num){
+function fillAdultRow(fill_num) {
 
-    for (i=0; i <= fill_num - 1; i++) {
+    for (i = 0; i <= fill_num - 1; i++) {
 
         adult_row.children[i].querySelector("i").classList.add("check")
-        
+
     }
 
-    for (i=adult_row.children.length - 1; i >= fill_num; i--) {
+    for (i = adult_row.children.length - 1; i >= fill_num; i--) {
 
         adult_row.children[i].querySelector("i").classList.remove("check")
-        
+
     }
 
 }
 
 
 // STEP 2
-child_row = document.querySelector("#container_child")
+//child_row = document.querySelector("#container_child")
 
+function getChildNumber() {
+
+    child_count = 0
+
+    for (i = 0; i <= child_row.children.length - 1; i++) {
+
+        item = child_row.children[i].querySelector("i") //.classList
+        console.log("Item[" + i + "]: ", item)
+
+        for (j = 0; j <= child_row.children[i].querySelector("i").classList.length - 1; j++) {
+            console.log("class type[" + j + "]: ", child_row.children[i].querySelector("i").classList[j])
+
+            if (child_row.children[i].querySelector("i").classList[j] == "check") {
+                child_row = i + 1
+            }
+
+        }
+    }
+
+    console.log("El número de niños es: ", child_count)
+    return child_count
+
+}
+
+function fillChildRow(fill_num) {
+
+    for (i = 0; i <= fill_num - 1; i++) {
+
+        child_row.children[i].querySelector("i").classList.add("check")
+
+    }
+
+    for (i = child_row.children.length - 1; i >= fill_num; i--) {
+
+        child_row.children[i].querySelector("i").classList.remove("check")
+
+    }
+
+}
 
 
 
