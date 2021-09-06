@@ -1,13 +1,13 @@
 console.log("hola")
 
-let pot = document.querySelector('#pot')
-let blender = document.querySelector('#blender')
-let microwave = document.querySelector('#microwave')
-let oven = document.querySelector('#oven')
-let proces = document.querySelector('#process')
-let stove = document.querySelector('#stove')
+let olla_de_presion = document.querySelector('#olla_de_presion')
+let licuadora = document.querySelector('#licuadora')
+let microondas = document.querySelector('#microondas')
+let horno = document.querySelector('#horno')
+let procesador = document.querySelector('#procesador')
+let estufa = document.querySelector('#estufa')
 
-pot.addEventListener('click', (e) => {
+olla_de_presion.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('pressed')) {
@@ -20,7 +20,7 @@ pot.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-blender.addEventListener('click', (e) => {
+licuadora.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -33,7 +33,7 @@ blender.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-microwave.addEventListener('click', (e) => {
+microondas.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -46,7 +46,7 @@ microwave.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-oven.addEventListener('click', (e) => {
+horno.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('pressed')) {
@@ -59,7 +59,7 @@ oven.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-proces.addEventListener('click', (e) => {
+procesador.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('pressed')) {
@@ -72,20 +72,8 @@ proces.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-oven.addEventListener('click', (e) => {
-    console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
-
-        e.target.classList.remove('check')
-
-    } else {
-        e.target.classList.add('check')
-    }
-    // e.target.classList
-})
-
-stove.addEventListener('click', (e) => {
+estufa.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {

@@ -1,16 +1,16 @@
 console.log("hola")
 
-let meat = document.querySelector('#meat')
-let chicken = document.querySelector('#chicken')
-let pork = document.querySelector('#pork')
-let fish = document.querySelector('#fish')
-let egg = document.querySelector('#egg')
+let res = document.querySelector('#res')
+let pollo = document.querySelector('#pollo')
+let cerdo = document.querySelector('#cerdo')
+let pescado = document.querySelector('#pescado')
+let huevo = document.querySelector('#huevo')
 let cheese = document.querySelector('#cheese')
-let fruit = document.querySelector('#fruit')
-let vegetables = document.querySelector('#vegetables')
-let wheat = document.querySelector('#wheat')
+let frutas = document.querySelector('#frutas')
+let verduras = document.querySelector('#verduras')
+let gluten = document.querySelector('#gluten')
 
-meat.addEventListener('click', (e) => {
+res.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -24,7 +24,7 @@ meat.addEventListener('click', (e) => {
 })
 
 
-chicken.addEventListener('click', (e) => {
+pollo.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -37,7 +37,7 @@ chicken.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-pork.addEventListener('click', (e) => {
+cerdo.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -50,7 +50,7 @@ pork.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-fish.addEventListener('click', (e) => {
+pescado.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -63,7 +63,7 @@ fish.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-egg.addEventListener('click', (e) => {
+huevo.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -76,7 +76,7 @@ egg.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-cheese.addEventListener('click', (e) => {
+lacteos.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -89,7 +89,7 @@ cheese.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-fruit.addEventListener('click', (e) => {
+frutas.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -102,7 +102,7 @@ fruit.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-vegetables.addEventListener('click', (e) => {
+verduras.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -115,7 +115,7 @@ vegetables.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-wheat.addEventListener('click', (e) => {
+gluten.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {

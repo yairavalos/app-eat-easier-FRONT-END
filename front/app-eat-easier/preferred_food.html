@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/df6ea92ceb.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/all.min.css">
@@ -21,7 +20,7 @@
     <!--logo-->
     <section>
         <div class="row">
-            <a href="home.html">
+            <a href="/">
                 <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
                     <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
                     <p class="logo-title mb-0">App-Eat-Easier</p>
@@ -178,29 +177,24 @@
     <section>
         <div class="col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto">
             <div class="col-4 col-md-4 text-center p-2 flex-column">
-                <a id="meat" href="#">
-                    <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                        <i class="icon_k far fa-steak"></i>
-                    </div>
-                </a>
+
+                <button id="res" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                    <i class="icon_k far fa-steak"></i>
+                </button>
                 <p class="p-1 card-title text-center">Res</p>
             </div>
 
             <div class="col-4 col-md-4 text-center p-2 flex-column">
-                <a id="chicken" href="#">
-                    <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                        <i class=" icon_k fas fa-drumstick-bite"></i>
-                    </div>
-                </a>
+                <button id="pollo" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                    <i class=" icon_k fas fa-drumstick-bite"></i>
+                </button>
                 <p class="p-1 card-title text-center">Pollo</p>
             </div>
 
             <div class="col-4 col-md-4 text-center p-2 flex-column">
-                <a id="pork" href="#">
-                    <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                        <i class=" icon_k fas fa-pig"></i>
-                    </div>
-                </a>
+                <button id="cerdo" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                    <i class=" icon_k fas fa-pig"></i>
+                </button>
                 <p class="p-1 card-title text-center">Cerdo</p>
             </div>
         </div>
@@ -211,27 +205,23 @@
 
     <div class="col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto">
         <div class="col-4 col-md-4 text-center p-2 flex-column">
-            <a id="fish" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                    <i class=" icon_k fas fa-fish"></i>
-                </div>
-            </a>
+            <button id="pescado" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                <i class=" icon_k fas fa-fish"></i>
+            </button>
             <p class="p-1 card-title text-center">Pescado</p>
         </div>
         <div class="col-4 col-md-4 text-center p-2 flex-column">
-            <a id="egg" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                    <i class=" icon_k far fa-egg-fried"></i>
-                </div>
-            </a>
+            <button id="huevo" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                <i class=" icon_k far fa-egg-fried"></i>
+            </button>
             <p class="p-1 card-title text-center">Huevo</p>
         </div>
         <div class="col-4 col-md-4 text-center p-2 flex-column">
-            <a id="cheese" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                    <i class="icon_k fal fa-cheese-swiss"></i>
-                </div>
-            </a>
+
+            <button id="lacteos" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                <i class="icon_k fal fa-cheese-swiss"></i>
+            </button>
+
             <p class="p-1 card-title text-center">Lácteos</p>
         </div>
     </div>
@@ -242,26 +232,26 @@
     <div class="col-12 col-sm-6 col-md-5 d-flex justify-content-evenly mx-auto">
         <div class="col-4 col-md-4 text-center p-2 flex-column">
 
-            <a id="fruit" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
+            <a href="#">
+                <button id="frutas" class="btn d-flex frame justify-content-center mx-auto align-items-center">
                     <i class=" icon_k fas fa-apple-alt"></i>
-                </div>
+                </button>
             </a>
             <p class="p-1 card-title text-center">Frutas</p>
         </div>
         <div class="col-4 col-md-4 text-center p-2 flex-column">
-            <a id="vegetables" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
-                    <i class=" icon_k fas fa-carrot"></i>
-                </div>
-            </a>
+
+            <button id="verduras" class="btn d-flex frame justify-content-center mx-auto align-items-center">
+                <i class=" icon_k fas fa-carrot"></i>
+            </button>
+
             <p class="p-1 card-title text-center">Verduras</p>
         </div>
         <div class="col-4 col-md-4 justify-content-center  p-2  flex-column">
-            <a id="wheat" href="#">
-                <div class=" d-flex frame justify-content-center mx-auto align-items-center">
+            <a href="#">
+                <button id="gluten" class=" btn d-flex frame justify-content-center mx-auto align-items-center">
                     <i class=" icon_k fal fa-wheat"></i>
-                </div>
+                </button>
             </a>
             <p class="p-1 card-title text-center">Gluten</p>
         </div>
