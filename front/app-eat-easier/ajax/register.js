@@ -45,35 +45,63 @@ async function postNewUser() {
 
 //const generateNewUser = () => {
 
-function generateNewUser() {
+function generateNewUser(my_headers) {
 
     console.log("posting with ajax: ")
 
     let my_user_data = getLocalUserData()
     console.log("my_user_data: ", my_user_data)
 
-    // Very important configuration !!
-    let headers = new Headers()
-    headers.set("Content-Type", "application/json")
-
     fetch(`${API_URL}users/signup/`, {
-            headers: headers,
             method: "POST",
+            credentials: 'same-origin',
+            headers: my_headers,
             body: JSON.stringify(my_user_data),
         })
         .then(response => {
             console.log('response:', response)
             return response.json()
         })
-        .catch(err => console.error('response_error:', err.message))
+        //.catch(err => console.error('response_error:', err.message))
         .then(data => {
             console.log('data:', data)
             saveUserProfile(data)
-                //return data
+            
+            return data
         })
         .catch(err => console.error('json_data:', err.message))
 
 }
+
+
+const createNewUser = async (my_user_data) => {
+	
+    let user_data = {}
+    let new_user = {}
+    
+    try {
+
+        let my_headers = new Headers()
+        my_headers.set("Content-Type", "application/json")
+
+        user_data = getLocalUserData()
+
+		const response = await fetch(`${API_URL}users/signup/`, {
+            method: "POST",
+            headers: my_headers,
+            body: JSON.stringify(user_data)
+		})
+		
+        new_user = await response.json()
+        saveUserProfile(new_user)
+
+        return new_user
+
+	} catch (error) {
+		console.log(error)
+	}
+}
+
 
 
 function saveUserProfile(myJSON) {
@@ -106,8 +134,14 @@ function getLocalUserData() {
 
 $(document).ready(() => {
 
+    // Very important configuration !!
+    let my_headers = new Headers()
+    my_headers.set("Content-Type", "application/json")
+
     my_form = document.querySelector('#register_form')
     my_submit = document.querySelector('#btn_submit')
+
+    var my_modal = document.querySelector('#modal_login')
 
     my_submit.addEventListener('click', (e) => {
 
@@ -120,12 +154,36 @@ $(document).ready(() => {
         if (e.target.id == 'btn_submit') {
 
             // New CODE goes here !!
-            generateNewUser()
-        }
+            // user_data = getLocalUserData()
+            // new_user = createNewUser(user_data)
+            // saveUserProfile(new_user)
+
+            generateNewUser(my_headers)
+        }   
+
+        my_modal.show()
 
     })
 
 });
+
+
+
+/*
+headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest', //Necessary to work with request.is_ajax()
+            },
+
+
+headers.append('Content-Type', 'application/json');
+headers.append('Accept', 'application/json');
+headers.append('Access-Control-Allow-Origin', 'http://localhost:5500');
+
+*/
+
+
 
 /* Algorithm
     Pre-requirements:
