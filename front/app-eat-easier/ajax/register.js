@@ -1,139 +1,71 @@
 const API_URL = "http://localhost:8000/api/";
 
-let user_profile_id = 1
-let my_json_list = []
-let my_user = {}
+let user_profile_id = 1;
+let my_json_list = [];
+let my_user = {};
 
-// This method it´s very unstable
-async function postNewUser() {
 
-    console.log("posting with Ajax postNewUser: ")
+async function generateNewUser(userData) {
+  console.log("posting with ajax: ");
 
-    let my_user_data = getLocalUserData()
-    console.log("my_user_data: ", my_user_data)
+  try {
+    const response = await fetch(`${API_URL}users/signup/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        //"Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(userData),
+    });
 
-    // Very important configuration !!
-    let my_headers = new Headers()
-    my_headers.set("Content-Type", "application/json")
-    console.log("My Headers Config:", my_headers)
-
-    try {
-
-        const my_response = await fetch(`${API_URL}users/signup/`, {
-            headers: {
-                'Content-Type': 'application/json'
-                    // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            method: 'POST',
-            body: JSON.stringify(my_user_data)
-        })
-        console.log("Response Status: ", my_response.status)
-
-        const my_data = await my_response.json()
-        console.log("Response Data: ", my_data)
-
-        return my_data
-
-    } catch (error) {
-        console.log("Error from Try/Catch de Fetch: ", error)
-    }
-
+    const data = response.json();
+    console.log("My response from AJAX: ", data);
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-// This method is unstable
-// but a least in debug mode always you have a response
-
-//const generateNewUser = () => {
-
-function generateNewUser() {
-
-    console.log("posting with ajax: ")
-
-    let my_user_data = getLocalUserData()
-    console.log("my_user_data: ", my_user_data)
-
-    // Very important configuration !!
-    let headers = new Headers()
-    headers.set("Content-Type", "application/json")
-
-    fetch(`${API_URL}users/signup/`, {
-            headers: headers,
-            method: "POST",
-            body: JSON.stringify(my_user_data),
-        })
-        .then(response => {
-            console.log('response:', response)
-            return response.json()
-        })
-        .catch(err => console.error('response_error:', err.message))
-        .then(data => {
-            console.log('data:', data)
-            saveUserProfile(data)
-                //return data
-        })
-        .catch(err => console.error('json_data:', err.message))
-
-}
-
 
 function saveUserProfile(myJSON) {
+  localStorage.clear();
 
-    localStorage.clear()
-
-    for ([key, value] of Object.entries(myJSON)) {
-        localStorage.setItem(key, value)
-        console.log("mi item key is: " + key)
-        console.log("my value is: " + value)
-    }
-
+  for ([key, value] of Object.entries(myJSON)) {
+    localStorage.setItem(key, value);
+    console.log("mi item key is: " + key);
+    console.log("my value is: " + value);
+  }
 }
 
+const myForm = document.getElementById("register_form");
 
 function getLocalUserData() {
+  let user_data = {
+    username: myForm.querySelector("#my_username").value,
+    password: myForm.querySelector("#my_pw1").value,
+    email: myForm.querySelector("#my_email").value,
+    first_name: myForm.querySelector("#my_first_name").value,
+    last_name: myForm.querySelector("#my_last_name").value,
+  };
 
-    let user_data = {
-        "username": my_form.querySelector('#my_username').value,
-        "password": my_form.querySelector('#my_pw1').value,
-        "email": my_form.querySelector('#my_email').value,
-        "first_name": my_form.querySelector('#my_first_name').value,
-        "last_name": my_form.querySelector('#my_last_name').value
-    }
-
-    return user_data
-
+  return user_data;
 }
 
+myForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log("Event prevented");
 
-$(document).ready(() => {
+  const data = getLocalUserData();
 
-    my_form = document.querySelector('#register_form')
-    my_submit = document.querySelector('#btn_submit')
-
-    my_submit.addEventListener('click', (e) => {
-
-        console.log("You are about to send the form:" + e.target.id)
-
-        e.preventDefault()
-        e.stopPropagation()
-        console.log('Event prevented')
-
-        if (e.target.id == 'btn_submit') {
-
-            // New CODE goes here !!
-            generateNewUser()
-        }
-
-    })
-
+  await generateNewUser(data);
 });
 
-/* Algorithm
 
+
+/* Algorithm
     Pre-requirements:
     - Json variable with User Profile Structure
     - Back-End validation for POST Transactions
     - Password encription from Django how it works
-
     First before to send anything
     validate form fields
     prevent default behaviors from Form and modal
@@ -151,8 +83,7 @@ $(document).ready(() => {
         redirect to people amount
     it its a user
         redirect them to favorites or home
-
     por default javascript son sincronos
     async / await -> solamente cuando se requiera que se ejecute código sin esperar la respuesta previa
-
 */
+
