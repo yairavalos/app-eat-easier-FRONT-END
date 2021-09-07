@@ -7,6 +7,8 @@ let horno = document.querySelector('#horno')
 let procesador = document.querySelector('#procesador')
 let estufa = document.querySelector('#estufa')
 
+let apps_dict = {}
+
 olla_de_presion.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
