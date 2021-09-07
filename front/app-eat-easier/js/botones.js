@@ -1,5 +1,6 @@
 console.log("hola")
 
+const API_URL = "http://localhost:8000/api/"
 
 // ALGORITHM FOR ADULT COLOR TOGGLE SELECTOR 
 
@@ -12,31 +13,54 @@ let adult3 = document.querySelector('#adult3')
 let adult4 = document.querySelector('#adult4')
 let adult5 = document.querySelector('#adult5')
 
+
+const postFetch = async(datos) => {
+    const data = await fetch(`${API_URL}users/profiles/qty/`, {
+        method: "Post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datos)
+    })
+    return await data
+}
+
+
+let people_qty = {
+    user_profile: 23,
+    adults_qty: 0,
+    child_qty: 0
+}
+console.log(people_qty)
+
 // ADULT DEFINITION
 
 let adult_dict = {
-    "adult1":1,
-    "adult2":2,
-    "adult3":3,
-    "adult4":4,
-    "adult5":5
+    "adult1": 1,
+    "adult2": 2,
+    "adult3": 3,
+    "adult4": 4,
+    "adult5": 5
 }
 
 let current_adult = ""
-let adult_count = 0
+let adultQty = 0
 
 // CHILDREN DEFINITION
 
 let child_dict = {
-    "child1":1,
-    "child2":2,
-    "child3":3,
-    "child4":4,
-    "child5":5
+    "child1": 1,
+    "child2": 2,
+    "child3": 3,
+    "child4": 4,
+    "child5": 5
 }
 
 let current_child = ""
-let child_count = 0
+let chilQty = 0
+
+
+
 
 // ADULT ICONS EVENT HANDLERS
 
@@ -52,7 +76,7 @@ adult1.addEventListener('click', (e) => {
     }
 
     current_adult = "adult1"
-    adult_count = adult_dict["adult1"]
+    people_qty.adults_qty = adult_dict["adult1"]
     fillAdultRow("adult1")
 
 })
@@ -69,7 +93,7 @@ adult2.addEventListener('click', (e) => {
     }
 
     current_adult = "adult2"
-    adult_count = adult_dict["adult2"]
+    people_qty.adults_qty = adult_dict["adult2"]
     fillAdultRow("adult2")
 
 })
@@ -87,7 +111,7 @@ adult3.addEventListener('click', (e) => {
     }
 
     current_adult = "adult3"
-    adult_count = adult_dict["adult3"]
+    people_qty.adults_qty = adult_dict["adult3"]
     fillAdultRow("adult3")
 
 })
@@ -105,7 +129,7 @@ adult4.addEventListener('click', (e) => {
     }
 
     current_adult = "adult4"
-    adult_count = adult_dict["adult4"]
+    people_qty.adults_qty = adult_dict["adult4"]
     fillAdultRow("adult4")
 })
 
@@ -122,7 +146,7 @@ adult5.addEventListener('click', (e) => {
     }
 
     current_adult = "adult5"
-    adult_count = adult_dict["adult5"]
+    people_qty.adults_qty = adult_dict["adult5"]
     fillAdultRow("adult5")
 
 })
@@ -153,7 +177,7 @@ child1.addEventListener('click', (e) => {
     }
 
     current_child = "child1"
-    child_count = child_dict["child1"]
+    people_qty.child_qty = child_dict["child1"]
     fillChildRow("child1")
 
 })
@@ -169,7 +193,7 @@ child2.addEventListener('click', (e) => {
     }
 
     current_child = "child2"
-    child_count = child_dict["child2"]
+    people_qty.child_qty = child_dict["child2"]
     fillChildRow("child2")
 
 })
@@ -185,7 +209,7 @@ child3.addEventListener('click', (e) => {
     }
 
     current_child = "child3"
-    child_count = child_dict["child3"]
+    people_qty.child_qty = child_dict["child3"]
     fillChildRow("child3")
 
 })
@@ -201,7 +225,7 @@ child4.addEventListener('click', (e) => {
     }
 
     current_child = "child4"
-    child_count = child_dict["child4"]
+    people_qty.child_qty = child_dict["child4"]
     fillChildRow("child4")
 
 })
@@ -217,9 +241,22 @@ child5.addEventListener('click', (e) => {
     }
 
     current_child = "child5"
-    child_count = child_dict["child5"]
+    people_qty.child_qty = child_dict["child5"]
     fillChildRow("child5")
 
+})
+
+
+let people_next = document.querySelector('#people_next')
+
+people_next.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('click')
+    let response = postFetch(people_qty)
+    if (response.status === 200 || response.status === 201) {
+        location.href = "pereferred_food.html"
+
+    }
 })
 
 

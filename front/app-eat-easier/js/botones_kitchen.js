@@ -7,7 +7,20 @@ let horno = document.querySelector('#horno')
 let procesador = document.querySelector('#procesador')
 let estufa = document.querySelector('#estufa')
 
-let apps_dict = {}
+
+
+let kitchenDict = {
+    "olla_de_presion": olla,
+    "licuadora": licua,
+    "microondas": micro,
+    "horno": horno,
+    "procesador": proces,
+    "estufa": estuf
+}
+
+let currentKitchen = ""
+let adultQty = 0
+
 
 olla_de_presion.addEventListener('click', (e) => {
     console.log(e.target.classList)
@@ -86,4 +99,32 @@ estufa.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
     // e.target.classList
+})
+
+function selectedApliance() {
+    var results = [];
+    for (var i = classList('check'); i < arguments.length; i++) {
+        results.push(arguments[i]);
+    }
+    return results;
+}
+var userSelect = selectedApliance('estufa', 'horno', 'microondas');
+console.log(userSelect);
+
+checked = ("estufa", "licuadora", "microondas", "horno")
+if (classlist.contains('check')) {
+
+}
+
+
+let kitchen_next = document.querySelector('#kitchen_next')
+
+people_next.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('click')
+    let response = postFetch(people_qty)
+    if (response.status === 200 || response.status === 201) {
+        window.location.href = pereferred_food.html
+
+    }
 })
