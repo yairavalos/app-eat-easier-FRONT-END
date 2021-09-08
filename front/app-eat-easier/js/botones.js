@@ -312,15 +312,22 @@ function fillChildRow(fill_num) {
     Algoritmo para pasar de Front-End 
     a Back-End por Ajax
 
+    // Obtner el feedback por parte del usuario
+
     1. Ir a la fila de adultos y encontrar la posición
     seleccionada
     2. Lo mismo con la de niños
-    
+
+    // Generar los respectivos end-points en BE
+
     3. Generar la estructura JSON como lo pide el Back-End
     4. Llenar dicha estructura de acuerdo a las opciones
     seleccionadas
     5. Ir a Local Storage y obtener los datos del Perfil
     del usuario para identificarse ante el BE
+
+    // Generar las comunicaciones necesarias
+
     6. Generar un Ajax Post para que se guarde en BE
     7. Tener una respuesta de confirmación del BE
     8. Guardar dicha selección en el Local Storage para
