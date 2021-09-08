@@ -27,7 +27,7 @@ const postFetch = async(url, datos) => {
 
 
 let people_qty = {
-    user_profile: 26,
+    user_profile: 27,
     adults_qty: 0,
     child_qty: 0
 }

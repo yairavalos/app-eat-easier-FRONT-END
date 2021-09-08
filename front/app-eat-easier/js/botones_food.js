@@ -13,28 +13,18 @@ let frutas = document.querySelector('#frutas')
 let verduras = document.querySelector('#verduras')
 let gluten = document.querySelector('#gluten')
 
-
-let res_pref = {
-    user_profile: 5,
-    food_type: "res"
-}
-console.log(res_pref)
-
-
-
-
-
+let foodDict = []
 
 //fetch
-const postFetch = async(datos) => {
-    const data = await fetch(`${API_URL}users/profiles/food/`, {
+const postFetch = async(url, datos) => {
+    const data = await fetch(`${API_URL + url}`, {
         method: "Post",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(datos)
     })
-    return await data
+    return await data.json()
 }
 
 
@@ -169,9 +159,27 @@ let food_next = document.querySelector('#food_next')
 food_next.addEventListener('click', (e) => {
     e.preventDefault()
     console.log('click')
-    let response = postFetch(foodPreference)
-    if (response.status === 200 || response.status === 201) {
-        location.href = "pereferred_food.html"
+
+    foodDict = []
+    let datos = []
+    let foodCheck = document.querySelectorAll(".btn-food i.check")
+
+    for (let i = 0; i < foodCheck.length; i++) {
+        console.log(i.parentNode)
+        let result = foodCheck[i].closest(".btn-food").id
+        datos.push({
+            user_profile: 9,
+            food_type: result
+        })
+    }
+
+    try {
+        let response = postFetch("users/profiles/food/", datos)
+        setTimeout(function() { window.location.href = "kitchen.html" }, 3000);
+
+    } catch (error) {
+        console.log(error)
 
     }
+
 })
