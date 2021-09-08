@@ -14,20 +14,20 @@ let adult4 = document.querySelector('#adult4')
 let adult5 = document.querySelector('#adult5')
 
 
-const postFetch = async(datos) => {
-    const data = await fetch(`${API_URL}users/profiles/qty/`, {
+const postFetch = async(url, datos) => {
+    const data = await fetch(`${API_URL + url}`, {
         method: "Post",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(datos)
     })
-    return await data
+    return await data.json()
 }
 
 
 let people_qty = {
-    user_profile: 23,
+    user_profile: 26,
     adults_qty: 0,
     child_qty: 0
 }
@@ -251,12 +251,16 @@ let people_next = document.querySelector('#people_next')
 
 people_next.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log('click')
-    let response = postFetch(people_qty)
-    if (response.status === 200 || response.status === 201) {
-        location.href = "pereferred_food.html"
+
+    try {
+        let response = postFetch("users/profiles/qty/", people_qty)
+        setTimeout(function() { window.location.href = "preferred_food.html" }, 3000);
+
+    } catch (error) {
+        console.log(error)
 
     }
+
 })
 
 

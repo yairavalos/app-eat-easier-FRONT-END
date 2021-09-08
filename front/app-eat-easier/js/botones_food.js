@@ -14,10 +14,20 @@ let verduras = document.querySelector('#verduras')
 let gluten = document.querySelector('#gluten')
 
 
+let res_pref = {
+    user_profile: 5,
+    food_type: "res"
+}
+console.log(res_pref)
+
+
+
+
+
 
 //fetch
 const postFetch = async(datos) => {
-    const data = await fetch(`${API_URL}users/profiles/qty/`, {
+    const data = await fetch(`${API_URL}users/profiles/food/`, {
         method: "Post",
         headers: {
             "Content-Type": "application/json",
@@ -32,6 +42,7 @@ const postFetch = async(datos) => {
 
 
 res.addEventListener('click', (e) => {
+
     console.log(e.target.classList)
 
     if (e.target.classList.contains('check')) {
@@ -40,9 +51,11 @@ res.addEventListener('click', (e) => {
 
     } else {
         e.target.classList.add('check')
-    }
-    // e.target.classList
+    } // e.target.classList
 })
+
+
+
 
 
 pollo.addEventListener('click', (e) => {
@@ -147,4 +160,18 @@ gluten.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
     // e.target.classList
+})
+
+
+
+let food_next = document.querySelector('#food_next')
+
+food_next.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('click')
+    let response = postFetch(foodPreference)
+    if (response.status === 200 || response.status === 201) {
+        location.href = "pereferred_food.html"
+
+    }
 })
