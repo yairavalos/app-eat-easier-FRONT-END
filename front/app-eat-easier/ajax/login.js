@@ -2,21 +2,8 @@ const API_URL = "http://localhost:8000/api/"
 
 let myForm = document.querySelector('#formLogin')
 
-// AJAX Comms to End-Point
-const postFetch = async(postData) => {
-    const data = await fetch(`${API_URL}users/login/`, {
-        method: "Post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postData)
-    })
-    const dataResult = await data.json()
-    console.log(dataResult)
-    saveUserProfile(dataResult)
-
-    return dataResult
-}
+var myModal = new bootstrap.Modal(document.getElementById('myModalLogin'), {keyboard: false})
+var myModal2 = new bootstrap.Modal(document.getElementById('myModalError'), {keyboard: false})
 
 
 // Local Storage to reduce number of server´s requests
@@ -29,6 +16,15 @@ function saveUserProfile(myJSON) {
         console.log("my value is: " + value);
     }
 }
+
+function selectModal(){
+
+    if () {
+
+    }
+
+}
+
 
 // Form Data Retrieve
 function getFormData(){
@@ -46,6 +42,26 @@ function getFormData(){
 }
 
 
+// AJAX Comms to End-Point
+const postFetch = async(postData) => {
+
+    const data = await fetch(`${API_URL}users/login/`, {
+        method: "Post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData)
+    })
+
+    const dataResult = await data.json()
+
+    console.log(dataResult)
+    saveUserProfile(dataResult)
+
+    return dataResult
+}
+
+
 // Event Handler
 myForm.addEventListener('submit', (e) => {
 
@@ -56,7 +72,13 @@ myForm.addEventListener('submit', (e) => {
     console.log("Form Data Result: ", userData)
 
     let myResponse = postFetch(userData)
-    console.log("Ajax Response Result: ", myResponse)
+
+    myResponse.then(console.log("Ajax Response Result: ", myResponse.data))
+    myResponse.then(myModal.show())
+    myResponse.catch((error)=>console.log(error)) 
+
+    //myResponse.then(console.log("SUCESS"),console.log("Something Wrong"))
+    //window.location.href = "people_amount.html" // If I enable this promise its interrupted and localStorage as well
 })
 
 /* 

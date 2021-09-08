@@ -5,6 +5,25 @@ let my_json_list = [];
 let my_user = {};
 
 
+const generateNewUser = async(postData) => {
+
+    const data = await fetch(`${API_URL}users/signup/`, {
+        method: "Post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData)
+    })
+
+    const dataResult = await data.json()
+
+    console.log(dataResult)
+    saveUserProfile(dataResult)
+
+    return dataResult
+}
+
+/*
 async function generateNewUser(userData) {
     console.log("posting with ajax: ");
 
@@ -26,6 +45,8 @@ async function generateNewUser(userData) {
         console.log(error);
     }
 }
+*/
+
 
 function saveUserProfile(myJSON) {
     localStorage.clear();
