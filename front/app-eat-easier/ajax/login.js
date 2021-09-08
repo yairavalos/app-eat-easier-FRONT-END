@@ -2,9 +2,9 @@ const API_URL = "http://localhost:8000/api/"
 
 let myForm = document.querySelector('#formLogin')
 
-var myModal = new bootstrap.Modal(document.getElementById('myModalLogin'), {keyboard: false})
-var myModal2 = new bootstrap.Modal(document.getElementById('myModalError'), {keyboard: false})
-
+var myModal1 = new bootstrap.Modal(document.getElementById('myModalLogin'), {keyboard: false})
+myModal1._element.querySelector("#modal_continue").style.display = "none"
+myModal1._element.querySelector("#modal_back").style.display = "none"
 
 // Local Storage to reduce number of server´s requests
 function saveUserProfile(myJSON) {
@@ -17,14 +17,17 @@ function saveUserProfile(myJSON) {
     }
 }
 
-function selectModal(){
+function modalHandler(){
 
-    if () {
-
+    if (localStorage.length > 1) {
+        myModal1._element.querySelector('#modal_message').innerText = "Ajax Terminado !!"
+        myModal1._element.querySelector("#modal_continue").style.display = "block"
+    } else {
+        myModal1._element.querySelector('#modal_message').innerText = "Por favor revisa tus datos de nuevo"
+        myModal1._element.querySelector("#modal_back").style.display = "block"
     }
-
+    
 }
-
 
 // Form Data Retrieve
 function getFormData(){
@@ -72,9 +75,10 @@ myForm.addEventListener('submit', (e) => {
     console.log("Form Data Result: ", userData)
 
     let myResponse = postFetch(userData)
-
+    
     myResponse.then(console.log("Ajax Response Result: ", myResponse.data))
-    myResponse.then(myModal.show())
+    myResponse.then(myModal1.show())
+    myResponse.then(setTimeout(() => { modalHandler() }, 3000)) 
     myResponse.catch((error)=>console.log(error)) 
 
     //myResponse.then(console.log("SUCESS"),console.log("Something Wrong"))
