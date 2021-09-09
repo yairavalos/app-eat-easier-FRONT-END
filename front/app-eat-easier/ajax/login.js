@@ -20,7 +20,7 @@ function saveUserProfile(myJSON) {
 function modalHandler(){
 
     if (localStorage.length > 1) {
-        myModal1._element.querySelector('#modal_message').innerText = "Ajax Terminado !!"
+        myModal1._element.querySelector('#modal_message').innerText = "BIENVENIDO !!! Por favor presiona siguiente"
         myModal1._element.querySelector("#modal_continue").style.display = "block"
     } else {
         myModal1._element.querySelector('#modal_message').innerText = "Por favor revisa tus datos de nuevo"
@@ -78,7 +78,7 @@ myForm.addEventListener('submit', (e) => {
     
     myResponse.then(console.log("Ajax Response Result: ", myResponse.data))
     myResponse.then(myModal1.show())
-    myResponse.then(setTimeout(() => { modalHandler() }, 3000)) 
+    myResponse.then(setTimeout(() => { modalHandler() }, 2000)) 
     myResponse.catch((error)=>console.log(error)) 
 
     //myResponse.then(console.log("SUCESS"),console.log("Something Wrong"))

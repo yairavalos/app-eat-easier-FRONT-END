@@ -2,6 +2,7 @@ console.log("hola")
 
 const API_URL = "http://localhost:8000/api/"
 
+
 // ALGORITHM FOR ADULT COLOR TOGGLE SELECTOR 
 
 let adult_row = document.querySelector("#container_adult")
@@ -33,35 +34,6 @@ let people_qty = {
 }
 console.log(people_qty)
 
-// ADULT DEFINITION
-
-let adult_dict = {
-    "adult1": 1,
-    "adult2": 2,
-    "adult3": 3,
-    "adult4": 4,
-    "adult5": 5
-}
-
-let current_adult = ""
-let adultQty = 0
-
-// CHILDREN DEFINITION
-
-let child_dict = {
-    "child1": 1,
-    "child2": 2,
-    "child3": 3,
-    "child4": 4,
-    "child5": 5
-}
-
-let current_child = ""
-let chilQty = 0
-
-
-
-
 // ADULT ICONS EVENT HANDLERS
 
 adult1.addEventListener('click', (e) => {
@@ -75,9 +47,8 @@ adult1.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_adult = "adult1"
-    people_qty.adults_qty = adult_dict["adult1"]
-    fillAdultRow("adult1")
+    people_qty.adults_qty = 1
+    fillAdultRow(1)
 
 })
 
@@ -92,9 +63,9 @@ adult2.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_adult = "adult2"
-    people_qty.adults_qty = adult_dict["adult2"]
-    fillAdultRow("adult2")
+   
+    people_qty.adults_qty = 2
+    fillAdultRow(2)
 
 })
 
@@ -110,9 +81,8 @@ adult3.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_adult = "adult3"
-    people_qty.adults_qty = adult_dict["adult3"]
-    fillAdultRow("adult3")
+    people_qty.adults_qty = 3
+    fillAdultRow(3)
 
 })
 
@@ -128,9 +98,8 @@ adult4.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_adult = "adult4"
-    people_qty.adults_qty = adult_dict["adult4"]
-    fillAdultRow("adult4")
+    people_qty.adults_qty = 4
+    fillAdultRow(4)
 })
 
 
@@ -145,9 +114,8 @@ adult5.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_adult = "adult5"
-    people_qty.adults_qty = adult_dict["adult5"]
-    fillAdultRow("adult5")
+    people_qty.adults_qty = 5
+    fillAdultRow(5)
 
 })
 
@@ -168,6 +136,7 @@ let child5 = document.querySelector('#child5')
 
 child1.addEventListener('click', (e) => {
     console.log(e.target.classList)
+
     if (e.target.classList.contains('check')) {
 
         e.target.classList.remove('check')
@@ -176,14 +145,14 @@ child1.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_child = "child1"
-    people_qty.child_qty = child_dict["child1"]
-    fillChildRow("child1")
+    people_qty.child_qty = 1
+    fillChildRow(1)
 
 })
 
 child2.addEventListener('click', (e) => {
     console.log(e.target.classList)
+
     if (e.target.classList.contains('check')) {
 
         e.target.classList.remove('check')
@@ -192,14 +161,14 @@ child2.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_child = "child2"
-    people_qty.child_qty = child_dict["child2"]
-    fillChildRow("child2")
+    people_qty.child_qty = 2
+    fillChildRow(2)
 
 })
 
 child3.addEventListener('click', (e) => {
     console.log(e.target.classList)
+
     if (e.target.classList.contains('check')) {
 
         e.target.classList.remove('check')
@@ -208,14 +177,14 @@ child3.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_child = "child3"
-    people_qty.child_qty = child_dict["child3"]
-    fillChildRow("child3")
+    people_qty.child_qty = 3
+    fillChildRow(3)
 
 })
 
 child4.addEventListener('click', (e) => {
     console.log(e.target.classList)
+
     if (e.target.classList.contains('check')) {
 
         e.target.classList.remove('check')
@@ -224,14 +193,14 @@ child4.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_child = "child4"
-    people_qty.child_qty = child_dict["child4"]
-    fillChildRow("child4")
+    people_qty.child_qty = 4
+    fillChildRow(4)
 
 })
 
 child5.addEventListener('click', (e) => {
     console.log(e.target.classList)
+
     if (e.target.classList.contains('check')) {
 
         e.target.classList.remove('check')
@@ -240,9 +209,8 @@ child5.addEventListener('click', (e) => {
         e.target.classList.add('check')
     }
 
-    current_child = "child5"
-    people_qty.child_qty = child_dict["child5"]
-    fillChildRow("child5")
+    people_qty.child_qty = 5
+    fillChildRow(5)
 
 })
 
@@ -264,13 +232,11 @@ people_next.addEventListener('click', (e) => {
 })
 
 
-// STEP 1.
-
 function fillAdultRow(fill_num) {
 
-    for (i = 0; i <= adult_row.children.length - 1; i++) {
+    for (i = 0; i < adult_row.children.length; i++) {
 
-        if (i <= adult_dict[fill_num] - 1) {
+        if (i < fill_num) {
 
             adult_row.children[i].querySelector("i").classList.add("check")
 
@@ -285,14 +251,11 @@ function fillAdultRow(fill_num) {
 }
 
 
-// STEP 2
-//child_row = document.querySelector("#container_child")
-
 function fillChildRow(fill_num) {
 
-    for (i = 0; i <= child_row.children.length - 1; i++) {
+    for (i = 0; i < child_row.children.length; i++) {
 
-        if (i <= child_dict[fill_num] - 1) {
+        if (i < fill_num) {
 
             child_row.children[i].querySelector("i").classList.add("check")
 
@@ -307,7 +270,70 @@ function fillChildRow(fill_num) {
 }
 
 
+// USER ID INITIAL CONFIGURATION
+
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+    people_qty.user_profile = localStorage.id
+}
+
+// RETRIEVE USER PROFILE
+const retrieveProfile = async() => {
+
+    const data = await fetch(`${API_URL}users/profiles/qty/?search=${people_qty.user_profile}`, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+
+    const dataResult = await data.json()
+    updateCounters(dataResult)
+    console.log("AJAX Fetch Result:", dataResult)
+
+    return dataResult
+}
+
+function updateCounters(profileData){
+
+    people_qty.user_profile = profileData[0].user_profile
+    people_qty.adults_qty = profileData[0].adults_qty
+    people_qty.child_qty = profileData[0].child_qty
+
+    console.log("People Qty Updated: ", people_qty)
+}
+
+
+window.addEventListener('load', (e)=>{
+
+    let myResponse = retrieveProfile()
+
+    myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
+    myResponse.then(()=>{fillAdultRow(people_qty.adults_qty)})
+    myResponse.then(()=>{fillChildRow(people_qty.child_qty)})
+    myResponse.catch((error)=>{console.log("My Response Catch Error: ", error)})
+
+})
+
+
 /*
+    Algoritmo para pasar de Back-End a Front-End por Ajax
+
+    1. Sacar los datos de perfil necesarios de LocalStorage
+    2. Hacer el retrieve através de FETCH
+    3. En base a los datos obtenidos, hay que pintar
+    los respectivos iconos
+    4. Dada la estructura que ya existe, las variables relacionadas
+    de conteo se deben de actualizar en automático con el punto 3
+    5. Configurar el Botón de Enviar
+        a. Si es un usuario nuevo la lista deberia de regresar vacia
+        por lo tanto hay que configurar el botón de siguiente como POST
+        para que se genere en la base de datos
+        b. Si es un usuario existente solamente seria visualización y
+        mostrar un modal para proteger modificaciones por lo pronto
+        c. y más adelante seria agregar un botón de modificación
+
 
     Algoritmo para pasar de Front-End 
     a Back-End por Ajax
