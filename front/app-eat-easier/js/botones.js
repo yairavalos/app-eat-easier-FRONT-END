@@ -256,11 +256,23 @@ if (localStorage.length > 1) {
 
 
 let blockConfirm = document.querySelector('#block_next')
-let people_next = document.querySelector('#people_next')
+let btnNext = document.querySelector('#people_next')
 
 let blockSave = document.querySelector('#block_save')
 let btnSave = blockSave.querySelector('.btn-green')
 btnSave.style.display = "none"
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+function updateCounters(profileData){
+
+    people_qty.user_profile = profileData[0].user_profile
+    people_qty.adults_qty = profileData[0].adults_qty
+    people_qty.child_qty = profileData[0].child_qty
+
+    console.log("People Qty Updated: ", people_qty)
+}
 
 
 // -------------------------------------------------------------------------------------------------------------------------------
@@ -295,6 +307,10 @@ const postFetch = async(url, datos) => {
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
+btnNext.addEventListener('click', (e) => {
+    window.location.href = "preferred_food.html"  
+})
+
 
 btnSave.addEventListener('click', (e) => {
     e.preventDefault()
@@ -325,17 +341,6 @@ function handleEmptyProfile(errorMsg){
     btnSave.style.display = "block"
 
 }
-
-
-function updateCounters(profileData){
-
-    people_qty.user_profile = profileData[0].user_profile
-    people_qty.adults_qty = profileData[0].adults_qty
-    people_qty.child_qty = profileData[0].child_qty
-
-    console.log("People Qty Updated: ", people_qty)
-}
-
 
 window.addEventListener('load', (e)=>{
 
