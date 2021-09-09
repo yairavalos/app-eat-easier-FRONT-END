@@ -2,6 +2,7 @@ console.log("hola")
 
 const API_URL = "http://localhost:8000/api/"
 
+let lockFunctions = false
 
 // ALGORITHM FOR ADULT COLOR TOGGLE SELECTOR 
 
@@ -15,112 +16,103 @@ let adult4 = document.querySelector('#adult4')
 let adult5 = document.querySelector('#adult5')
 
 
-const postFetch = async(url, datos) => {
-    const data = await fetch(`${API_URL + url}`, {
-        method: "Post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(datos)
-    })
-    return await data.json()
-}
+// --------------------------------------------------------------------------------------------------------------------------
 
 
 let people_qty = {
-    user_profile: 27,
+    user_profile: 0,
     adults_qty: 0,
     child_qty: 0
 }
-console.log(people_qty)
 
 // ADULT ICONS EVENT HANDLERS
 
 adult1.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillAdultRow(1)
     }
-
-    people_qty.adults_qty = 1
-    fillAdultRow(1)
 
 })
 
 adult2.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillAdultRow(2)
     }
-
-   
-    people_qty.adults_qty = 2
-    fillAdultRow(2)
-
 })
 
 
 adult3.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillAdultRow(3)
     }
-
-    people_qty.adults_qty = 3
-    fillAdultRow(3)
-
 })
 
 
 adult4.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
-    }
+        } else {
+            e.target.classList.add('check')
+        }
 
-    people_qty.adults_qty = 4
-    fillAdultRow(4)
+        fillAdultRow(4)
+    }   
 })
 
 
 adult5.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillAdultRow(5)
     }
-
-    people_qty.adults_qty = 5
-    fillAdultRow(5)
-
 })
 
 
-
+// ----------------------------------------------------------------------------------------------------------
 
 // ALGORITHM FOR CHILD COLOR TOGGLE SELECTOR 
 
@@ -137,138 +129,121 @@ let child5 = document.querySelector('#child5')
 child1.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillChildRow(1)
     }
-
-    people_qty.child_qty = 1
-    fillChildRow(1)
-
 })
 
 child2.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillChildRow(2)
     }
-
-    people_qty.child_qty = 2
-    fillChildRow(2)
-
 })
 
 child3.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillChildRow(3)
     }
-
-    people_qty.child_qty = 3
-    fillChildRow(3)
-
 })
 
 child4.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillChildRow(4)
     }
-
-    people_qty.child_qty = 4
-    fillChildRow(4)
-
 })
 
 child5.addEventListener('click', (e) => {
     console.log(e.target.classList)
 
-    if (e.target.classList.contains('check')) {
+    if (lockFunctions === false){
+        if (e.target.classList.contains('check')) {
 
-        e.target.classList.remove('check')
+            e.target.classList.remove('check')
 
-    } else {
-        e.target.classList.add('check')
+        } else {
+            e.target.classList.add('check')
+        }
+
+        fillChildRow(5)
     }
-
-    people_qty.child_qty = 5
-    fillChildRow(5)
-
 })
 
 
-let people_next = document.querySelector('#people_next')
-
-people_next.addEventListener('click', (e) => {
-    e.preventDefault()
-
-    try {
-        let response = postFetch("users/profiles/qty/", people_qty)
-        setTimeout(function() { window.location.href = "preferred_food.html" }, 3000);
-
-    } catch (error) {
-        console.log(error)
-
-    }
-
-})
+// ---------------------------------------------------------------------------------------------------------------
 
 
 function fillAdultRow(fill_num) {
 
-    for (i = 0; i < adult_row.children.length; i++) {
+    if (lockFunctions === false) {
 
-        if (i < fill_num) {
+        people_qty.adults_qty = fill_num
 
-            adult_row.children[i].querySelector("i").classList.add("check")
-
-        } else {
-
-            adult_row.children[i].querySelector("i").classList.remove("check")
-
+        for (i = 0; i < adult_row.children.length; i++) {
+            if (i < fill_num) {
+                adult_row.children[i].querySelector("i").classList.add("check")
+            } else {
+                adult_row.children[i].querySelector("i").classList.remove("check")
+            }
         }
-
-    }
-
+    } 
 }
 
 
 function fillChildRow(fill_num) {
 
-    for (i = 0; i < child_row.children.length; i++) {
+    if (lockFunctions === false) {
 
-        if (i < fill_num) {
+        people_qty.child_qty = fill_num
 
-            child_row.children[i].querySelector("i").classList.add("check")
-
-        } else {
-
-            child_row.children[i].querySelector("i").classList.remove("check")
-
+        for (i = 0; i < child_row.children.length; i++) {
+            if (i < fill_num) {
+                child_row.children[i].querySelector("i").classList.add("check")
+            } else {
+                child_row.children[i].querySelector("i").classList.remove("check")
+            }
         }
-
     }
-
 }
 
+// --------------------------------------------------------------------------------------------------------------------
 
 // USER ID INITIAL CONFIGURATION
 
@@ -278,6 +253,17 @@ if (localStorage.length > 1) {
     welcome.innerText = "Hola " + localStorage.user
     people_qty.user_profile = localStorage.id
 }
+
+
+let blockConfirm = document.querySelector('#block_next')
+let people_next = document.querySelector('#people_next')
+
+let blockSave = document.querySelector('#block_save')
+let btnSave = blockSave.querySelector('.btn-green')
+btnSave.style.display = "none"
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // RETRIEVE USER PROFILE
 const retrieveProfile = async() => {
@@ -294,6 +280,52 @@ const retrieveProfile = async() => {
 
     return dataResult
 }
+
+// POST USER PROFILE
+const postFetch = async(url, datos) => {
+    const data = await fetch(`${API_URL + url}`, {
+        method: "Post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datos)
+    })
+    return await data.json()
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+
+btnSave.addEventListener('click', (e) => {
+    e.preventDefault()
+    lockFunctions = true
+
+    try {
+        let response = postFetch("users/profiles/qty/", people_qty)
+        setTimeout(function() { window.location.href = "preferred_food.html" }, 3000);
+
+    } catch (error) {
+        console.log(error)
+
+    }
+
+})
+
+// ---------------------------------------------------------------------------------------------------------------
+
+
+function handleEmptyProfile(errorMsg){
+
+    lockFunctions = false
+    console.log("My Response Catch Error: ", errorMsg)
+
+    blockConfirm.querySelector('.btn-nar').style.display = "none"
+    blockConfirm.style.display = "none"
+
+    btnSave.style.display = "block"
+
+}
+
 
 function updateCounters(profileData){
 
@@ -312,7 +344,8 @@ window.addEventListener('load', (e)=>{
     myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
     myResponse.then(()=>{fillAdultRow(people_qty.adults_qty)})
     myResponse.then(()=>{fillChildRow(people_qty.child_qty)})
-    myResponse.catch((error)=>{console.log("My Response Catch Error: ", error)})
+    myResponse.then(()=>{lockFunctions = true})
+    myResponse.catch((error)=>{handleEmptyProfile(error)})
 
 })
 
