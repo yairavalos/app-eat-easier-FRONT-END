@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8000/api/";
 let user_profile_id = 0
 let my_json_list = []
 let busqueda = " "
-
+let busquedaMv = " "
 const getSearch = async(search, searchNeeded) => {
     let url = ""
     try {
@@ -157,6 +157,24 @@ search.addEventListener('click', (e) => {
 
 })
 
+
+let searchMov = document.querySelector("#search-mov")
+searchMov.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log("click")
+    let inputSearchMov = document.querySelector("#input-search-mov").value
+    busquedaMv = inputSearchMov
+    getSearch(inputSearchMov)
+
+    my_container = document.querySelector(".json_container")
+        //my_container.innerHTML = ""
+
+    my_template_item = my_container.children[0]
+
+    user_profile_id =
+        transfer_retrieve(inputSearchMov);
+
+})
 $(document).ready(() => {
 
     //my_container = document.querySelector(".json_container")
