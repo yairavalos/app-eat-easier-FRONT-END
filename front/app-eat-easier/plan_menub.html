@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-datepicker3.min.css" />
     <script src="./js/glide.min.js"></script>
     <link rel="stylesheet" href="./css/glide.core.min.css" />
     <link rel="stylesheet" href="./css/glide.theme.min.css" />
@@ -28,7 +28,14 @@
         <section>
             <div class="row">
                 <a href="home.html">
-                    <div class="col-12 col-md-10 mx-auto d-flex justify-content-center align-items-end p-3">
+                    <div class="
+                col-12 col-md-10
+                mx-auto
+                d-flex
+                justify-content-center
+                align-items-end
+                p-3
+              ">
                         <img class="logo" src="./assets/fotos/logo.png" alt="logo" />
                         <p class="logo-title mb-0">App-Eat-Easier</p>
                     </div>
@@ -36,9 +43,16 @@
             </div>
         </section>
         <!--search-->
-        <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
+        <nav class="
+          navbar navbar-light navbar-expand-lg
+          col-12 col-sm-6 col-md-10
+          d-flex
+          justify-content-evenly
+          p-3
+          flex-column
+          mx-auto
+        ">
             <div class="container-fluid">
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
@@ -53,7 +67,7 @@
                             <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
+                            <a class="text-head p-2" aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
                         <li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
@@ -87,14 +101,13 @@
                         </button>
                     </form>
                 </div>
-                <!--serach boton mobile-->
-                <div class="border ">
-                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
+                <!--search boton mobile-->
+                <div class="border">
+                    <a class="btn navbar-toggler" data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
                         <span> <i class="fa fa-search"></i> </span>
                     </a>
                 </div>
-
-
+            </div>
         </nav>
         <div class="row d-flex">
             <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -111,7 +124,14 @@
 
                 <!--menu hamburguesa-->
                 <div class="row">
-                    <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
+                    <div class="
+                col-12
+                text-center
+                mx-auto
+                d-flex
+                justify-content
+                flex-column
+              ">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                             <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             <a href="home.html"><button class="btn-green mb-2" type="button">
@@ -159,15 +179,17 @@
             </a>
         </div>
         <!--modal search -->
-        <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
+        <div class="search-cont offcanvas offcanvas-start offcanvas-bg border d-flex" tabindex="-1" id="search" aria-labelledby="search">
             <div class="offcanvas-header">
-                <form class="d-flex col-12 border ">
-                    <input class="  form-control  me-1" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                <form class="d-flex col-12 border">
+                    <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF8908"
+                            class="bi bi-search" viewBox="0 0 16 16">
                             <path
                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg></button>
+                        </svg>
+                    </button>
                 </form>
                 <!--<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
             </div>
@@ -339,7 +361,16 @@
                     </div>
 
                     <div class="glide__slide card card-1 g-0 border position-relative">
-                        <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
+                        <span class="
+                  position-absolute
+                  top-0
+                  end-0
+                  circle
+                  me-2
+                  mt-2
+                  d-flex
+                  align-items-center
+                  justify-content-around
                 " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <i class="fa fa-minus"></i></span>
                         <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url" alt="pollo-horno " /></a>
@@ -404,7 +435,18 @@
             </div>
         </div>
 
-        <div class="row images-2 glide col-12 col-md-10 d-flex mb-5 d-flex justify-content-center align-items-center p-1">
+        <div class="
+          row
+          images-2
+          glide
+          col-12 col-md-10
+          d-flex
+          mb-5
+          d-flex
+          justify-content-center
+          align-items-center
+          p-1
+        ">
             <div class="glide__track" data-glide-el="track">
                 <div class="glide__slides json_container3">
                     <div class="glide__slide card card-1 g-0 border">
@@ -637,12 +679,12 @@
     <script src="./ajax/menu_planner.js"></script>
     <script src="./js/carrousel.js"></script>
     <script>
-        $('#sandbox-container .input-group.date').datepicker({
+        $("#sandbox-container .input-group.date").datepicker({
             format: "dd-mm-yyyy",
             language: "es",
             calendarWeeks: true,
             autoclose: true,
-            todayHighlight: true
+            todayHighlight: true,
         });
     </script>
 </body>
