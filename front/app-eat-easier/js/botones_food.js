@@ -14,19 +14,7 @@ let verduras = document.querySelector('#verduras')
 let gluten = document.querySelector('#gluten')
 
 let foodDict = []
-
-//fetch
-const postFetch = async(url, datos) => {
-    const data = await fetch(`${API_URL + url}`, {
-        method: "Post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(datos)
-    })
-    return await data.json()
-}
-
+let lockFunctions = false
 
 // FOOD ICONS EVENT HANDLERS
 
@@ -43,9 +31,6 @@ res.addEventListener('click', (e) => {
         e.target.classList.add('check')
     } // e.target.classList
 })
-
-
-
 
 
 pollo.addEventListener('click', (e) => {
@@ -153,12 +138,29 @@ gluten.addEventListener('click', (e) => {
 })
 
 
+// --------------------------------------------------------------------------------------------------------------------
 
-let food_next = document.querySelector('#food_next')
+// USER ID INITIAL CONFIGURATION
 
-food_next.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('click')
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+    people_qty.user_profile = localStorage.id
+}
+
+
+let blockConfirm = document.querySelector('#block_next')
+let btnNext = document.querySelector('#people_next')
+
+let blockSave = document.querySelector('#block_save')
+let btnSave = blockSave.querySelector('.btn-green')
+btnSave.style.display = "none"
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+function generateJSON(){
 
     foodDict = []
     let datos = []
@@ -173,13 +175,53 @@ food_next.addEventListener('click', (e) => {
         })
     }
 
+}
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+btnNext.addEventListener('click', (e) => {
+    window.location.href = "preferred_food.html"  
+})
+
+
+btnSave.addEventListener('click', (e) => {
+    e.preventDefault()
+    lockFunctions = true
+
     try {
-        let response = postFetch("users/profiles/food/", datos)
-        setTimeout(function() { window.location.href = "kitchen.html" }, 3000);
+        let response = postFetch("users/profiles/qty/", people_qty)
+        setTimeout(function() { window.location.href = "preferred_food.html" }, 3000);
 
     } catch (error) {
         console.log(error)
 
     }
+
+})
+
+
+// ---------------------------------------------------------------------------------------------------------------
+
+function handleEmptyProfile(errorMsg){
+
+    lockFunctions = false
+    console.log("My Response Catch Error: ", errorMsg)
+
+    blockConfirm.querySelector('.btn-nar').style.display = "none"
+    blockConfirm.style.display = "none"
+
+    btnSave.style.display = "block"
+
+}
+
+window.addEventListener('load', (e)=>{
+
+    let myResponse = retrieveProfile()
+
+    myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
+    myResponse.then(()=>{fillAdultRow(people_qty.adults_qty)})
+    myResponse.then(()=>{fillChildRow(people_qty.child_qty)})
+    myResponse.then(()=>{lockFunctions = true})
+    myResponse.catch((error)=>{handleEmptyProfile(error)})
 
 })

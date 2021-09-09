@@ -9,21 +9,8 @@ let procesador = document.querySelector('#procesador')
 let estufa = document.querySelector('#estufa')
 
 
-
+let lockFunctions = false
 let kitchenDict = []
-
-//FETCH
-const postFetch = async(url, datos) => {
-    const data = await fetch(`${API_URL + url}`, {
-        method: "Post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(datos)
-    })
-    return await data.json()
-}
-
 let currentKitchen = ""
 let kitchenSelected = [""]
 
@@ -110,33 +97,40 @@ estufa.addEventListener('click', (e) => {
     // e.target.classList
 })
 
-let kitchenPressed = document.querySelectorAll(".btn-kit i.pressed")
 
-for (let i = 0; i < kitchenPressed.length; i++) {
-    console.log(i.parentNode)
+// --------------------------------------------------------------------------------------------------------------------
+
+// USER ID INITIAL CONFIGURATION
+
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+    people_qty.user_profile = localStorage.id
 }
 
 
+let blockConfirm = document.querySelector('#block_next')
+let btnNext = document.querySelector('#people_next')
+
+let blockSave = document.querySelector('#block_save')
+let btnSave = blockSave.querySelector('.btn-green')
+btnSave.style.display = "none"
 
 
+// --------------------------------------------------------------------------------------------------------------------
+
+function generateJSON(){
+
+    /*  TO BE VALIDATED
+    let kitchenPressed = document.querySelectorAll(".btn-kit i.pressed")
+
+    for (let i = 0; i < kitchenPressed.length; i++) {
+        console.log(i.parentNode)
+    }
+    */
 
 
-
-
-
-
-
-
-//boton siguiente
-let kitchen_next = document.querySelector('#kitchen_next')
-    //document.querySelector('#kitchen_next').onClick = function(e) {
-    //    e.preventDefault();
-    //    console.log("kitchen_next")
-    //}
-
-kitchen_next.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('click')
     kitchenDict = []
     let kitchenCheck = document.querySelectorAll(".btn-kit i.check")
 
@@ -161,17 +155,54 @@ kitchen_next.addEventListener('click', (e) => {
         })
     }
 
+}
+
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
+btnNext.addEventListener('click', (e) => {
+    window.location.href = "preferred_food.html"  
+})
+
+
+btnSave.addEventListener('click', (e) => {
+    e.preventDefault()
+    lockFunctions = true
+
     try {
-        let response = postFetch("users/profiles/apps/", datos)
-        setTimeout(function() { window.location.href = "home.html" }, 3000);
+        let response = postFetch("users/profiles/qty/", people_qty)
+        setTimeout(function() { window.location.href = "preferred_food.html" }, 3000);
 
     } catch (error) {
         console.log(error)
 
     }
 
-    //if (response.status === 200 || response.status === 201) {
-    //    window.location.href = home.html
+})
 
+
+// ---------------------------------------------------------------------------------------------------------------
+
+function handleEmptyProfile(errorMsg){
+
+    lockFunctions = false
+    console.log("My Response Catch Error: ", errorMsg)
+
+    blockConfirm.querySelector('.btn-nar').style.display = "none"
+    blockConfirm.style.display = "none"
+
+    btnSave.style.display = "block"
+
+}
+
+window.addEventListener('load', (e)=>{
+
+    let myResponse = retrieveProfile()
+
+    myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
+    myResponse.then(()=>{fillAdultRow(people_qty.adults_qty)})
+    myResponse.then(()=>{fillChildRow(people_qty.child_qty)})
+    myResponse.then(()=>{lockFunctions = true})
+    myResponse.catch((error)=>{handleEmptyProfile(error)})
 
 })
