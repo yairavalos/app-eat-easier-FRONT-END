@@ -5,6 +5,14 @@ let my_json_list = []
 let myForm = document.querySelector('#newMenuForm')
 var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), {keyboard:false})
 
+// USER ID INITIAL CONFIGURATION
+
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+}
+
 const getMenuGenerator = async() => {
 
     try {
