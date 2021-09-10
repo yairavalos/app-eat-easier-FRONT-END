@@ -1,17 +1,14 @@
 const API_URL = "http://localhost:8000/api/";
 
-let user_profile_id = 0
 let my_json_list = []
-let my_json_post =[]
-let user_planner_id = 0
-let user_period = ""
-let user_period_start = ""
 
+let myForm = document.querySelector('#newMenuForm')
+var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), {keyboard:false})
 
 const getMenuGenerator = async() => {
 
     try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/planners/`, {
+        const response = await fetch(`${API_URL}users/${localStorage.id}/planners/`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -28,26 +25,24 @@ const getMenuGenerator = async() => {
 
 }
 
-const createPlanner = async() => {
 
-    try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/planners/`, {
-            headers: {
-                "Content-Type": "application/json",
-                "method": "POST",
-                "body": my_json_post
-            },
-        });
+// AJAX Comms to End-Point
+const postFetch = async(postData) => {
 
-        const new_data = await response.json()
-        console.log(new_data)
+    const data = await fetch(`${API_URL}users/${localStorage.id}/planners/`, {
+        method: "Post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData)
+    })
 
-        return new_data
+    const dataResult = await data.json()
 
-    } catch (error) {
-        console.log(error)
-    }
+    console.log(dataResult)
+    //saveUserProfile(dataResult) -> according to response this function would change
 
+    return dataResult
 }
 
 
@@ -60,8 +55,6 @@ function populate_nodes(n) {
 
     console.log(this_attr)
     my_container.lastElementChild.querySelectorAll(".plan_title")[0].innerText = this_attr
-
-
 
 }
 
@@ -98,14 +91,70 @@ const transfer_retrieve = async() => {
 
 }
 
+function generateWeekNum(start_date){
+
+    let now = new Date(start_date);
+    let onejan = new Date(now.getFullYear(), 0, 1);
+    let week = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7) - 1;
+
+    console.log(week);
+    return week
+}
+
+function generateEndDate(period, start_date){
+
+    let myDate = new Date(start_date)
+
+    if (period == "semanal"){
+        myDate.setDate(myDate.getDate() + 7)
+    } else if (period == "quincenal"){
+        myDate.setDate(myDate.getDate() + 14)
+    }
+    return myDate.toISOString().substr(0,10)
+}
+
+function generateJSON(){
+
+    let myMenuDict = {
+        "user_profile": localStorage.id,
+        "plan_title": myForm.querySelector('#inputTitle').value,
+        "week_num": generateWeekNum(user_period_start),
+        "period": myForm.querySelector('#selectPeriod').value,
+        "start_date": user_period_start,
+        "end_date": "",
+        "saved": false
+    }
+
+    myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
+    
+    console.log("Generated JSON: " ,myMenuDict)
+    return myMenuDict
+}
+
+
+myForm.addEventListener('submit', (e)=>{
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    let jsonPOST = generateJSON()
+    console.log("My JSON to be Posted: " ,jsonPOST)
+
+    let myResponse = postFetch(jsonPOST)
+
+    myResponse.then((dataResult)=>{console.log("AJAX POST Result its", dataResult)})
+    myResponse.then(myModal1.show())
+    myResponse.then(setTimeout(() => { console.log("TIME OUT") }, 2000)) 
+    myResponse.catch((error)=>{console.log("Ajax Catch Error is: ", error)})
+
+})
+
 
 $(document).ready(() => {
 
     my_container = document.querySelector(".json_container")
     my_template_item = my_container.children[0]
 
-    user_profile_id = 1
-    user_planner_id = 1
     transfer_retrieve();
 
     $('#myDatePicker').datepicker({
