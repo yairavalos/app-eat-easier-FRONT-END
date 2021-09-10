@@ -16,6 +16,18 @@ let gluten = document.querySelector('#gluten')
 let foodDict = []
 let lockFunctions = false
 
+let foodIcon = {
+    "res": "check",
+    "pollo": "check",
+    "cerdo": "check",
+    "pescado": "check",
+    "huevo": "check",
+    "chesse": "check",
+    "frutas": "check",
+    "verduras": "check",
+    "gluten": "check"
+}
+
 // FOOD ICONS EVENT HANDLERS
 
 
@@ -171,7 +183,7 @@ btnSave.style.display = "none"
 // -------------------------------------------------------------------------------------------------------------------------------
 
 
-function jsongenerator() {
+function generateJSON() {
     foodDict = []
     let datos = []
     let foodCheck = document.querySelectorAll(".btn-food i.check")
@@ -180,9 +192,18 @@ function jsongenerator() {
         console.log(i.parentNode)
         let result = foodCheck[i].closest(".btn-food").id
         datos.push({
-            user_profile: 0,
+            user_profile: localStorage.id,
             food_type: result
         })
+    }
+}
+
+
+function dumpJSON(datos) {
+
+    for (let i = 0; i < datos.length; i++) {
+
+        document.getElementById(datos[i].food_type).firstElementChild.classList.add(foodIcon[datos[i].food_type]);
     }
 }
 
@@ -201,7 +222,7 @@ const retrieveProfile = async() => {
     })
 
     const dataResult = await data.json()
-    update(dataResult)
+
     console.log("AJAX Fetch Result:", dataResult)
 
     return dataResult
@@ -230,8 +251,11 @@ btnSave.addEventListener('click', (e) => {
     e.preventDefault()
     lockFunctions = true
 
+    dataToSend = generateJSON()
+    console.log("Saving this AJAX POST before to go", dataToSend)
+
     try {
-        let response = postFetch("users/profiles/food/", datos)
+        let response = postFetch("users/profiles/food/", dataToSend)
         setTimeout(function() { window.location.href = "kitchen.html" }, 3000);
 
     } catch (error) {
@@ -244,26 +268,31 @@ btnSave.addEventListener('click', (e) => {
 
 // ---------------------------------------------------------------------------------------------------------------
 
-function handleEmptyProfile(errorMsg) {
+function handleEmptyProfile(dataResult) {
 
-    lockFunctions = false
-    console.log("My Response Catch Error: ", errorMsg)
+    if (dataResult.length == 0) {
 
-    blockConfirm.querySelector('.btn-nar').style.display = "none"
-    blockConfirm.style.display = "none"
+        lockFunctions = false
 
-    btnSave.style.display = "block"
+        blockConfirm.querySelector('.btn-nar').style.display = "none"
+        blockConfirm.style.display = "none"
 
+        btnSave.style.display = "block"
+
+    } else {
+
+        lockFunctions = true
+        dumpJSON(dataResult)
+    }
 }
 
 window.addEventListener('load', (e) => {
 
     let myResponse = retrieveProfile()
 
+
     myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
-    myResponse.then(() => { fillAdultRow(food_type) })
-        //myResponse.then(() => { fillChildRow(people_qty.child_qty) })
-        //myResponse.then(() => { lockFunctions = true })
-        //myResponse.catch((error) => { handleEmptyProfile(error) })
+    myResponse.then((dataResult) => { handleEmptyProfile(dataResult) })
+    myResponse.catch((error) => { console.log(error) })
 
 })

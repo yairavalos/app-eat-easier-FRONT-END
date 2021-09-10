@@ -43,27 +43,27 @@
                 <!--nav desktop-->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item p-title">
+                        <!--<li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
-                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
+                            <a class=" text-head p-2 m-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
-                        <li class="nav-item p-title">
+                       <!-- <li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
                                 principal</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="menu_generator.html">Generador de
+                            <a class="text-head p-2 m-2" aria-current="page" href="menu_generator.html">Generador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="plan_menu.html">Mi planificador de
+                            <a class="text-head p-2 m-2" aria-current="page" href="plan_menu.html">Mi planificador de
                                 menú</a>
                         </li>
-                        <li class="nav-item p-title">
+                        <!--<li class="nav-item p-title">
                             <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
                             <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
                         </li>
@@ -111,24 +111,24 @@
                             <a href="home.html"><button class="btn-green mb-2" type="button">
                                     Inicio
                                 </button></a>
-                            <a href="edit_profile.html"><button class="btn-green mb-2" type="button">
+                        <!--<a href="edit_profile.html"><button class="btn-green mb-2" type="button">
                                     Mi perfil
-                                </button></a>
+                                </button></a>-->
                             <a href="favoritos.html"><button class="btn-green mb-2" type="button">
                                     Mis favoritos
                                 </button></a>
-                            <a href="categorias.html"><button class="btn-green mb-2" type="button">
+                            <!--<a href="categorias.html"><button class="btn-green mb-2" type="button">
                                     Ingrediente principal
-                                </button></a>
+                                </button></a>-->
                             <a href="menu_generator.html"><button class="btn-green mb-2" type="button">
                                     Generador de menú
                                 </button></a>
                             <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
                                     Mi planificador de menú
                                 </button></a>
-                            <a href="menu.html"><button class="btn-green mb-2" type="button">
+                           <!--<a href="menu.html"><button class="btn-green mb-2" type="button">
                                     Mi menú
-                                </button></a>
+                                </button></a>-->
                             <a href="mi_lista.html"><button class="btn-green mb-2" type="button">
                                     Mi lista de super
                                 </button></a>
@@ -140,7 +140,8 @@
 
         <!--Logo-->
         <div class="row">
-            <a href="preferred_food.html">
+        <div class="col-12 d-flex ">
+            <a href="javascript: history.go(-1)">
                 <div class="row d-flex justify-content-start">
                     <div class="left-arr col-1 d-flex align-content">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-up fa-w-14 fa-5x">
@@ -151,7 +152,15 @@
                     </div>
                 </div>
             </a>
+            <div class="row ">
+                <div class="d-flex">
+
+                    <h3 class="ut ms-5 mt-3" id="user_welcome">Hola usuario</h3>
+
+                </div>
+            </div>
         </div>
+    </div>
         <!--modal search -->
         <div class=" search-cont offcanvas offcanvas-start offcanvas-bg  border d-flex " tabindex="-1" id="search" aria-labelledby="search">
             <div class="offcanvas-header">
@@ -192,18 +201,18 @@
                     <img src="./assets/fotos/Web_fotoreceta.jpg" class="foto rounded-bottom card-img-bottom card-img-top pic_url" alt="pic_url" />
 
                     <div class="card-body d-flex justify-content-evenly">
-                        <i class="fas fa-users"></i>
+                        <i class="peop fas fa-users"></i>
 
-                        <i class="fas fa-clock"></i>
+                        <i class="peop fas fa-clock"></i>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                             <path
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
                     </div>
-                    <section class="d-flex p-2 justify-content-evenly">
-                        <p class="card-1-text text-center persons">2-4</p>
-                        <p class="card-1-text text-center time_prep">20 min</p>
-                        <p class="card-1-text text-center level">Bajo</p>
+                    <section class="d-flex p-1 justify-content-evenly">
+                        <p class="tit text-center persons">2-4</p>
+                        <p class="tit text-center time_prep">20 min</p>
+                        <p class="tit text-center level">Bajo</p>
                     </section>
                 </div>
             </div>
