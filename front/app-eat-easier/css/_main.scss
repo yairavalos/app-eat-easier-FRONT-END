@@ -141,6 +141,14 @@ h3 {
     font-size: 18px;
 }
 
+.tit {
+    color: #15202B;
+    font-family: hind;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .card-2 {
     background-color: #FFF6F3;
     border: 0px;
@@ -308,4 +316,9 @@ h3 {
 .card-image {
     object-fit: cover;
     height: 200px;
+}
+
+.peop {
+    font-size: 26px;
+    color: $colorOne;
 }

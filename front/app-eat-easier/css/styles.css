@@ -235,6 +235,14 @@ h3 {
   font-size: 18px;
 }
 
+.tit {
+  color: #15202B;
+  font-family: hind;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 .card-2 {
   background-color: #FFF6F3;
   border: 0px;
@@ -309,11 +317,10 @@ h3 {
   color: #FF8908;
 }
 
-.fa {
-  color: #FF8908;
-  font-size: 20px;
-}
-
+/*.fa {
+    color: $colorOne;
+    font-size: 20px;
+}*/
 .carousel-item {
   height: 70%;
 }
@@ -408,6 +415,11 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
   height: 200px;
+}
+
+.peop {
+  font-size: 26px;
+  color: #FF8908;
 }
 
 footer {

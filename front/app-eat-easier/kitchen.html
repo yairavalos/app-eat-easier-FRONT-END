@@ -33,12 +33,10 @@
             </div>
         </section>
         <!--search-->
-        <nav
-            class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
+       <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
             <div class="container-fluid">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -48,27 +46,27 @@
                 <!--nav desktop-->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item p-title">
+                        <!--<li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="edit_profile.html">Mi perfil</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
-                            <a class=" text-head p-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
+                            <a class=" text-head p-2 m-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
-                        <li class="nav-item p-title">
+                       <!-- <li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
                                 principal</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="menu_generator.html">Generador de
+                            <a class="text-head p-2 m-2" aria-current="page" href="menu_generator.html">Generador de
                                 menú</a>
                         </li>
                         <li class="nav-item p-title">
-                            <a class="text-head p-2" aria-current="page" href="plan_menu.html">Mi planificador de
+                            <a class="text-head p-2 m-2" aria-current="page" href="plan_menu.html">Mi planificador de
                                 menú</a>
                         </li>
-                        <li class="nav-item p-title">
+                        <!--<li class="nav-item p-title">
                             <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item p-title">
                             <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
                         </li>
@@ -88,8 +86,7 @@
                 </div>
                 <!--serach boton mobile-->
                 <div class="border ">
-                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button"
-                        aria-controls="offcanvasExample">
+                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
                         <span> <i class="fa fa-search"></i> </span>
                     </a>
                 </div>
@@ -97,46 +94,44 @@
 
         </nav>
         <div class="row d-flex">
-            <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- <form class="d-flex border bg-nar">
-                                          <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-                                          <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                  fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                              </svg></button>
-                                      </form>-->
+                                                  <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
+                                                  <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                          fill="#FF8908" class="bi bi-search" viewBox="0 0 16 16">
+                                                          <path
+                                                              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                                      </svg></button>
+                                              </form>-->
                 </div>
 
                 <!--menu hamburguesa-->
                 <div class="row">
                     <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                            <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             <a href="home.html"><button class="btn-green mb-2" type="button">
                                     Inicio
                                 </button></a>
-                            <a href="edit_profile.html"><button class="btn-green mb-2" type="button">
+                        <!--<a href="edit_profile.html"><button class="btn-green mb-2" type="button">
                                     Mi perfil
-                                </button></a>
+                                </button></a>-->
                             <a href="favoritos.html"><button class="btn-green mb-2" type="button">
                                     Mis favoritos
                                 </button></a>
-                            <a href="categorias.html"><button class="btn-green mb-2" type="button">
+                            <!--<a href="categorias.html"><button class="btn-green mb-2" type="button">
                                     Ingrediente principal
-                                </button></a>
+                                </button></a>-->
                             <a href="menu_generator.html"><button class="btn-green mb-2" type="button">
                                     Generador de menú
                                 </button></a>
                             <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
                                     Mi planificador de menú
                                 </button></a>
-                            <a href="menu.html"><button class="btn-green mb-2" type="button">
+                           <!--<a href="menu.html"><button class="btn-green mb-2" type="button">
                                     Mi menú
-                                </button></a>
+                                </button></a>-->
                             <a href="mi_lista.html"><button class="btn-green mb-2" type="button">
                                     Mi lista de super
                                 </button></a>
@@ -149,7 +144,7 @@
         <!--Logo-->
         <div class="row">
             <div class="col-12 d-flex ">
-                <a href="preferred_food.html">
+                <a href="javascript: history.go(-1)">
                     <div class="row d-flex justify-content-start">
                         <div class="left-arr col-1 d-flex align-content">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-up"
