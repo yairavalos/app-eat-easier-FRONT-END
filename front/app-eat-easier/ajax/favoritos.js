@@ -3,6 +3,11 @@ const API_URL = "http://localhost:8000/api/";
 let user_profile_id = 0
 let my_json_list = []
 
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+}
 
 const getUserFavorites = async() => {
 

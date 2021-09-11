@@ -4,7 +4,11 @@ let user_profile_id = 0
 let my_json_list = []
 let user_planner_id = 0
 
+let welcome = document.getElementById('user_welcome')
 
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+}
 
 const getUserSprmktList = async() => {
 

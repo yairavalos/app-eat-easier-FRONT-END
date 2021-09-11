@@ -5,6 +5,12 @@ let user_planner_id = 5
 let recipe_id = 3
 let my_json_list = []
 
+let welcome = document.getElementById('user_welcome')
+
+if (localStorage.length > 1) {
+    welcome.innerText = "Hola " + localStorage.user
+}
+
 const getRecipeByID = async() => {
 
     try {
