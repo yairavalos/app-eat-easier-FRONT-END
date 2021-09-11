@@ -189,13 +189,15 @@ function generateJSON() {
     let foodCheck = document.querySelectorAll(".btn-food i.check")
 
     for (let i = 0; i < foodCheck.length; i++) {
-        console.log(i.parentNode)
+
         let result = foodCheck[i].closest(".btn-food").id
         datos.push({
             user_profile: localStorage.id,
             food_type: result
         })
     }
+    console.log("Data from generateJSON(): ", datos)
+    return datos
 }
 
 
@@ -208,9 +210,7 @@ function dumpJSON(datos) {
 }
 
 
-
-
-
+// -------------------------------------------------------------------------------------------------------------------------------
 
 // RETRIEVE USER PROFILE FOOD
 const retrieveProfile = async() => {
