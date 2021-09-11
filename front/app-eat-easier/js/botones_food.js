@@ -8,25 +8,27 @@ let pollo = document.querySelector('#pollo')
 let cerdo = document.querySelector('#cerdo')
 let pescado = document.querySelector('#pescado')
 let huevo = document.querySelector('#huevo')
-let cheese = document.querySelector('#cheese')
+let lacteos = document.querySelector('#lacteos')
 let frutas = document.querySelector('#frutas')
 let verduras = document.querySelector('#verduras')
 let gluten = document.querySelector('#gluten')
 
-let foodDict = []
 let lockFunctions = false
+let foodDict = []
+
 
 let foodIcon = {
     "res": "check",
-    "pollo": "check",
-    "cerdo": "check",
-    "pescado": "check",
-    "huevo": "check",
-    "chesse": "check",
-    "frutas": "check",
-    "verduras": "check",
-    "gluten": "check"
+    "pollo": "pollo",
+    "cerdo": "cerdo",
+    "pescado": "pescado",
+    "huevo": "huevo",
+    "lacteos": "lacteos",
+    "frutas": "frutas",
+    "verduras": "verduras",
+    "gluten": "gluten"
 }
+
 
 // FOOD ICONS EVENT HANDLERS
 

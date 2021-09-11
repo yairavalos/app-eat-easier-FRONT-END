@@ -13,12 +13,12 @@ let kitchenDict = []
 let kitchenSelected = [""]
 
 let kitchenIcon = {
-    "olla_de_presion":"pressed",
-    "licuadora":"check",
-    "microondas":"check",
-    "horno":"pressed",
-    "procesador":"pressed",
-    "estufa":"check"
+    "olla_de_presion": "pressed",
+    "licuadora": "check",
+    "microondas": "check",
+    "horno": "pressed",
+    "procesador": "pressed",
+    "estufa": "check"
 }
 
 
@@ -65,7 +65,7 @@ microondas.addEventListener('click', (e) => {
         } else {
             e.target.classList.add('check')
         }
-    }   
+    }
 })
 
 horno.addEventListener('click', (e) => {
@@ -134,8 +134,8 @@ btnSave.style.display = "none"
 
 // --------------------------------------------------------------------------------------------------------------------
 
-function generateJSON(){
-    
+function generateJSON() {
+
     kitchenDict = []
     let datos = []
 
@@ -152,7 +152,7 @@ function generateJSON(){
     }
 
     for (let i = 0; i < kitchenCheck.length; i++) {
-        
+
         let result = kitchenCheck[i].closest(".btn-kit").id
         datos.push({
             user_profile: localStorage.id,
@@ -164,10 +164,10 @@ function generateJSON(){
 }
 
 
-function dumpJSON(datos){
-    
+function dumpJSON(datos) {
+
     for (let i = 0; i < datos.length; i++) {
-        
+
         if (datos[i].app_name == "olla de presion") {
             document.getElementById("olla_de_presion").firstElementChild.classList.add(kitchenIcon["olla_de_presion"])
         } else {
@@ -211,7 +211,7 @@ const postFetch = async(url, datos) => {
 // -------------------------------------------------------------------------------------------------------------------------------
 
 btnNext.addEventListener('click', (e) => {
-    window.location.href = "home.html"  
+    window.location.href = "home.html"
 })
 
 
@@ -236,10 +236,10 @@ btnSave.addEventListener('click', (e) => {
 
 // ---------------------------------------------------------------------------------------------------------------
 
-function handleEmptyProfile(dataResult){
+function handleEmptyProfile(dataResult) {
 
-    if (dataResult.length == 0){
-        
+    if (dataResult.length == 0) {
+
         lockFunctions = false
 
         blockConfirm.querySelector('.btn-nar').style.display = "none"
@@ -248,19 +248,19 @@ function handleEmptyProfile(dataResult){
         btnSave.style.display = "block"
 
     } else {
-        
+
         lockFunctions = true
         dumpJSON(dataResult)
     }
 }
 
-window.addEventListener('load', (e)=>{
+window.addEventListener('load', (e) => {
 
     let myResponse = retrieveProfile()
 
     myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
-    myResponse.then((dataResult)=>{ handleEmptyProfile(dataResult) })
-    myResponse.catch((error)=>{console.log(error)})
+    myResponse.then((dataResult) => { handleEmptyProfile(dataResult) })
+    myResponse.catch((error) => { console.log(error) })
 
 })
 
@@ -274,5 +274,3 @@ window.addEventListener('load', (e)=>{
         console.log(i.parentNode)
     }
     */
-
-   
