@@ -5,6 +5,9 @@ let my_json_list = []
 let myForm = document.querySelector('#newMenuForm')
 var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), {keyboard:false})
 
+myModal1._element.querySelector("#modal_continue").style.display = "none"
+myModal1._element.querySelector("#modal_back").style.display = "none"
+
 // USER ID INITIAL CONFIGURATION
 
 let welcome = document.getElementById('user_welcome')
@@ -37,7 +40,7 @@ const getMenuGenerator = async() => {
 // AJAX Comms to End-Point
 const postFetch = async(postData) => {
 
-    const data = await fetch(`${API_URL}users/${localStorage.id}/planners/`, {
+    const data = await fetch(`${API_URL}users/profiles/planner/`, {
         method: "Post",
         headers: {
             "Content-Type": "application/json",
@@ -46,8 +49,7 @@ const postFetch = async(postData) => {
     })
 
     const dataResult = await data.json()
-
-    console.log(dataResult)
+    console.log("Data Result from Post Fetch: " ,dataResult)
     //saveUserProfile(dataResult) -> according to response this function would change
 
     return dataResult
@@ -139,22 +141,32 @@ function generateJSON(){
     return myMenuDict
 }
 
+function modalHandler(){
+
+    if (localStorage.length > 1) {
+        myModal1._element.querySelector('#modal_message').innerText = "LISTO !!! Por favor presiona siguiente"
+        myModal1._element.querySelector("#modal_continue").style.display = "block"
+    } else {
+        myModal1._element.querySelector('#modal_message').innerText = "Por favor revisa tus datos de nuevo"
+        myModal1._element.querySelector("#modal_back").style.display = "block"
+    }
+    
+}
 
 myForm.addEventListener('submit', (e)=>{
 
     e.preventDefault()
-    e.stopPropagation()
 
     let jsonPOST = generateJSON()
     console.log("My JSON to be Posted: " ,jsonPOST)
 
     let myResponse = postFetch(jsonPOST)
+    setTimeout(() => { modalHandler() }, 2000)
 
-    myResponse.then((dataResult)=>{console.log("AJAX POST Result its", dataResult)})
-    myResponse.then(myModal1.show())
-    myResponse.then(setTimeout(() => { console.log("TIME OUT") }, 2000)) 
+    myModal1.show()
+    myResponse.then((dataResult)=>{console.log("AJAX POST Result from Event Listener its", dataResult)})
     myResponse.catch((error)=>{console.log("Ajax Catch Error is: ", error)})
-
+    
 })
 
 
@@ -173,11 +185,9 @@ $(document).ready(() => {
         todayHighlight: true
     })
 
-
     $('#myDatePicker').datepicker().on('changeDate', function(e){
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
         console.log(user_period_start.toString())
     })
-
     
 });
