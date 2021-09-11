@@ -17,17 +17,20 @@ let lockFunctions = false
 let foodDict = []
 
 
+
 let foodIcon = {
     "res": "check",
-    "pollo": "pollo",
-    "cerdo": "cerdo",
-    "pescado": "pescado",
-    "huevo": "huevo",
-    "lacteos": "lacteos",
-    "frutas": "frutas",
-    "verduras": "verduras",
-    "gluten": "gluten"
+    "pollo": "check",
+    "cerdo": "check",
+    "pescado": "check",
+    "huevo": "check",
+    "lacteos": "check",
+    "frutas": "check",
+    "verduras": "check",
+    "gluten": "check"
 }
+
+
 
 
 // FOOD ICONS EVENT HANDLERS

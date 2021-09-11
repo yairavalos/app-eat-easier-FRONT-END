@@ -211,7 +211,7 @@ const postFetch = async(url, datos) => {
 // -------------------------------------------------------------------------------------------------------------------------------
 
 btnNext.addEventListener('click', (e) => {
-    window.location.href = "home.html"
+    window.location.href = "favoritos.html"
 })
 
 
