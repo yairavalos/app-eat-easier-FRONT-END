@@ -88,7 +88,7 @@ $(document).ready(() => {
     my_container = document.querySelector(".json_container")
     my_template_item = my_container.children[0]
 
-    user_profile_id = 2
+    user_profile_id = 0
     transfer_retrieve();
 
 });
