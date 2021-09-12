@@ -322,3 +322,9 @@ h3 {
     font-size: 26px;
     color: $colorOne;
 }
+
+.img-small {
+    object-fit: cover;
+    height: 165px;
+    width: 100%;
+}

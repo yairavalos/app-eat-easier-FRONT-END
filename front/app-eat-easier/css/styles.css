@@ -422,6 +422,13 @@ h3 {
   color: #FF8908;
 }
 
+.img-small {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 165px;
+  width: 100%;
+}
+
 footer {
   height: 380px;
   border-radius: 20px 20px 0 0;
