@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8000/api/";
 
-let user_profile_id = 0
+let user_profile_recipes = 5
 let my_json_list = []
 
 let welcome = document.getElementById('user_welcome')
@@ -9,10 +9,10 @@ if (localStorage.length > 1) {
     welcome.innerText = "Hola " + localStorage.user
 }
 
-const getUserFavorites = async() => {
+const getUserRecipes = async() => {
 
     try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
+        const response = await fetch(`${API_URL}users/profile/suggest/${user_profile_recipes}/`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -60,7 +60,7 @@ function clone_html_item() {
 
 const transfer_retrieve = async() => {
 
-    my_json_list = await getUserFavorites();
+    my_json_list = await getUserRecipes();
     json_items_num = my_json_list.length
 
     if (json_items_num > 1) {
