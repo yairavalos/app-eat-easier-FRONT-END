@@ -30,9 +30,6 @@ const getSearch = async(search, searchNeeded) => {
 
 }
 
-
-
-
 function populate_nodes(n) {
 
     let titleSearch = document.querySelector(".title-search")
