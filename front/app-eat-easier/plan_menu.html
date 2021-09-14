@@ -189,27 +189,28 @@
             <div class="col-12 col-sm-6 col-md-10  d-flex justify-content flex-column json_item">
                 <h2 class="mb-2 json_node">Planificador de menú </h2>
                 <p class="card-1-text json_node planner_title">El título de mi planner</p>
-                <p class="p-title json_node period">El periodo del menu</p>
+                <p class="p-title json_node period">Elige tus recetas </p>
                 <p class="card-1-text json_node">Menú del Día</p>
             </div>
 
             <section>
-                <form id="newMenuForm">
+                <form id="planForm">
                     <!--SELECCION DE LA FECHA DEL MENU -->
                     <div class="row">
                         <!--DATE PICKER-->
-                        <div class="col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
-                            <div>
-                                <p class="p-title">Elige el dia de tu menú</p>
-                            </div>
-                            <div class="input-group date mb-5">
-                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Día:</span>
-                                <input type="text" id="myDatePicker" class="form-control col-9" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Escoge una fecha" required>
-                                <div>
-                                    <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                        <div class="row" id="sandbox-container">
+                            <div class="col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                                <div class="input-group date mb-5">
+                                    <span class="input-group-text col-3" id="inputGroup-sizing-default">Inicia
+                                        el:</span>
+                                    <input type="text" id="myDatePicker" class="form-control col-9" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Escoge una fecha" required>
+                                    <div>
+                                        <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!--SELECION DE MOMENTO DE LA COMIDA -->
                     <div class="row">
@@ -218,7 +219,7 @@
                             <div class="input-group col-12 col-sm-6 col-md-8 mb-3">
                                 <span class="input-group-text col-3" id="inputGroup-sizing-default">Momento del
                                     día</span>
-                                <select id="recetas-favoritas" class="form-select col-9" id="period_validation" required>
+                                <select class="form-select col-9" id="tipo-comida" required>
                                     <option value="desayuno">Desayuno</option>
                                     <option value="comida">Comida</option>
                                     <option value="cena">Cena</option>
@@ -230,33 +231,53 @@
                     <!--LISTA DE RECETAS FAVORITAS -->
 
                     <div class="row">
-                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column container">
                             <p class="p-title">Recetas Favoritas </p>
-                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3">
-                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Lista de
+                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3 json_container">
+                                <span class="input-group-text col-3 " id="inputGroup-sizing-default">Lista
+                                    de
                                     recetas</span>
-                                <select id="selectPeriod" class="form-select col-9" id="favorit_recipe" required>
-                                    <option value="receta1">Receta1</option>
-                                    <option value="receta2">Receta2</option>
+                                <select class="form-select col-9 recipe_title " id="favorit_recipe" required>
+                                    <option  id="recipe_title" value="elegir">elegir</option>
+                                   
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <!--BUTTON TO CREATE NEW USER PLANNER MENU-->
-                    <div class="col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column">
-                        <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                            <button class="btn-nar" type="submit" id="create_menu">Revisar Menú</button>
-                            <!--data-bs-toggle="modal" data-bs-target="#menuCreateModal1"-->
+
+                        <!--BUTTON TO CREATE NEW USER PLANNER MENU-->
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                            <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
+                                <button class="btn-nar" type="submit" id="create_menu">Revisar Menú</button>
+                                <!--data-bs-toggle="modal" data-bs-target="#menuCreateModal1"-->
+                            </div>
                         </div>
                     </div>
                 </form>
             </section>
 
-            <div class="col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column">
+            <!-- MODAL TO CONFIRM USER PLANNER MENU DESTROY -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content offcanvas-bg">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">¿Deseas eliminar este menú?</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-red">Eliminar</button>
+                            <button type="button" class="btn-green" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
                 <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
                     <a href="ver_menu.html"> <button class="btn-nar" type="button">Confirmar mi plan</button></a>
                 </div>
-            </div>
+            </div>-->
     </main>
     <!--Footer-->
     <footer>
@@ -273,7 +294,7 @@
             <div class="col-12 col-md-6 d-flex justify-content-between">
                 <ul class="col-6 p-3">
                     <li class="p-2">
-                        <a href="plan_menu.html"> Planificador de Menús </a>
+                        <a href="ver_menu.html"> Planificador de Menús </a>
                     </li>
                     <li class="p-2">Acerca de nosotros</li>
                     <li class="p-2">Contáctanos</li>
@@ -323,7 +344,6 @@
     <script src="./js/bootstrap-datepicker.min.js"></script>
     <script src="./js/bootstrap-datepicker.es.min.js"></script>
     <script src="./ajax/plan_menu.js"></script>
-
 </body>
 
 </html>

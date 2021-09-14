@@ -1,12 +1,8 @@
 const API_URL = "http://localhost:8000/api/";
 
+let user_profile_id = 0
 let my_json_list = []
 
-let myForm = document.querySelector('#newMenuForm')
-var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), { keyboard: false })
-
-myModal1._element.querySelector("#modal_continue").style.display = "none"
-myModal1._element.querySelector("#modal_back").style.display = "none"
 
 // USER ID INITIAL CONFIGURATION
 
@@ -16,31 +12,23 @@ if (localStorage.length > 1) {
     welcome.innerText = "Hola " + localStorage.user
 }
 
-const getMenuGenerator = async() => {
+const getPlan = async() => {
+    const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    const data = await response.json();
+    //console.log(data);
+    return data
 
-    try {
-        const response = await fetch(`${API_URL}users/${localStorage.id}/planners/`, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        const data = await response.json()
-        console.log(data)
-
-        return data
-
-    } catch (error) {
-        console.log(error)
-    }
-
-}
+};
 
 
 // AJAX Comms to End-Point
 const postFetch = async(postData) => {
 
-    const data = await fetch(`${API_URL}users/profiles/planner/`, {
+    const data = await fetch(`${API_URL}api/users/profiles/planner/menu/`, {
         method: "Post",
         headers: {
             "Content-Type": "application/json",
@@ -56,50 +44,43 @@ const postFetch = async(postData) => {
 }
 
 
-function populate_nodes(n) {
 
-    this_attr = my_json_list[n].id
-    my_container.lastElementChild.setAttribute("id", this_attr) //no se toca 
-
-    this_attr = my_json_list[n].plan_title
-
-    console.log(this_attr)
-    my_container.lastElementChild.querySelectorAll(".plan_title")[0].innerText = this_attr
-
-}
-
-function clone_html_item() {
-
-    my_item = document.createElement("div")
-    my_container.appendChild(my_item)
-
-    my_container.lastElementChild.outerHTML = my_container.firstElementChild.outerHTML
-
-}
-
-const transfer_retrieve = async() => {
-
-    my_json_list = await getMenuGenerator();
-    json_items_num = my_json_list.length
-
-    if (json_items_num > 1) {
-
-        for (i = 0; i < json_items_num; i++) {
-
-            populate_nodes(i)
-
-            if (i < json_items_num - 1) {
-                clone_html_item()
-            }
+const filtrarComida = async(valor) => {
+    let plan = await getPlan()
+    let recipe_titulo = document.getElementById("favorit_recipe")
+    let elementosOption = document.querySelectorAll(".elementosOption")
+    if (elementosOption.length > 0) {
+        for (let i = 0; i < elementosOption.length; i++) {
+            elementosOption[i].remove()
         }
-
-    } else {
-        populate_nodes(0)
     }
-
-    console.log("transfer retrieve")
-
+    //console.log(plan)
+    const comidaFiltrada = plan.filter(comida => {
+            //console.log(comida)
+            if (comida.cat_recipe.meal_type === valor) {
+                console.log(comida.cat_recipe.title)
+                let titulo = `<option  id=${comida.cat_recipe.title} value=${comida.cat_recipe.title}>${comida.cat_recipe.title}</option>`
+                let element = document.createElement("option")
+                element.innerText = comida.cat_recipe.title
+                element.setAttribute("id", comida.cat_recipe.title)
+                element.setAttribute("value", comida.cat_recipe.title)
+                element.setAttribute("class", "elementosOption")
+                recipe_titulo.append(element)
+                return comida
+            }
+        })
+        // return await comidaFiltrada
+        //console.log(comidaFiltrada)
 }
+
+let tipoComida = document.getElementById("tipo-comida")
+tipoComida.addEventListener("change", (e) => {
+    e.preventDefault()
+    let tipoComidaValor = document.getElementById("tipo-comida").value
+
+    filtrarComida(tipoComidaValor)
+        //console.log(comidaFiltro)
+})
 
 function generateWeekNum(start_date) {
 
@@ -123,23 +104,21 @@ function generateEndDate(period, start_date) {
     return myDate.toISOString().substr(0, 10)
 }
 
-function generateJSON() {
-
-    let myMenuDict = {
-        "user_profile": localStorage.id,
-        "plan_title": myForm.querySelector('#inputTitle').value,
-        "week_num": generateWeekNum(user_period_start),
-        "period": myForm.querySelector('#selectPeriod').value,
-        "start_date": user_period_start,
-        "end_date": "",
-        "saved": false
-    }
-
-    myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
-
-    console.log("Generated JSON: ", myMenuDict)
-    return myMenuDict
-}
+//function generateJSON() {
+//
+//    let myMenuDict = {
+//    "id": 31,
+//    "user_planner": 13,
+//    "meal_date": "2021-09-13",
+//    "meal_type": "desayuno",
+//    "user_recipe": 15,
+//    "done": false
+//}
+//    myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
+//
+//    console.log("Generated JSON: ", myMenuDict)
+//    return myMenuDict
+//}
 
 function modalHandler() {
 
@@ -153,29 +132,29 @@ function modalHandler() {
 
 }
 
-myForm.addEventListener('submit', (e) => {
+//myForm.addEventListener('submit', (e) => {
+//
+//    e.preventDefault()
+//
+//    let jsonPOST = generateJSON()
+//    console.log("My JSON to be Posted: ", jsonPOST)
+//
+//    let myResponse = postFetch(jsonPOST)
+//    setTimeout(() => { modalHandler() }, 2000)
+//
+//    myModal1.show()
+//    myResponse.then((dataResult) => { console.log("AJAX POST Result from Event Listener its", dataResult) })
+//    myResponse.catch((error) => { console.log("Ajax Catch Error is: ", error) })
+//
+//})
 
-    e.preventDefault()
 
-    let jsonPOST = generateJSON()
-    console.log("My JSON to be Posted: ", jsonPOST)
-
-    let myResponse = postFetch(jsonPOST)
-    setTimeout(() => { modalHandler() }, 2000)
-
-    myModal1.show()
-    myResponse.then((dataResult) => { console.log("AJAX POST Result from Event Listener its", dataResult) })
-    myResponse.catch((error) => { console.log("Ajax Catch Error is: ", error) })
-
-})
-
-
-$(document).ready(() => {
+$(document).ready(async() => {
 
     my_container = document.querySelector(".json_container")
     my_template_item = my_container.children[0]
 
-    transfer_retrieve();
+
 
     $('#myDatePicker').datepicker({
         format: "yyyy-mm-dd",
@@ -189,5 +168,19 @@ $(document).ready(() => {
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
         console.log(user_period_start.toString())
     })
+    let recipe_titulo = document.getElementById("favorit_recipe")
+    let planDesayuno = await getPlan()
+    planDesayuno.filter(comida => {
+        //console.log(comida)
+        if (comida.cat_recipe.meal_type === "desayuno") {
 
+            let element = document.createElement("option")
+            element.innerText = comida.cat_recipe.title
+            element.setAttribute("id", comida.cat_recipe.title)
+            element.setAttribute("value", comida.cat_recipe.title)
+            element.setAttribute("class", "elementosOption")
+            recipe_titulo.append(element)
+            return comida
+        }
+    })
 });
