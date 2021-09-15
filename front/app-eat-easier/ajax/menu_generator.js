@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8000/api/";
 let my_json_list = []
 
 let myForm = document.querySelector('#newMenuForm')
-var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), {keyboard:false})
+var myModal1 = new bootstrap.Modal(document.getElementById('menuCreateModal1'), { keyboard: false })
 
 myModal1._element.querySelector("#modal_continue").style.display = "none"
 myModal1._element.querySelector("#modal_back").style.display = "none"
@@ -49,8 +49,8 @@ const postFetch = async(postData) => {
     })
 
     const dataResult = await data.json()
-    console.log("Data Result from Post Fetch: " ,dataResult)
-    //saveUserProfile(dataResult) -> according to response this function would change
+    console.log("Data Result from Post Fetch: ", dataResult)
+        //saveUserProfile(dataResult) -> according to response this function would change
 
     return dataResult
 }
@@ -101,7 +101,7 @@ const transfer_retrieve = async() => {
 
 }
 
-function generateWeekNum(start_date){
+function generateWeekNum(start_date) {
 
     let now = new Date(start_date);
     let onejan = new Date(now.getFullYear(), 0, 1);
@@ -111,19 +111,19 @@ function generateWeekNum(start_date){
     return week
 }
 
-function generateEndDate(period, start_date){
+function generateEndDate(period, start_date) {
 
     let myDate = new Date(start_date)
 
-    if (period == "semanal"){
+    if (period == "semanal") {
         myDate.setDate(myDate.getDate() + 7)
-    } else if (period == "quincenal"){
+    } else if (period == "quincenal") {
         myDate.setDate(myDate.getDate() + 14)
     }
-    return myDate.toISOString().substr(0,10)
+    return myDate.toISOString().substr(0, 10)
 }
 
-function generateJSON(){
+function generateJSON() {
 
     let myMenuDict = {
         "user_profile": localStorage.id,
@@ -136,12 +136,12 @@ function generateJSON(){
     }
 
     myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
-    
-    console.log("Generated JSON: " ,myMenuDict)
+
+    console.log("Generated JSON: ", myMenuDict)
     return myMenuDict
 }
 
-function modalHandler(){
+function modalHandler() {
 
     if (localStorage.length > 1) {
         myModal1._element.querySelector('#modal_message').innerText = "LISTO !!! Por favor presiona siguiente"
@@ -150,23 +150,24 @@ function modalHandler(){
         myModal1._element.querySelector('#modal_message').innerText = "Por favor revisa tus datos de nuevo"
         myModal1._element.querySelector("#modal_back").style.display = "block"
     }
-    
+
 }
 
-myForm.addEventListener('submit', (e)=>{
+myForm.addEventListener('submit', (e) => {
 
     e.preventDefault()
 
     let jsonPOST = generateJSON()
-    console.log("My JSON to be Posted: " ,jsonPOST)
+    console.log("My JSON to be Posted: ", jsonPOST)
 
     let myResponse = postFetch(jsonPOST)
     setTimeout(() => { modalHandler() }, 2000)
 
     myModal1.show()
-    myResponse.then((dataResult)=>{console.log("AJAX POST Result from Event Listener its", dataResult)})
-    myResponse.catch((error)=>{console.log("Ajax Catch Error is: ", error)})
-    
+    myResponse.then((dataResult) => { console.log("AJAX POST Result from Event Listener its", dataResult) })
+    myResponse.catch((error) => { console.log("Ajax Catch Error is: ", error) })
+
+
 })
 
 
@@ -185,9 +186,9 @@ $(document).ready(() => {
         todayHighlight: true
     })
 
-    $('#myDatePicker').datepicker().on('changeDate', function(e){
+    $('#myDatePicker').datepicker().on('changeDate', function(e) {
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
         console.log(user_period_start.toString())
     })
-    
+
 });

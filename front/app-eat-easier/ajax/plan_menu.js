@@ -22,6 +22,7 @@ const getPlan = async() => {
     //console.log(data);
     return data
 
+
 };
 
 
@@ -56,31 +57,77 @@ const filtrarComida = async(valor) => {
     }
     //console.log(plan)
     const comidaFiltrada = plan.filter(comida => {
-            //console.log(comida)
-            if (comida.cat_recipe.meal_type === valor) {
-                console.log(comida.cat_recipe.title)
-                let titulo = `<option  id=${comida.cat_recipe.title} value=${comida.cat_recipe.title}>${comida.cat_recipe.title}</option>`
-                let element = document.createElement("option")
-                element.innerText = comida.cat_recipe.title
-                element.setAttribute("id", comida.cat_recipe.title)
-                element.setAttribute("value", comida.cat_recipe.title)
-                element.setAttribute("class", "elementosOption")
-                recipe_titulo.append(element)
-                return comida
-            }
-        })
-        // return await comidaFiltrada
-        //console.log(comidaFiltrada)
+        //console.log(comida)
+        if (comida.cat_recipe.meal_type === valor) {
+
+            return comida
+        }
+    })
+    console.log(comidaFiltrada)
+
+    return comidaFiltrada
+
 }
+$("#tipo-desayuno").change(async() => {
+    filtrarComida($("#tipo-desayuno").val())
+        .then(function(data) {
 
-let tipoComida = document.getElementById("tipo-comida")
-tipoComida.addEventListener("change", (e) => {
-    e.preventDefault()
-    let tipoComidaValor = document.getElementById("tipo-comida").value
-
-    filtrarComida(tipoComidaValor)
-        //console.log(comidaFiltro)
+            let comidas = '<option id="recipe_title" value="elegir">Elegir receta</option>'
+            data.forEach((desayuno) => {
+                comidas += `
+            <option  
+                value="${desayuno.cat_recipe.id }"
+                data-recipeid="${desayuno.cat_recipe.id }"
+                data-id="${desayuno.id}"
+            >${desayuno.cat_recipe.title}</option>
+            `
+            })
+            document.getElementById("desayuno-favorito").innerHTML = comidas
+        })
 })
+
+
+$("#tipo-comida").change(async() => {
+    filtrarComida($("#tipo-comida").val())
+        .then(function(data) {
+
+            let comidas = '<option id="recipe_title" value="elegir">Elegir receta</option>'
+            data.forEach((comida) => {
+                comidas += `
+                <option  
+                    value="${comida.cat_recipe.id }"
+                    data-recipeid="${comida.cat_recipe.id }"
+                    data-id="${comida.id}"
+                >${comida.cat_recipe.title}</option>
+                `
+            })
+            document.getElementById("comida-favorita").innerHTML = comidas
+        })
+
+})
+
+$("#tipo-cena").change(async() => {
+    filtrarComida($("#tipo-cena").val())
+        .then(function(data) {
+
+            let comidas = '<option id="recipe_title" value="elegir">Elegir receta</option>'
+            data.forEach((cena) => {
+                comidas += `
+                <option  
+                    value="${cena.cat_recipe.id }"
+                    data-recipeid="${cena.cat_recipe.id }"
+                    data-id="${cena.id}"
+                >${cena.cat_recipe.title}</option>
+                `
+            })
+            document.getElementById("cena-favorita").innerHTML = comidas
+        })
+
+})
+
+
+
+
 
 function generateWeekNum(start_date) {
 
@@ -92,17 +139,17 @@ function generateWeekNum(start_date) {
     return week
 }
 
-function generateEndDate(period, start_date) {
+//function generateEndDate(period, start_date) {//
 
-    let myDate = new Date(start_date)
+//    let myDate = new Date(start_date)//
 
-    if (period == "semanal") {
-        myDate.setDate(myDate.getDate() + 7)
-    } else if (period == "quincenal") {
-        myDate.setDate(myDate.getDate() + 14)
-    }
-    return myDate.toISOString().substr(0, 10)
-}
+//    if (period == "semanal") {
+//        myDate.setDate(myDate.getDate() + 7)
+//    } else if (period == "quincenal") {
+//        myDate.setDate(myDate.getDate() + 14)
+//    }
+//    return myDate.toISOString().substr(0, 10)
+//}
 
 //function generateJSON() {
 //
@@ -147,6 +194,12 @@ function modalHandler() {
 //    myResponse.catch((error) => { console.log("Ajax Catch Error is: ", error) })
 //
 //})
+function guardarTiempo() {
+    let meal_date = document.getElementById("myDatePicker")
+    console.log(meal_date)
+}
+
+
 
 
 $(document).ready(async() => {
@@ -165,22 +218,71 @@ $(document).ready(async() => {
     })
 
     $('#myDatePicker').datepicker().on('changeDate', function(e) {
-        user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
-        console.log(user_period_start.toString())
-    })
-    let recipe_titulo = document.getElementById("favorit_recipe")
-    let planDesayuno = await getPlan()
-    planDesayuno.filter(comida => {
-        //console.log(comida)
-        if (comida.cat_recipe.meal_type === "desayuno") {
+            user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
+            console.log(user_period_start.toString())
+        })
+        //let recipe_titulo = document.getElementById("favorit_recipe")
+        //let planDesayuno = await getPlan()
+        //planDesayuno.filter(comida => {
+        //    //console.log(comida)
+        //    if (comida.cat_recipe.meal_type === "desayuno") {
+        //
+        //        let element = document.createElement("option")
+        //        element.innerText = comida.cat_recipe.title
+        //        element.setAttribute("id", comida.cat_recipe.title)
+        //        element.setAttribute("value", comida.cat_recipe.title)
+        //        element.setAttribute("class", "elementosOption")
+        //        recipe_titulo.append(element)
+        //        return comida
+        //    }
+        //})
+    $("#tipo-desayuno").val("desayuno").trigger("change")
+    $("#tipo-comida").val("comida").trigger("change")
+    $("#tipo-cena").val("cena").trigger("change")
 
-            let element = document.createElement("option")
-            element.innerText = comida.cat_recipe.title
-            element.setAttribute("id", comida.cat_recipe.title)
-            element.setAttribute("value", comida.cat_recipe.title)
-            element.setAttribute("class", "elementosOption")
-            recipe_titulo.append(element)
-            return comida
-        }
+    $('#guardar_menu').click(() => {
+        var done = false
+        var meal_date = $('#myDatePicker').val()
+        var user_planner = 13
+        var idDesayuno = $('#desayuno-favorito').val()
+        var user_recipeDesayuno = 15
+        var idComida = $('#comida-favorita').val()
+        var user_recipeComida = 15
+        var idCena = $('#cena-favorita').val()
+        var user_recipeCena = 15
+            //console.log(id, user_planner, meal_date, meal_type, user_recipe, done)
+        $.post(`${API_URL}users/profiles/planner/menu/ `, {
+            id: idDesayuno,
+            user_planner: user_planner,
+            meal_date: meal_date,
+            meal_type: "desayuno",
+            user_recipe: user_recipeDesayuno,
+            done: done
+        }).done(function(data) {
+            console.log('desayuno guardado')
+            $.post(`${API_URL}users/profiles/planner/menu/ `, {
+                id: idComida,
+                user_planner: user_planner,
+                meal_date: meal_date,
+                meal_type: "comida",
+                user_recipe: user_recipeComida,
+                done: done
+            }).done(function(data) {
+                console.log('comida guardada')
+                $.post(`${API_URL}users/profiles/planner/menu/ `, {
+                    id: idCena,
+                    user_planner: user_planner,
+                    meal_date: meal_date,
+                    meal_type: "cena",
+                    user_recipe: user_recipeCena,
+                    done: done
+                }).done(function(data) {
+                    console.log('Cena guardada')
+                    window.location.href = 'http://127.0.0.1:5501/front/app-eat-easier/ver_menu.html?id_planner=1234'
+                })
+            })
+        })
     })
+
+
 });

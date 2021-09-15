@@ -214,15 +214,67 @@
                     </div>
                     <!--SELECION DE MOMENTO DE LA COMIDA -->
                     <div class="row">
-                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column d-none">
                             <p class="p-title">Momento </p>
-                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3">
-                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Momento del
-                                    día</span>
+                            <div class="input-group col-12 col-sm-6 col-md-6 mb-3">
+                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Momento</span>
+                                <select class="form-select col-9" id="tipo-desayuno" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="desayuno">Desayuno</option>
+                                    <option value="comida">Comida</option>
+                                    <option value="cena">Cena</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column container">
+                            <p class="p-title">Recetas Favoritas </p>
+                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3 json_container">
+                                <span class="input-group-text col-3 " id="inputGroup-sizing-default">Desayuno</span>
+                                <select class="form-select col-9 recipe_title " id="desayuno-favorito" required>
+                                    <option id="recipe_title" value="elegir">Elegir receta</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column d-none">
+                            <p class="p-title">Momento </p>
+                            <div class="input-group col-12 col-sm-6 col-md-6 mb-3">
+                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Momento</span>
                                 <select class="form-select col-9" id="tipo-comida" required>
                                     <option value="desayuno">Desayuno</option>
                                     <option value="comida">Comida</option>
                                     <option value="cena">Cena</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column container">
+                            <!--<p class="p-title">Recetas Favoritas </p>-->
+                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3 json_container">
+                                <span class="input-group-text col-3 " id="inputGroup-sizing-default">Comida</span>
+                                <select class="form-select col-9 recipe_title " id="comida-favorita" required>
+                                    <option id="recipe_title" value="elegir">Elegir receta</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column d-none">
+                            <p class="p-title">Momento </p>
+                            <div class="input-group col-12 col-sm-6 col-md-6 mb-3">
+                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Momento</span>
+                                <select class="form-select col-9" id="tipo-cena" required>
+                                    <option value="desayuno">Desayuno</option>
+                                    <option value="comida">Comida</option>
+                                    <option value="cena">Cena</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column container">
+
+                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3 json_container">
+                                <span class="input-group-text col-3 " id="inputGroup-sizing-default">Cena</span>
+                                <select class="form-select col-9 recipe_title " id="cena-favorita" required>
+                                    <option id="recipe_title" value="elegir">Elegir receta</option>
+
                                 </select>
                             </div>
                         </div>
@@ -231,26 +283,15 @@
                     <!--LISTA DE RECETAS FAVORITAS -->
 
                     <div class="row">
-                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column container">
-                            <p class="p-title">Recetas Favoritas </p>
-                            <div class="input-group col-12 col-sm-6 col-md-8 mb-3 json_container">
-                                <span class="input-group-text col-3 " id="inputGroup-sizing-default">Lista
-                                    de
-                                    recetas</span>
-                                <select class="form-select col-9 recipe_title " id="favorit_recipe" required>
-                                    <option  id="recipe_title" value="elegir">elegir</option>
-                                   
-                                </select>
-                            </div>
-                        </div>
 
-                        <!--BUTTON TO CREATE NEW USER PLANNER MENU-->
-                        <div class=" col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                        <div class=" col-12 col-sm-6 col-md-6 d-flex mx-auto justify-content flex-column">
                             <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                                <button class="btn-nar" type="submit" id="create_menu">Revisar Menú</button>
+                                <button class="btn-nar" type="button" id="guardar_menu">Guardar</button>
                                 <!--data-bs-toggle="modal" data-bs-target="#menuCreateModal1"-->
                             </div>
                         </div>
+                        <!--BUTTON TO CREATE NEW USER PLANNER MENU-->
+
                     </div>
                 </form>
             </section>
