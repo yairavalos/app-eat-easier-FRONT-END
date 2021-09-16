@@ -57,13 +57,13 @@ const filtrarComida = async(valor) => {
     }
     //console.log(plan)
     const comidaFiltrada = plan.filter(comida => {
-        //console.log(comida)
-        if (comida.cat_recipe.meal_type === valor) {
+            //console.log(comida)
+            if (comida.cat_recipe.meal_type === valor) {
 
-            return comida
-        }
-    })
-    console.log(comidaFiltrada)
+                return comida
+            }
+        })
+        //console.log(comidaFiltrada)
 
     return comidaFiltrada
 
@@ -156,7 +156,7 @@ function modalHandler() {
 
 function guardarTiempo() {
     let meal_date = document.getElementById("myDatePicker")
-    console.log(meal_date)
+        // console.log(meal_date)
 }
 
 
@@ -179,7 +179,7 @@ $(document).ready(async() => {
 
     $('#myDatePicker').datepicker().on('changeDate', function(e) {
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
-        console.log(user_period_start.toString())
+            //console.log(user_period_start.toString())
     })
 
     $("#tipo-desayuno").val("desayuno").trigger("change")
@@ -202,7 +202,7 @@ $(document).ready(async() => {
             user_recipe: idDesayuno,
             done: done
         }).done(function(data) {
-            console.log('desayuno guardado')
+            // console.log('desayuno guardado')
             $.post(`${API_URL}users/profiles/planner/menu/ `, {
 
                 user_planner: parseInt(localStorage.getItem('user_planner_id')),
@@ -211,7 +211,7 @@ $(document).ready(async() => {
                 user_recipe: idComida,
                 done: done
             }).done(function(data) {
-                console.log('comida guardada')
+                // console.log('comida guardada')
                 $.post(`${API_URL}users/profiles/planner/menu/ `, {
 
                     user_planner: parseInt(localStorage.getItem('user_planner_id')),
@@ -220,7 +220,7 @@ $(document).ready(async() => {
                     user_recipe: idCena,
                     done: done
                 }).done(function(data) {
-                    console.log('Cena guardada')
+                    //console.log('Cena guardada')
                     window.location.href = 'ver_menu.html'
                 })
             })

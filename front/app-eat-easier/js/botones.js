@@ -28,9 +28,9 @@ let people_qty = {
 // ADULT ICONS EVENT HANDLERS
 
 adult1.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -45,9 +45,9 @@ adult1.addEventListener('click', (e) => {
 })
 
 adult2.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -62,9 +62,9 @@ adult2.addEventListener('click', (e) => {
 
 
 adult3.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -79,9 +79,9 @@ adult3.addEventListener('click', (e) => {
 
 
 adult4.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -91,14 +91,14 @@ adult4.addEventListener('click', (e) => {
         }
 
         fillAdultRow(4)
-    }   
+    }
 })
 
 
 adult5.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -127,9 +127,9 @@ let child5 = document.querySelector('#child5')
 // ADULT ICONS EVENT HANDLERS
 
 child1.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -143,9 +143,9 @@ child1.addEventListener('click', (e) => {
 })
 
 child2.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -159,9 +159,9 @@ child2.addEventListener('click', (e) => {
 })
 
 child3.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    // console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -175,9 +175,9 @@ child3.addEventListener('click', (e) => {
 })
 
 child4.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    // console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -191,9 +191,9 @@ child4.addEventListener('click', (e) => {
 })
 
 child5.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
-    if (lockFunctions === false){
+    if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
             e.target.classList.remove('check')
@@ -223,7 +223,7 @@ function fillAdultRow(fill_num) {
                 adult_row.children[i].querySelector("i").classList.remove("check")
             }
         }
-    } 
+    }
 }
 
 
@@ -265,13 +265,13 @@ btnSave.style.display = "none"
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
-function updateCounters(profileData){
+function updateCounters(profileData) {
 
     people_qty.user_profile = profileData[0].user_profile
     people_qty.adults_qty = profileData[0].adults_qty
     people_qty.child_qty = profileData[0].child_qty
 
-    console.log("People Qty Updated: ", people_qty)
+    // console.log("People Qty Updated: ", people_qty)
 }
 
 
@@ -288,7 +288,7 @@ const retrieveProfile = async() => {
 
     const dataResult = await data.json()
     updateCounters(dataResult)
-    console.log("AJAX Fetch Result:", dataResult)
+        //console.log("AJAX Fetch Result:", dataResult)
 
     return dataResult
 }
@@ -308,7 +308,7 @@ const postFetch = async(url, datos) => {
 // -------------------------------------------------------------------------------------------------------------------------------
 
 btnNext.addEventListener('click', (e) => {
-    window.location.href = "preferred_food.html"  
+    window.location.href = "preferred_food.html"
 })
 
 
@@ -330,7 +330,7 @@ btnSave.addEventListener('click', (e) => {
 // ---------------------------------------------------------------------------------------------------------------
 
 
-function handleEmptyProfile(errorMsg){
+function handleEmptyProfile(errorMsg) {
 
     lockFunctions = false
     console.log("My Response Catch Error: ", errorMsg)
@@ -342,15 +342,15 @@ function handleEmptyProfile(errorMsg){
 
 }
 
-window.addEventListener('load', (e)=>{
+window.addEventListener('load', (e) => {
 
     let myResponse = retrieveProfile()
 
     myResponse.then(console.log("AJAX Retrieve in Main", myResponse.dataResult))
-    myResponse.then(()=>{fillAdultRow(people_qty.adults_qty)})
-    myResponse.then(()=>{fillChildRow(people_qty.child_qty)})
-    myResponse.then(()=>{lockFunctions = true})
-    myResponse.catch((error)=>{handleEmptyProfile(error)})
+    myResponse.then(() => { fillAdultRow(people_qty.adults_qty) })
+    myResponse.then(() => { fillChildRow(people_qty.child_qty) })
+    myResponse.then(() => { lockFunctions = true })
+    myResponse.catch((error) => { handleEmptyProfile(error) })
 
 })
 

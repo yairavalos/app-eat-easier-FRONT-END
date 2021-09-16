@@ -25,7 +25,7 @@ let kitchenIcon = {
 // -------------------------------------------------------------------------------------------------------------------
 
 olla_de_presion.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
 
@@ -40,7 +40,7 @@ olla_de_presion.addEventListener('click', (e) => {
 })
 
 licuadora.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
 
@@ -55,7 +55,7 @@ licuadora.addEventListener('click', (e) => {
 })
 
 microondas.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -69,7 +69,7 @@ microondas.addEventListener('click', (e) => {
 })
 
 horno.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('pressed')) {
@@ -83,7 +83,7 @@ horno.addEventListener('click', (e) => {
 })
 
 procesador.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
 
@@ -99,7 +99,7 @@ procesador.addEventListener('click', (e) => {
 
 
 estufa.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -220,11 +220,11 @@ btnSave.addEventListener('click', (e) => {
     lockFunctions = true
 
     dataToSend = generateJSON()
-    console.log("Saving this AJAX POST before to go", dataToSend)
+        //console.log("Saving this AJAX POST before to go", dataToSend)
 
     try {
         let response = postFetch("users/profiles/apps/", dataToSend)
-        setTimeout(function() { window.location.href = "#" }, 3000);
+        setTimeout(function() { window.location.href = "#" }, 2000);
 
     } catch (error) {
         console.log(error)

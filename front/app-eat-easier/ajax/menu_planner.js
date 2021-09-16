@@ -21,7 +21,7 @@ const getRecipeByID = async() => {
         });
 
         const data = await response.json()
-        console.log(data)
+            //console.log(data)
 
         return data
 
@@ -45,7 +45,7 @@ function populate_nodes_header(n) {
 
 function populate_nodes_meals(n) {
 
-    console.log("My function name is populate nodes meals")
+    //console.log("My function name is populate nodes meals")
 
     this_attr = my_json_list[n].user_recipe.cat_recipe.title
     my_container.querySelector("." + my_json_list[n].meal_type).querySelector(".title").innerText = this_attr
@@ -91,9 +91,9 @@ function container_handler(my_container_name, target_date, populate_nodes) {
             for (i = 0; i < json_items_num; i++) {
 
                 let my_json_date = new Date(my_json_list[i].meal_date)
-                console.log("my_json_date: " + my_json_date)
+                    // console.log("my_json_date: " + my_json_date)
                 let my_picker_date = new Date(target_date)
-                console.log("my_picker_date: " + my_picker_date)
+                    // console.log("my_picker_date: " + my_picker_date)
 
                 if (my_json_date.toLocaleDateString() == my_picker_date.toLocaleDateString()) {
 
@@ -113,7 +113,7 @@ const transfer_retrieve = async() => {
 
     // Here instead to have just one container, we need to split it into 2
     my_json_list = await getRecipeByID();
-    console.log("transfer retrieve desde menu planner")
+    // console.log("transfer retrieve desde menu planner")
 
     $("#myDatePicker").datepicker('update', my_json_list[0].user_planner.start_date)
 

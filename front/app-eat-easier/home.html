@@ -24,8 +24,7 @@
 </head>
 
 <body>
-    <!--Header -->
-    <header class="container-fluid-sm p-1">
+  <header class="container-fluid-sm p-1">
         <!--logo-->
         <section>
             <div class="row">
@@ -38,12 +37,10 @@
             </div>
         </section>
         <!--search-->
-        <nav
-            class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
+     <nav class="  navbar navbar-light navbar-expand-lg col-12 col-sm-6 col-md-10 d-flex justify-content-evenly p-3 flex-column mx-auto">
             <div class="container-fluid">
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#FF8908" class="bi bi-list"
                         viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -59,7 +56,7 @@
                         <li class="nav-item p-title">
                             <a class=" text-head p-2 m-2 " aria-current="page" href="favoritos.html">Mis favoritos</a>
                         </li>
-                        <!-- <li class="nav-item p-title">
+                       <!-- <li class="nav-item p-title">
                             <a class="text-head p-2" aria-current="page" href="categorias.html">Ingrediente
                                 principal</a>
                         </li>-->
@@ -71,11 +68,11 @@
                             <a class="text-head p-2 m-2" aria-current="page" href="plan_menu.html">Mi planificador de
                                 menú</a>
                         </li>
-                        <!--<li class="nav-item p-title">
-                            <a class="text-head p-1" aria-current="page" href="menu.html">Mi menú</a>
-                        </li>-->
+                     <li class="nav-item p-title">
+                            <a class="text-head  p-2 m-2" aria-current="page" href="ver_menu.html">Mi menú</a>
+                        </li>
                         <li class="nav-item p-title">
-                            <a class="text-head p-1" aria-current="page" href="mi_lista.html">Mi lista de super</a>
+                            <a class="text-head  p-2 m-2" aria-current="page" href="mi_lista.html">Mi lista de super</a>
                         </li>
                     </ul>
                     <!--search desktop-->
@@ -93,8 +90,7 @@
                 </div>
                 <!--serach boton mobile-->
                 <div class="border ">
-                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button"
-                        aria-controls="offcanvasExample">
+                    <a class="btn navbar-toggler " data-bs-toggle="offcanvas" href="#search" role="button" aria-controls="offcanvasExample">
                         <span> <i class="fa fa-search"></i> </span>
                     </a>
                 </div>
@@ -102,8 +98,7 @@
 
         </nav>
         <div class="row d-flex">
-            <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-bg offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
                     <!-- <form class="d-flex border bg-nar">
                                                   <input class=" search form-control  me-2" type="search" placeholder="Search" aria-label="Search">
@@ -119,12 +114,11 @@
                 <div class="row">
                     <div class="col-12 text-center mx-auto d-flex justify-content flex-column">
                         <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                            <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close ms-auto text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             <a href="home.html"><button class="btn-green mb-2" type="button">
                                     Inicio
                                 </button></a>
-                            <!--<a href="edit_profile.html"><button class="btn-green mb-2" type="button">
+                        <!--<a href="edit_profile.html"><button class="btn-green mb-2" type="button">
                                     Mi perfil
                                 </button></a>-->
                             <a href="favoritos.html"><button class="btn-green mb-2" type="button">
@@ -139,9 +133,9 @@
                             <a href="plan_menu.html"><button class="btn-green mb-2" type="button">
                                     Mi planificador de menú
                                 </button></a>
-                            <!--<a href="menu.html"><button class="btn-green mb-2" type="button">
+                           <a href="ver_menu.html"><button class="btn-green mb-2" type="button">
                                     Mi menú
-                                </button></a>-->
+                                </button></a>
                             <a href="mi_lista.html"><button class="btn-green mb-2" type="button">
                                     Mi lista de super
                                 </button></a>
@@ -150,6 +144,8 @@
                 </div>
             </div>
         </div>
+
+        <!--Logo-->
 
         <!--Logo-->
         <div class="row">
@@ -200,11 +196,9 @@
                 <h2 class=" mb-2">Nuevas Recetas</h2>
             </div>
         </div>
-
-        <div class="row col-12 col-sm-6 col-md-10 text-center mx-auto d-flex justify-content-evenly json_container1">
+ <div class="row col-12 col-sm-6 col-md-10 text-center mx-auto d-flex justify-content-evenly json_container1">
             <div class=" border mx-0 card card-1 g-0 col-12 col-md-4 d-flex mb-4 desayuno">
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url"
-                        alt="pollo-horno " /></a>
+                <img src="./assets/fotos/Web_fotoreceta.jpg" class="card-image pic_url" alt="pollo-horno " />
                 <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
                 <p class="p-title ps-2 json_node meal_type">Desayuno</p>
                 <div class="card-body d-flex justify-content-between">
@@ -215,8 +209,7 @@
                     </svg>
                     <section class="d-flex">
                         <p class="card-level me-2 level">Bajo</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908"
-                            class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                             <path
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
@@ -226,9 +219,8 @@
 
             <div class="card card-1 g-0 col-12 col-md-4  border mb-4 comida">
 
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url"
-                        alt="pollo-horno " /></a>
-                <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
+                <img src="./assets/fotos/PECHUGAS-DE-POLLO-RELLENAS-DE-JAMÓN-Y-QUESO-1-1024x576.jpg" class="card-image pic_url" alt="pollo-horno " />
+                <p class="card-text card-1-text p-2 title">Pechugas Rellenas</p>
                 <p class="p-title text-center json_node meal_type">Comida</p>
                 <div class="card-body d-flex justify-content-between">
                     <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -238,8 +230,7 @@
                     </svg>
                     <section class="d-flex">
                         <p class="card-level me-2 level">Bajo</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908"
-                            class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                             <path
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
@@ -248,9 +239,8 @@
             </div>
 
             <div class="card card-1 g-0 col-12 mb-4 col-md-4  cena">
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-img-top pic_url"
-                        alt="pollo-horno " /></a>
-                <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
+                <img src="./assets/fotos/ensalada-de-manzana-queso-y-almendras.jpg" class=" card-image pic_url" alt="pollo-horno " />
+                <p class="card-text card-1-text p-2 title">Ensalada de Manzana</p>
                 <p class="p-title text-center json_node meal_type">Cena</p>
                 <div class="card-body d-flex justify-content-between">
                     <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,8 +250,7 @@
                     </svg>
                     <section class="d-flex">
                         <p class="card-level me-2 level">Bajo</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908"
-                            class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                             <path
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
@@ -269,8 +258,9 @@
                 </div>
             </div>
         </div>
-        <div class="row d-flex mb-2 d-flex justify-content-evenly  align-items-center ">
-            <div class=" row d-flex  d-flex justify-content  align-items-center ">
+
+        <div class="row d-flex mb-2 d-flex justify-content-evenly  align-items-center">
+            <div class="row d-flex justify-content  align-items-center">
 
                 <div class="col-12 col-sm-4 col-md-4  mt-3 mb-3 d-flex justify-content">
                     <h3>Nuestras Consentidas</h3>
@@ -286,28 +276,18 @@
                         <div class="col-8 col-md-6">
                             <div class="card-body d-flex flex-wrap justify-content-between">
                                 <h5 class="card-title align-items-center">Pollo con papas</h5>
-                                <span class="
-                            circle
-                            mb-3
-                            d-flex
-                            align-items-center
-                            justify-content-around
-                          " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class=" check fa fa-minus"></i></span>
 
                                 <div class="row">
                                     <p class="card-text d-fex">Delicioso y fácil de preparar</p>
                                     <div class="d-flex justify-content-between">
-                                        <svg width="28" height="25" viewBox="0 0 28 25" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
                                                 fill="#E30C0C" />
                                         </svg>
                                         <section class="d-flex">
                                             <p class="card-level me-2">Bajo</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                                             </svg>
@@ -321,28 +301,22 @@
                 <div class="card card-2 mb-3 p-0 col-12 col-md-5 flex-wrap">
                     <div class="row g-0">
                         <div class="col-4 col-md-6 ps-0">
-                            <img src="./assets/fotos/pollo-papas.jpg" class="img-small img-fluid g-0" alt="pollo" />
+                            <img src="./assets/fotos/images14.jpg" class="img-small img-fluid g-0" alt="pollo" />
                         </div>
                         <div class="col-8 col-md-6">
                             <div class="card-body d-flex flex-wrap justify-content-between">
-                                <h5 class="card-title align-items-center">Pollo con papas</h5>
-                                <span class="circle mb-3 d-flex align-items-center justify-content-around" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="check fa fa-minus"></i></span>
-
+                                <h5 class="card-title align-items-center">Cerdo agridulce</h5>
                                 <div class="row">
                                     <p class="card-text d-fex">Delicioso y fácil de preparar</p>
                                     <div class="d-flex justify-content-between">
-                                        <svg width="28" height="25" viewBox="0 0 28 25" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M25.0687 1.75686C21.9078 -0.884795 17.0242 -0.488004 14 2.57218C10.9758 -0.488004 6.09219 -0.890231 2.93125 1.75686C-1.18124 5.19753 -0.579681 10.807 2.35157 13.7802L11.9437 23.4934C12.4906 24.0478 13.2234 24.3577 14 24.3577C14.782 24.3577 15.5094 24.0533 16.0562 23.4989L25.6484 13.7856C28.5742 10.8124 29.1867 5.20296 25.0687 1.75686ZM23.7781 11.9484L14.1859 21.6617C14.0547 21.7921 13.9453 21.7921 13.8141 21.6617L4.22188 11.9484C2.22579 9.92641 1.8211 6.09982 4.6211 3.75712C6.74844 1.97971 10.0297 2.24605 12.0859 4.32785L14 6.26832L15.9141 4.32785C17.9812 2.23518 21.2625 1.97971 23.3789 3.75169C26.1734 6.09439 25.7578 9.94272 23.7781 11.9484Z"
                                                 fill="#E30C0C" />
                                         </svg>
                                         <section class="d-flex">
                                             <p class="card-level me-2">Bajo</p>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                                             </svg>

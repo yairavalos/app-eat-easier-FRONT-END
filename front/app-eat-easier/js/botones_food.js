@@ -38,7 +38,7 @@ let foodIcon = {
 
 res.addEventListener('click', (e) => {
 
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -53,7 +53,7 @@ res.addEventListener('click', (e) => {
 
 
 pollo.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -68,7 +68,7 @@ pollo.addEventListener('click', (e) => {
 })
 
 cerdo.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -82,7 +82,7 @@ cerdo.addEventListener('click', (e) => {
 })
 
 pescado.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
 
@@ -95,7 +95,7 @@ pescado.addEventListener('click', (e) => {
 })
 
 huevo.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -109,7 +109,7 @@ huevo.addEventListener('click', (e) => {
 })
 
 lacteos.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -123,7 +123,7 @@ lacteos.addEventListener('click', (e) => {
 })
 
 frutas.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -137,7 +137,7 @@ frutas.addEventListener('click', (e) => {
 })
 
 verduras.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -151,7 +151,7 @@ verduras.addEventListener('click', (e) => {
 })
 
 gluten.addEventListener('click', (e) => {
-    console.log(e.target.classList)
+    //console.log(e.target.classList)
 
     if (lockFunctions === false) {
         if (e.target.classList.contains('check')) {
@@ -201,7 +201,7 @@ function generateJSON() {
             food_type: result
         })
     }
-    console.log("Data from generateJSON(): ", datos)
+    //console.log("Data from generateJSON(): ", datos)
     return datos
 }
 
@@ -228,7 +228,7 @@ const retrieveProfile = async() => {
 
     const dataResult = await data.json()
 
-    console.log("AJAX Fetch Result:", dataResult)
+    //console.log("AJAX Fetch Result:", dataResult)
 
     return dataResult
 }
@@ -257,7 +257,7 @@ btnSave.addEventListener('click', (e) => {
     lockFunctions = true
 
     dataToSend = generateJSON()
-    console.log("Saving this AJAX POST before to go", dataToSend)
+        //console.log("Saving this AJAX POST before to go", dataToSend)
 
     try {
         let response = postFetch("users/profiles/food/", dataToSend)

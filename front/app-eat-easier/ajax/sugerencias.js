@@ -19,7 +19,7 @@ const getUserRecipes = async() => {
         });
 
         const data = await response.json()
-        console.log(data)
+            //console.log(data)
 
         return data
 
@@ -84,7 +84,7 @@ function generateJSON() {
             "favorite": true
         })
     }
-    console.log("Data from generateJSON(): ", datos)
+    //console.log("Data from generateJSON(): ", datos)
     return datos
 }
 
@@ -109,7 +109,7 @@ const transfer_retrieve = async() => {
         populate_nodes(0)
     }
 
-    console.log("transfer retrieve")
+    //console.log("transfer retrieve")
 
 }
 let btnSave = document.getElementById("btn_home")
@@ -119,7 +119,7 @@ btnSave.addEventListener('click', (e) => {
 
 
     dataToSend = generateJSON()
-    console.log("Saving this AJAX POST before to go", dataToSend)
+        //console.log("Saving this AJAX POST before to go", dataToSend)
 
     try {
         let response = postFetch(dataToSend)

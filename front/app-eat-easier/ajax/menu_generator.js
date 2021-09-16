@@ -26,7 +26,7 @@ const getMenuGenerator = async() => {
         });
 
         const data = await response.json()
-        console.log(data)
+            //console.log(data)
 
         return data
 
@@ -50,7 +50,7 @@ const postFetch = async(postData) => {
 
     const dataResult = await data.json()
     localStorage.setItem("user_planner_id", dataResult.id)
-    console.log("Data Result from Post Fetch: ", dataResult)
+        //console.log("Data Result from Post Fetch: ", dataResult)
 
     //saveUserProfile(dataResult) -> according to response this function would change
 
@@ -65,7 +65,7 @@ function populate_nodes(n) {
 
     this_attr = my_json_list[n].plan_title
 
-    console.log(this_attr)
+    //console.log(this_attr)
     my_container.lastElementChild.querySelectorAll(".plan_title")[0].innerText = this_attr
 
 }
@@ -99,7 +99,7 @@ const transfer_retrieve = async() => {
         populate_nodes(0)
     }
 
-    console.log("transfer retrieve")
+    //console.log("transfer retrieve")
 
 }
 
@@ -109,7 +109,7 @@ function generateWeekNum(start_date) {
     let onejan = new Date(now.getFullYear(), 0, 1);
     let week = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7) - 1;
 
-    console.log(week);
+    //console.log(week);
     return week
 }
 
@@ -139,7 +139,7 @@ function generateJSON() {
 
     myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
 
-    console.log("Generated JSON: ", myMenuDict)
+    //console.log("Generated JSON: ", myMenuDict)
     return myMenuDict
 }
 
@@ -160,7 +160,7 @@ myForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     let jsonPOST = generateJSON()
-    console.log("My JSON to be Posted: ", jsonPOST)
+        //console.log("My JSON to be Posted: ", jsonPOST)
 
     let myResponse = postFetch(jsonPOST)
     setTimeout(() => { modalHandler() }, 2000)
@@ -190,7 +190,7 @@ $(document).ready(() => {
 
     $('#myDatePicker').datepicker().on('changeDate', function(e) {
         user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
-        console.log(user_period_start.toString())
+            //console.log(user_period_start.toString())
     })
 
 });

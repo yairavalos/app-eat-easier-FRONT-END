@@ -21,7 +21,7 @@ const getRecipeByID = async() => {
         });
 
         const data = await response.json()
-        console.log(data)
+            // console.log(data)
 
         return data
 
@@ -34,8 +34,8 @@ const getRecipeByID = async() => {
 
 function populate_nodes_details(n) {
 
-    console.log("My function name is populate nodes details")
-    console.log("My n value is " + n)
+    //console.log("My function name is populate nodes details")
+    //console.log("My n value is " + n)
 
     this_attr = my_json_list["recipe_details"][n].id
     my_container.setAttribute("id", this_attr)
@@ -61,7 +61,7 @@ function populate_nodes_details(n) {
 
 function populate_nodes_ingredients(n) {
 
-    console.log("My function name is populate nodes ingredients")
+    //console.log("My function name is populate nodes ingredients")
 
     this_attr = my_json_list["recipe_ingredients"][n].ingredient_qty
     this_attr += " " + my_json_list["recipe_ingredients"][n].unit_type.equivalency
@@ -72,7 +72,7 @@ function populate_nodes_ingredients(n) {
 
 function populate_nodes_apps(n) {
 
-    console.log("My function name is populate nodes apps")
+    //console.log("My function name is populate nodes apps")
 
     this_attr = my_json_list["recipe_apps"][n].apps_type
     my_container.querySelector(".apps_type").innerText = this_attr
@@ -81,7 +81,7 @@ function populate_nodes_apps(n) {
 
 function populate_nodes_procedure(n) {
 
-    console.log("My function name is populate nodes procedure")
+    //console.log("My function name is populate nodes procedure")
 
     this_attr = my_json_list["recipe_procedure"][n].proc_descrip
     my_container.querySelector(".proc_descrip").innerText = this_attr
@@ -104,7 +104,7 @@ function container_handler(my_container_name, myjson_item, populate_nodes) {
     my_template_item = my_container.children[0]
 
     json_items_num = my_json_list[myjson_item].length
-    console.log("container_handler")
+        //console.log("container_handler")
 
     if (json_items_num > 1) {
 
@@ -127,7 +127,7 @@ const transfer_retrieve = async() => {
 
     // Here instead to have just one container, we need to split it into 4
     my_json_list = await getRecipeByID();
-    console.log("transfer retrieve")
+    //console.log("transfer retrieve")
 
     container_handler(".json_container1", "recipe_details", populate_nodes_details)
     container_handler(".json_container2", "recipe_ingredients", populate_nodes_ingredients)

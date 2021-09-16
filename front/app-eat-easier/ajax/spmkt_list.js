@@ -20,7 +20,7 @@ const getUserSprmktList = async() => {
         });
 
         const data = await response.json()
-        console.log(data)
+            //console.log(data)
 
         return data
 
@@ -29,12 +29,6 @@ const getUserSprmktList = async() => {
     }
 
 }
-
-//function periodRetrieve() {
-//
-//    period_str = "Periodo " + my_json_list[0].user_planner.period
-//    document.querySelector(".period").innerText = period_str
-//}
 
 
 function populate_nodes(n) {
@@ -47,7 +41,7 @@ function populate_nodes(n) {
     this_attr += " " + my_json_list[n].cat_ingredient_id__ingredient_name
 
 
-    console.log(this_attr)
+    //console.log(this_attr)
     my_container.lastElementChild.querySelectorAll(".qty")[0].innerText = this_attr
 
 
@@ -59,7 +53,7 @@ function clone_html_item() {
     my_container.appendChild(my_item)
 
     my_container.lastElementChild.outerHTML = my_container.firstElementChild.outerHTML
-    console.log(my_container.lastElementChild.outerHTML)
+        //console.log(my_container.lastElementChild.outerHTML)
 }
 
 
@@ -85,7 +79,7 @@ const transfer_retrieve = async() => {
         populate_nodes(0)
     }
 
-    console.log("transfer retrieve")
+    //console.log("transfer retrieve")
 
 }
 

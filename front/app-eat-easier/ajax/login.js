@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8000/api/"
 
 let myForm = document.querySelector('#formLogin')
 
-var myModal1 = new bootstrap.Modal(document.getElementById('myModalLogin'), {keyboard: false})
+var myModal1 = new bootstrap.Modal(document.getElementById('myModalLogin'), { keyboard: false })
 myModal1._element.querySelector("#modal_continue").style.display = "none"
 myModal1._element.querySelector("#modal_back").style.display = "none"
 
@@ -17,7 +17,7 @@ function saveUserProfile(myJSON) {
     }
 }
 
-function modalHandler(){
+function modalHandler() {
 
     if (localStorage.length > 1) {
         myModal1._element.querySelector('#modal_message').innerText = "BIENVENIDO !!! Por favor presiona siguiente"
@@ -26,19 +26,19 @@ function modalHandler(){
         myModal1._element.querySelector('#modal_message').innerText = "Por favor revisa tus datos de nuevo"
         myModal1._element.querySelector("#modal_back").style.display = "block"
     }
-    
+
 }
 
 // Form Data Retrieve
-function getFormData(){
+function getFormData() {
 
     let user_profile = {}
 
     let username = myForm.querySelector('#myUserName').value
     let password = myForm.querySelector('#myPassword').value
 
-    user_profile = {...user_profile, username}
-    user_profile = {...user_profile, password}
+    user_profile = {...user_profile, username }
+    user_profile = {...user_profile, password }
 
     return user_profile
 
@@ -72,14 +72,14 @@ myForm.addEventListener('submit', (e) => {
     e.stopPropagation()
 
     let userData = getFormData()
-    console.log("Form Data Result: ", userData)
+        // console.log("Form Data Result: ", userData)
 
     let myResponse = postFetch(userData)
-    
+
     myResponse.then(console.log("Ajax Response Result: ", myResponse.data))
     myResponse.then(myModal1.show())
-    myResponse.then(setTimeout(() => { modalHandler() }, 2000)) 
-    myResponse.catch((error)=>console.log(error)) 
+    myResponse.then(setTimeout(() => { modalHandler() }, 2000))
+    myResponse.catch((error) => console.log(error))
 
     //myResponse.then(console.log("SUCESS"),console.log("Something Wrong"))
     //window.location.href = "people_amount.html" // If I enable this promise its interrupted and localStorage as well
@@ -101,4 +101,3 @@ myForm.addEventListener('submit', (e) => {
 9. redirect to the next page
 
 */
-
