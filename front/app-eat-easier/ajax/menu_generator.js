@@ -49,8 +49,10 @@ const postFetch = async(postData) => {
     })
 
     const dataResult = await data.json()
+    localStorage.setItem("user_planner_id", dataResult.id)
     console.log("Data Result from Post Fetch: ", dataResult)
-        //saveUserProfile(dataResult) -> according to response this function would change
+
+    //saveUserProfile(dataResult) -> according to response this function would change
 
     return dataResult
 }

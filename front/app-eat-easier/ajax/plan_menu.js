@@ -13,7 +13,7 @@ if (localStorage.length > 1) {
 }
 
 const getPlan = async() => {
-    const response = await fetch(`${API_URL}users/${user_profile_id}/favorites/`, {
+    const response = await fetch(`${API_URL}users/profiles/favorite/?search=${localStorage.id}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -76,7 +76,7 @@ $("#tipo-desayuno").change(async() => {
             data.forEach((desayuno) => {
                 comidas += `
             <option  
-                value="${desayuno.cat_recipe.id }"
+                value="${desayuno.id }"
                 data-recipeid="${desayuno.cat_recipe.id }"
                 data-id="${desayuno.id}"
             >${desayuno.cat_recipe.title}</option>
@@ -95,7 +95,7 @@ $("#tipo-comida").change(async() => {
             data.forEach((comida) => {
                 comidas += `
                 <option  
-                    value="${comida.cat_recipe.id }"
+                    value="${comida.id }"
                     data-recipeid="${comida.cat_recipe.id }"
                     data-id="${comida.id}"
                 >${comida.cat_recipe.title}</option>
@@ -114,7 +114,7 @@ $("#tipo-cena").change(async() => {
             data.forEach((cena) => {
                 comidas += `
                 <option  
-                    value="${cena.cat_recipe.id }"
+                    value="${cena.id }"
                     data-recipeid="${cena.cat_recipe.id }"
                     data-id="${cena.id}"
                 >${cena.cat_recipe.title}</option>
@@ -139,33 +139,7 @@ function generateWeekNum(start_date) {
     return week
 }
 
-//function generateEndDate(period, start_date) {//
 
-//    let myDate = new Date(start_date)//
-
-//    if (period == "semanal") {
-//        myDate.setDate(myDate.getDate() + 7)
-//    } else if (period == "quincenal") {
-//        myDate.setDate(myDate.getDate() + 14)
-//    }
-//    return myDate.toISOString().substr(0, 10)
-//}
-
-//function generateJSON() {
-//
-//    let myMenuDict = {
-//    "id": 31,
-//    "user_planner": 13,
-//    "meal_date": "2021-09-13",
-//    "meal_type": "desayuno",
-//    "user_recipe": 15,
-//    "done": false
-//}
-//    myMenuDict.end_date = generateEndDate(myMenuDict.period, myMenuDict.start_date)
-//
-//    console.log("Generated JSON: ", myMenuDict)
-//    return myMenuDict
-//}
 
 function modalHandler() {
 
@@ -179,21 +153,7 @@ function modalHandler() {
 
 }
 
-//myForm.addEventListener('submit', (e) => {
-//
-//    e.preventDefault()
-//
-//    let jsonPOST = generateJSON()
-//    console.log("My JSON to be Posted: ", jsonPOST)
-//
-//    let myResponse = postFetch(jsonPOST)
-//    setTimeout(() => { modalHandler() }, 2000)
-//
-//    myModal1.show()
-//    myResponse.then((dataResult) => { console.log("AJAX POST Result from Event Listener its", dataResult) })
-//    myResponse.catch((error) => { console.log("Ajax Catch Error is: ", error) })
-//
-//})
+
 function guardarTiempo() {
     let meal_date = document.getElementById("myDatePicker")
     console.log(meal_date)
@@ -218,24 +178,10 @@ $(document).ready(async() => {
     })
 
     $('#myDatePicker').datepicker().on('changeDate', function(e) {
-            user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
-            console.log(user_period_start.toString())
-        })
-        //let recipe_titulo = document.getElementById("favorit_recipe")
-        //let planDesayuno = await getPlan()
-        //planDesayuno.filter(comida => {
-        //    //console.log(comida)
-        //    if (comida.cat_recipe.meal_type === "desayuno") {
-        //
-        //        let element = document.createElement("option")
-        //        element.innerText = comida.cat_recipe.title
-        //        element.setAttribute("id", comida.cat_recipe.title)
-        //        element.setAttribute("value", comida.cat_recipe.title)
-        //        element.setAttribute("class", "elementosOption")
-        //        recipe_titulo.append(element)
-        //        return comida
-        //    }
-        //})
+        user_period_start = $('#myDatePicker').datepicker('getFormattedDate')
+        console.log(user_period_start.toString())
+    })
+
     $("#tipo-desayuno").val("desayuno").trigger("change")
     $("#tipo-comida").val("comida").trigger("change")
     $("#tipo-cena").val("cena").trigger("change")
@@ -243,42 +189,39 @@ $(document).ready(async() => {
     $('#guardar_menu').click(() => {
         var done = false
         var meal_date = $('#myDatePicker').val()
-        var user_planner = 13
         var idDesayuno = $('#desayuno-favorito').val()
-        var user_recipeDesayuno = 15
         var idComida = $('#comida-favorita').val()
-        var user_recipeComida = 15
         var idCena = $('#cena-favorita').val()
-        var user_recipeCena = 15
-            //console.log(id, user_planner, meal_date, meal_type, user_recipe, done)
+
+        //console.log(id, user_planner, meal_date, meal_type, user_recipe, done)
         $.post(`${API_URL}users/profiles/planner/menu/ `, {
-            id: idDesayuno,
-            user_planner: user_planner,
+
+            user_planner: parseInt(localStorage.getItem('user_planner_id')),
             meal_date: meal_date,
             meal_type: "desayuno",
-            user_recipe: user_recipeDesayuno,
+            user_recipe: idDesayuno,
             done: done
         }).done(function(data) {
             console.log('desayuno guardado')
             $.post(`${API_URL}users/profiles/planner/menu/ `, {
-                id: idComida,
-                user_planner: user_planner,
+
+                user_planner: parseInt(localStorage.getItem('user_planner_id')),
                 meal_date: meal_date,
                 meal_type: "comida",
-                user_recipe: user_recipeComida,
+                user_recipe: idComida,
                 done: done
             }).done(function(data) {
                 console.log('comida guardada')
                 $.post(`${API_URL}users/profiles/planner/menu/ `, {
-                    id: idCena,
-                    user_planner: user_planner,
+
+                    user_planner: parseInt(localStorage.getItem('user_planner_id')),
                     meal_date: meal_date,
                     meal_type: "cena",
-                    user_recipe: user_recipeCena,
+                    user_recipe: idCena,
                     done: done
                 }).done(function(data) {
                     console.log('Cena guardada')
-                    window.location.href = 'http://127.0.0.1:5501/front/app-eat-easier/ver_menu.html?id_planner=1234'
+                    window.location.href = 'ver_menu.html'
                 })
             })
         })

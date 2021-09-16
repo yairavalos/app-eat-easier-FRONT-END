@@ -201,21 +201,21 @@
 
         </div>
 
-         <div class="row">
-                        <!--DATE PICKER-->
-                        <div class="col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
-                            <div>
-                                <p class="p-title">Elige el dia de tu menú</p>
-                            </div>
-                            <div class="input-group date mb-5">
-                                <span class="input-group-text col-3" id="inputGroup-sizing-default">Día:</span>
-                                <input type="text" id="myDatePicker" class="form-control col-9" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Escoge una fecha" required>
-                                <div>
-                                    <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+            <!--DATE PICKER-->
+            <div class="col-12 col-sm-6 col-md-8 d-flex mx-auto justify-content flex-column">
+                <div>
+                    <p class="p-title">Elige el dia de tu menú</p>
+                </div>
+                <div class="input-group date mb-5">
+                    <span class="input-group-text col-3" id="inputGroup-sizing-default">Día:</span>
+                    <input type="text" id="myDatePicker" class="form-control col-9" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Escoge una fecha" required>
+                    <div>
+                        <span class="input-group-addon"><i class="far fa-calendar-alt"></i></span>
                     </div>
+                </div>
+            </div>
+        </div>
 
         <div class="row col-12 col-sm-6 col-md-10 text-center mx-auto d-flex justify-content-evenly json_container1">
             <div class=" border mx-0 card card-1 g-0 col-12 col-md-4 d-flex mb-4 desayuno">
@@ -223,7 +223,7 @@
                 <!--<span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center  justify-content-around
                                         " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <i class=" check fa fa-minus"></i></span>-->
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-image card-img-top pic_url" alt="pollo-horno " /></a>
+               <img src="./assets/fotos/Web_fotoreceta.jpg" id="img-desayuno" data-catRecipe="" class="card-image card-img-top pic_url" alt="pollo-horno " />
                 <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
                 <p class="p-title ps-2 json_node meal_type">Desayuno</p>
                 <div class="card-body d-flex justify-content-between">
@@ -241,10 +241,10 @@
 
             <div class="card card-1 g-0 col-12 col-md-4  border mb-4 comida">
                 <!--boton modal-->
-                <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
+                <!-- <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around
                                 " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class=" check fa fa-minus"></i></span>
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class=" card-image card-img-top pic_url" alt="pollo-horno " /></a>
+                    <i class=" check fa fa-minus"></i></span>-->
+                <img src="./assets/fotos/Web_fotoreceta.jpg" id="img-comida" data-catRecipe="" class=" card-image card-img-top pic_url" alt="pollo-horno " />
                 <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
                 <p class="p-title text-center json_node meal_type">Comida</p>
                 <div class="card-body d-flex justify-content-between">
@@ -262,20 +262,20 @@
 
             <div class="card card-1 g-0 col-12 mb-4 col-md-4  cena">
                 <!--boton modal-->
-                <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="check fa fa-minus"></i></span>
-                <a href="detalle_receta.html"><img src="./assets/fotos/Web_fotoreceta.jpg" class="card-image card-img-top pic_url" alt="pollo-horno " /></a>
+                <!-- <span class="position-absolute top-0 end-0 circle me-2 mt-2 d-flex align-items-center justify-content-around" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="check fa fa-minus"></i></span>-->
+               <img src="./assets/fotos/Web_fotoreceta.jpg" id="img-cena" data-catRecipe=""  class="card-image card-img-top pic_url" alt="pollo-horno"/>
                 <p class="card-text card-1-text p-2 title">Huevo a la mexicana</p>
                 <p class="p-title  json_node meal_type">Cena</p>
                 <div class="card-body d-flex justify-content-between">
-                    <span type="button" data-bs-toggle="modal" data-bs-target="#modal-favoritos"><i
+                    <!--  <span type="button" data-bs-toggle="modal" data-bs-target="#modal-favoritos"><i
                             class="heart far fa-heart"></i></span>
-                    <section class="d-flex">
-                        <p class="card-level me-2 level">Bajo</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
-                        </svg>
+                    <section class="d-flex">-->
+                    <p class="card-level me-2 level">Bajo</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FF8908" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
+                    </svg>
                     </section>
                 </div>
             </div>
@@ -320,7 +320,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-4 text-center d-flex mx-auto flex-column">
             <div class="d-grid gap-2 col-11 col-md-8 mx-auto mb-5">
-                <button class="btn-nar" type="button">Confirmar mi plan</button>
+              <a href="mi_lista.html" > <button class="btn-nar" type="button">Ir a la lista del super</button></a>
             </div>
         </div>
     </main>

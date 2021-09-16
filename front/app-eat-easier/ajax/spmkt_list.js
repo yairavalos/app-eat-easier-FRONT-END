@@ -13,7 +13,7 @@ if (localStorage.length > 1) {
 const getUserSprmktList = async() => {
 
     try {
-        const response = await fetch(`${API_URL}users/${user_profile_id}/planners/${user_planner_id}/menu/sprmkt_list/`, {
+        const response = await fetch(`${API_URL}users/profiles/shopping_list/${localStorage.user_planner_id}/`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -30,11 +30,11 @@ const getUserSprmktList = async() => {
 
 }
 
-function periodRetrieve() {
-
-    period_str = "Periodo " + my_json_list[0].user_planner.period
-    document.querySelector(".period").innerText = period_str
-}
+//function periodRetrieve() {
+//
+//    period_str = "Periodo " + my_json_list[0].user_planner.period
+//    document.querySelector(".period").innerText = period_str
+//}
 
 
 function populate_nodes(n) {
@@ -42,12 +42,10 @@ function populate_nodes(n) {
     this_attr = my_json_list[n].id
     my_container.lastElementChild.setAttribute("id", this_attr) //no se toca 
 
-    this_attr = my_json_list[n].qty
-    this_attr += " " + my_json_list[n].stock_package.package_type.package_desc
-    this_attr += " " + my_json_list[n].stock_package.spq_value
-    this_attr += " " + my_json_list[n].stock_package.unit_type.equivalency
-    this_attr += " " + my_json_list[n].stock_package.ingredient.ingredient_name
-    this_attr += " " + my_json_list[n].stock_package.additional_desc
+    this_attr = my_json_list[n].myTotal
+    this_attr += " " + my_json_list[n].unit_type_id__unit_desc
+    this_attr += " " + my_json_list[n].cat_ingredient_id__ingredient_name
+
 
     console.log(this_attr)
     my_container.lastElementChild.querySelectorAll(".qty")[0].innerText = this_attr
@@ -70,7 +68,7 @@ const transfer_retrieve = async() => {
     my_json_list = await getUserSprmktList();
     json_items_num = my_json_list.length
 
-    periodRetrieve()
+    // periodRetrieve()
 
     if (json_items_num > 1) {
 
