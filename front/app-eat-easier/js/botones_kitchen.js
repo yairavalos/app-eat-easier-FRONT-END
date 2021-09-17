@@ -1,4 +1,3 @@
-console.log("hola kitchen")
 const API_URL = "http://localhost:8000/api/"
 
 let olla_de_presion = document.querySelector('#olla_de_presion')
